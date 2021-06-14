@@ -4,30 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LINE|始終在你身邊</title>
+    <title>LINE|始終在你身邊。</title>
+    <script src="https://kit.fontawesome.com/d4d6060dd7.js" crossorigin="anonymous"></script>
 
     <style>
         *{
             margin:0;
             padding:0;
             list-style: none;
+            font-family:" LINESeed",sans-serif;
         }
 
         .header{
             font-size: 0;
             position:fixed;
             width: 100%;
-            background-color: #FFF;
-            opacity: 0.9;
+            background-color: #FFFFFFE5;
+
             border: 1px solid #ccc;
         }
         .header .logo a{
-            font-size:18px ;
+            font-size:16px ;
             text-decoration: none;
             color: #000;
             position: absolute;
             display:inline-block;
-            line-height:60px;
+            line-height:50px;
             padding:10px 20px; 
 
         }
@@ -36,11 +38,23 @@
         }
         .header nav a{
             display:inline-block;
-            line-height:60px;
+            line-height:50px;
             text-decoration: none;
             color: #000;
-            padding:10px 30px; 
-            font-size: 18px;
+            padding:10px 40px; 
+            font-size: 16px;
+        }
+
+        .header nav a :hover{
+            text-decoration:underline #000 solid;
+            text-decoration-thickness: 5px;
+            text-underline-offset: 5px;
+            
+        }
+
+
+        .banner img{
+            width: 100%;
         }
            
         .lifeonline{
@@ -50,8 +64,10 @@
         }
         .wrap > h1{
             text-align: center;
-            font-size: 70px;
+            font-size: 60px;
             padding: 50px 0 0 0;
+            font-family:" LINESeed",sans-serif;
+            font-weight: bold;
         }
         .wrap > p{
             text-align: center;
@@ -92,7 +108,7 @@
         }
 
         .txt h3{
-            font-size: 15px;
+            font-size: 20px;
             color:rgb(7, 181, 59);
             padding: 10px 0;
         }
@@ -119,6 +135,122 @@
             color:#FFF;
         }
 
+        .messengerAPP {
+            padding-top: 150px;
+            padding-bottom: 150px;
+            margin: auto;
+            background-color:#F0F0F0;
+        }
+
+        .messengerAPP > h1{
+            text-align: center;
+            font-size: 60px;
+            padding: 50px 0 0 0;
+            font-family:" LINESeed",sans-serif;
+            font-weight: bold;
+        }
+
+        .messengerAPP >p{
+            text-align: center;
+            font-size: 20px;
+            color:#888;
+            padding: 10px 0 100px 0;
+        }
+        .messengerAPP .wrap1,
+        .messengerAPP .wrap2{
+            width: 960px;
+            display: flex;
+            margin:auto;
+        }
+
+
+        .messengerAPP .item img{
+            width: 100%;
+        }
+        .messengerAPP .item-txt{
+            padding: 5px;
+            text-align: center;
+        }
+        .messengerAPP .item-txt h3{
+            font-size: 24px;
+            margin: 36px 0px 12px;
+
+        }
+        .messengerAPP .item-txt p{
+            font-size: 14px;
+            padding: 10px 10px;
+            color:#888;
+        }
+        
+        .corporate{
+            font-size: 0;
+            width:100%;
+            position: relative;
+        }
+
+        .corporate .item-img img{
+            width: 100%;
+            z-index: 1;
+        }
+
+        .corporate .item-txt{
+            position:absolute;
+            top: 40%;
+            right: 45%;
+            z-index: 2;
+
+        }
+        .corporate .item-txt h1{
+            font-size: 46px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .footer{
+            position:relative;
+            width: 960px;
+            display: flex;
+            padding-top: 150px;
+            padding-bottom: 30px;
+            margin: auto;
+
+        }
+        .footer .footer-txt{
+            margin: 0 30px 0 0;
+            font-size: 12px;
+            line-height: 1.8;
+
+        }
+        .footer nav a{
+            color: #1e1e1e;
+            font-size: 12px;
+            text-decoration: none;
+            line-height: 1.8;
+            margin: 0 14px 0 0;
+            font-weight: bolder;
+        }
+
+        .link{
+            position:absolute;
+            bottom: 25px;
+            right:  25px;
+
+        }
+        
+        .link a{
+            text-decoration: none;
+            color: #000;
+            margin: 0 0 0 20px;
+        }
+
+        .fab{
+            font-size: 25px;
+        }
+
+        .link i :hover{
+            cursor: pointer;
+         }
+
     </style>
 
 
@@ -128,18 +260,22 @@
 
     <div class="header">
         <div class="logo">
-            <a href="LINE/HW01-Line.html" class="LINE"><strong>LINE</strong></a>
+            <a href="https://jessy8130.github.io/HW01-LINE/HW01-Line.html" class="LINE"><strong>LINE</strong></a>
         </div>
         <nav>
-            <a href="#"><strong>Life on LINE</strong> </a>
+            <a href="#" class="first_a"><strong>Life on LINE</strong> </a>
             <a href="#"><strong>通訊軟體</strong></a>
             <a href="#"><strong>服務總覽</strong></a>
         </nav>
     </div>
+
+    <div class="banner">
+        <img src="LINE/banner.png" alt="">
+    </div>
     
     <div class="lifeonline">
         <div class="wrap">
-            <h1>Life on Line</h1>
+            <h1>Life on LINE</h1>
             <p>超越通訊軟體，LINE為用戶建構全新的溝通型態與豐富的數位生活，成為用戶生活中不可或缺的平台。</p>
         </div>
         <div class="wrap">
@@ -173,7 +309,7 @@
                     <div class="txt">
                         <h2>LINE貼文串</h2>
                         <h3>探索樂趣，分享生活</h3>
-                        <p>在貼文串追蹤你的最愛．有感內容不錯過。 打造你的個人閱知頻道，探索生活大小事。 分享所見所聞，串連人際、啟發創意的無限可能！</p>
+                        <p>在貼文串追蹤你的最愛．有感內容不錯過。 <br>打造你的個人閱知頻道，探索生活大小事。 <br>分享所見所聞，串連人際、啟發創意的無限可能！</p>
                         <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
                             <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
@@ -240,6 +376,107 @@
         </div>
     </div>
 
-   
+    <div class="messengerAPP">
+        <h1>通訊軟體</h1>
+        <p>一款全新型態的通訊軟體，讓您隨時隨地享受免費傳訊、免費通話等溝通樂趣。</p>
+
+        <div class="wrap">
+            <div class="wrap1">
+                <div class="item">
+                    <div class="item-img">
+                        <img src="LINE/02-1.png">
+                    </div>
+                    <div class="item-txt">
+                        <h3>聊天、語音通話＆視訊通話</h3>
+                        <p>能夠和好友一對一或多人群組訊息聊天，或是進行語音、視訊通話。</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-img">
+                        <img src="LINE/02-2.png">
+                    </div>
+                    <div class="item-txt">
+                        <h3>貼圖＆表情貼＆主題</h3>
+                        <p>使用有趣的貼圖或表情貼豐富聊天，也能更換超讚的主題來表達自己。</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="item-img">
+                        <img src="LINE/02-3.png">
+                    </div>
+                    <div class="item-txt">
+                        <h3>主頁</h3>
+                        <p>可以快速連結 LINE 的各種服務，包含貼圖等多樣的內容資訊。</p>
+                    </div>
+
+                </div>
+            </div>
+           <div class="wrap2">
+            <div class="item">
+                <div class="item-img">
+                    <img src="LINE/02-4.png">
+                </div>
+                <div class="item-txt">
+                    <h3>社群</h3>
+                    <p>輕鬆分享共同興趣、開心聊出好麻吉。</p>
+                </div>
+
+            </div>
+            
+            <div class="item">
+                <div class="item-img">
+                    <img src="LINE/02-5.png">
+                </div>
+                <div class="item-txt">
+                    <h3>貼文串</h3>
+                    <p>供你分享你的近況，或是瞭解好友的最新消息。透過「探索」功能，能找到更多你喜愛的內容。</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="item-img">
+                    <img src="LINE/02-6.png">
+                </div>
+                <div class="item-txt">
+                    <h3>錢包</h3>
+                    <p>使用「 LINE Pay 」可以進行安全方便的行動付款或轉帳，也能使用其他金融相關服務。</p>
+                </div>
+           </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="corporate">
+        <a href="#">
+            <div class="item-img">
+                <img src="LINE/03.png">
+            </div>
+            <div class="item-txt">
+                <h1>企業服務</h1>
+            </div>
+        </a>
+    </div>
+
+    <div class="footer">
+        <div class="footer-txt">&copy; LINE Corporation</div>
+
+        <nav>
+            <a href="#">常見問題</a>
+            <a href="#">服務條款</a>
+            <a href="#">隱私權政策</a>
+            <a href="#">註冊及移動帳號</a>
+        </nav>
+
+        <div class="link">
+            <a href=""><i class="fab fa-youtube"></i></a>
+            <a href=""><i class="fab fa-facebook"></i></a>
+           
+        </div>
+
+
+    </div>
+
+
 </body>
 </html>
