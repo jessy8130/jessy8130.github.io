@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type="number"]:in-range{
+            color: green;
+        }
+        input[type="number"]:out-of-range{
+            color: red;
+        }
+
+
+    </style>
+</head>
+<body>
+    <form action="">
+        <!-- ID FOR 相同為一組 -->
+        <div>
+            <label for="user_name">姓名</label>
+            <input id="user_name" type="text">
+        </div>
+
+        <div>
+            <label for="">密碼</label>
+            <input type="password">
+        </div>
+
+        <div>
+            <label for="">年齡</label>
+            <input type="number" min="18" max="60">
+        </div>
+
+        <div>
+            <label for="">生日</label>
+            <input type="date">
+        </div>
+
+        <div>
+            <label for="">完整日期</label>
+            <input type="datetime-local">
+        </div>
+
+        <div>
+            <label for="">隱藏欄位</label>
+            <input type="hidden">
+        </div>
+
+        <div>
+            <label for="">第幾周</label>
+            <input type="week">
+        </div>
+
+        <div>
+            <label for="">第幾個月</label>
+            <input type="month">
+        </div>
+
+        <div>
+            <label for="">時間</label>
+            <input type="time">
+        </div>
+
+        <div>
+            <label for="">電話</label>
+            <input type="tel">
+        </div>
+
+        <div>
+            <label for="">信箱</label>
+            <input type="email">
+        </div>
+
+        <div>
+            <label for="">網站</label>
+            <input type="url">
+        </div>
+
+        <div>
+            <label for="">上傳</label>
+            <input type="file">
+        </div>
+
+        <div>
+            <label for="">搜尋</label>
+            <input type="search">
+        </div>
+
+        <div>
+            <label for="">色彩</label>
+            <input type="color">
+        </div>
+
+        <div>
+            <label for="">區間</label>
+            <input type="range">
+        </div>
+
+
+        <div>
+            <!-- label包input需刪除for -->
+            <label>興趣
+                <input type="checkbox">釣魚
+            </label>
+            <label>
+                <input type="checkbox">溯溪
+            </label>
+            <label>
+                <input type="checkbox">曬太陽
+            </label>
+        </div>
+
+        <!-- name相同做單選 -->
+        <div>
+            <label>性別
+                <input type="radio" name="gender">男性
+            </label>
+            <label>
+                <input type="radio" name="gender">女性
+            </label>
+        </div>
+
+        <div>
+            <label for="">搜尋</label>
+            <input type="search">
+        </div>
+
+
+        <div>
+            <input type="submit">
+            <input type="reset">
+            <input type="button" value="type button">
+            <button>botton 標籤</button>
+            <!-- bottom標籤在視覺上比較好調整 -->
+        </div>
+
+
+    </form>
+
+</body>
+</html>
