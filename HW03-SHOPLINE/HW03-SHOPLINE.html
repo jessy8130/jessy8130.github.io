@@ -62,13 +62,18 @@
             padding: 0 50px;
         }
         .header-bottom nav ul > li{
+            position: relative;
             padding: 0 15px;
         }
-
-        /* .header-bottom nav ul li::after{
-            content:"url(<i class="fas fa-arrow-right">)"
-
-        } */
+        .header-bottom nav ul li::after{
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            content:"\f107";
+            padding: 0 5px;
+            position: absolute;
+            top:0;
+            right: 0;
+        }
         .header-bottom nav ul > li:hover{
             text-decoration: underline #0061FF solid;
             text-decoration-thickness: 5px;
@@ -629,9 +634,6 @@
             <div class="item">
                 <div class="item-txt">
                     <h3>免寫程式、多款版型<br>輕鬆打造全能電商網站</h3>
-                    <div class="icon-wave">
-                        <i></i>
-                    </div>
                     <p>不會寫程式也能輕鬆架設品牌電商官網！任何產業都能找到合適的專業設計版型，以滑鼠拖曳就能完成網頁編輯，讓架設網站就像堆積木一樣簡單。</p>
                     <ul>
                         <li>豐富版型主題與字型搭配</li>
