@@ -9,25 +9,27 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <title>SHOPLINE 全球智慧開店平台 | 完整開店功能讓你生意不斷成長</title>
     <style>
-        .item-img img:not(.logo){
+        .item-img img:not(.logo),
+        .shopline img{
             width: 100%;
             vertical-align: middle;
         }
 
         h1{
-            font-size: 35px;
+            font-size: 25px;
             margin-bottom: 30px;
             font-weight: bold;
+            text-align: center;
         }
         h2{
-            font-size: 35px;
+            font-size: 20px;
             text-align: center;
             font-weight: bold;
             margin: 0 0 50px 0;
             line-height: 1.5;
         }
         h3{
-            font-size: 30px;
+            font-size: 20px;
             font-weight: bold;
             line-height: 1.7;
             margin-bottom: 30px;
@@ -39,13 +41,18 @@
             padding: 5px 0;
         }
         p{
-            font-size: 17px;
+            font-size: 15px;
             margin-bottom: 20px;
-            text-align: justify;
+            /* text-align: justify; */
             color:#324255;
             line-height: 1.7;
         }
-
+        /* header{
+            z-index: 10;
+        } */
+        #hb-btn{
+            display: none;
+        }
         .banner{
             background-image: url(https://img.shoplineapp.com/media/image_clips/5f069a12dc4d9a00335656c2/original.png?1594268177);
             background-size: cover;
@@ -101,6 +108,10 @@
             padding-top: 50px;
             padding-bottom: 50px;
         }
+        .info-body,
+        .info-body ul{
+            margin: auto;
+        }
         .info .title p{
             text-align: center;
         }
@@ -109,12 +120,11 @@
             margin-bottom: 100px;
             border-bottom: 1px solid #ccc ;
         }
-        .info .container :first-child,
-        .info .container :last-child{
+        .info .container > div:first-child,
+        .info .container > div:last-child{
             border: none;
             padding-bottom: 0;
         }
-
         .info .item-txt a{
             color:#0061FF;
             text-decoration: none;
@@ -195,7 +205,7 @@
         }
         .service .item-img img{
             width:60%;
-            padding: 25px;
+            padding: 20px;
         }
         .service .item-txt h3{
             text-align: center;
@@ -349,16 +359,144 @@
             color:#748094;
         }
 
+        @media screen and (max-width: 991px){
+            .header-top,
+            .header-bottom .free{
+                display: none;
+            }
+            .header-bottom{
+                position: fixed;
+                top: 0;
+                background-color: #fff;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                padding: 0 20px;
+                box-sizing: border-box;
+            }
+            .header-bottom .shopline a{
+                line-height: 55px;
+            }
+            .header-bottom .shopline img{
+                width: 125px;
+            }
+            .hb{
+                width: 35px;
+                height: 35px;
+                position: relative;
+            }
+            .hb span{
+                position: absolute;
+                display: block;
+                width: 80%;
+                height: 2px;
+                background-color: #000;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+            .hb span:first-child{
+                top: 12px;
+            }
+            .hb span:nth-of-type(2){
+                opacity: 1;
+            }
+            .hb span:last-child{
+                bottom: 12px;
+            }
+            #hb-btn:checked ~ header .hb span:first-child{
+                top: 0;
+                transform: rotate(45deg);
+            }
+            #hb-btn:checked ~ header .hb span:nth-of-type(2){
+                opacity: 0;
+            }
+            #hb-btn:checked ~ header .hb span:last-child{
+                bottom: 0;
+                transform: rotate(-45deg);
+            }
+            .header-bottom nav{
+                position: absolute;
+                display: block;
+                width: 100vw;
+                height: calc(100vh - 80px);
+                top: 100%;
+                background-color: #fff;
+                right: -100vw;
+                transition: right .5s;   
+            }
+            #hb-btn:checked ~ header .header-bottom nav{
+                right: 0;
+            }
 
-
-        @media screen and (min-width: 768px){
+            .banner{
+                margin-top: 55px;
+            }
+            .banner .item-txt{
+                padding: 0;
+            }
+            .banner .item-txt button{
+                width: 100%;
+                margin: 30px 0;
+            }
+            .info-body > .col,
+            .info-title > .col{
+                padding:0;
+            }
+            .info-body .item-img{
+                margin-bottom: 50px;
+            }
+            .map .item-txt a{
+                width: 100%;
+                padding: 20px 0;
+            }
+            .footer-info{
+                text-align: center;
+            }
+            .footer-info .copyright p {
+                font-size: 14px;
+            }
+        }
+        @media screen and (min-width: 992px){
             .container{
                 max-width: 1500px;
                 margin: auto;
             }
-
-        }
-        @media screen and (min-width: 992px){
+            h1{
+                font-size: 35px;
+                margin-bottom: 30px;
+                font-weight: bold;
+                text-align: left;
+            }
+            h2{
+                font-size: 35px;
+                text-align: center;
+                font-weight: bold;
+                margin: 0 0 50px 0;
+                line-height: 1.5;
+            }
+            h3{
+                font-size: 30px;
+                font-weight: bold;
+                line-height: 1.7;
+                margin-bottom: 30px;
+            }
+            h4{
+                font-size: 20px;
+                color: #fff;
+                line-height: 1.7;
+                padding: 5px 0;
+            }
+            p{
+                font-size: 17px;
+                margin-bottom: 20px;
+                text-align: justify;
+                color:#324255;
+                line-height: 1.7;
+            }
+            .header,
             .banner .row,
             .info .row,
             .service .row
@@ -369,12 +507,86 @@
             .info .col{
                 width: 50%;
             }
-
+            .header{
+                position: fixed;
+                top:0;
+                font-size: 0;
+            }
+            .header-top{
+                text-align: end;
+                background-color: #00142D;
+                padding:15px 20px;
+            }
+            .header-top a{
+                font-size: 17px;
+                text-decoration: none;
+                color: #fff;
+                margin-left:15px;
+            }
+            .header-top a:hover{
+                color:#0061FF;
+            }
+            .header-top nav a:first-of-type{
+                padding-right:15px;
+                border-right: 1px solid #fff;
+            }
+            .header-bottom{
+                display: flex;
+                font-size: 17px;
+                background-color: #fff;
+                height: 80px;
+                align-items: center;
+                padding: 0 60px;
+                justify-content: space-between;
+            }
+            .header-bottom .shopline{
+                width: 160px;
+            }
+            .header-bottom .hb{
+                display: none;
+            }
+            .header-bottom ul{
+                display: flex;
+            }
+            .header-bottom nav{
+                padding: 0 50px;
+            }
+            .header-bottom nav ul > li{
+                position: relative;
+                padding: 0 20px;
+            }
+            .header-bottom nav ul li::after{
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                content:"\f107";
+                padding: 0 5px;
+                position: absolute;
+                top:0;
+                right: 0;
+            }
+            .header-bottom nav ul > li:hover{
+                text-decoration: underline #0061FF solid;
+                text-decoration-thickness: 5px;
+                text-underline-offset: 27px;
+                cursor: pointer;
+                transition: .3s ease;
+                color:#0061FF;
+            }
+            .header-bottom .free a{
+                text-decoration: none;
+                background-color: #0061FF;
+                color: #fff;
+                padding: 15px 20px;
+                border-radius: 30px;
+            }
+            .header-bottom .free a:hover{
+                background-color: #0747A6;
+            }
+        
             .info .row:nth-child(even),
             .brand .container :nth-child(3){
                 flex-direction: row-reverse;
             }
-
             .brand .container .row:nth-of-type(2){
                 display: flex;
                 border-bottom: 1px solid #ccc;
@@ -407,16 +619,42 @@
     </style>
 </head>
 <body>
-    <!-- <header class="container">
-        <div class="row-cols-1">
-            <div class="col-12"></div>
-            <div class="col-12"></div>
-            <div class="col-12"></div>
+    <input type="checkbox" id="hb-btn">
+    <header>
+        <div class="header-top">
+            <nav>
+                <a href="#"><i class="fas fa-globe"></i></a>
+                <a href="#">幫助中心</a>
+                <a href="#">登入網站</a>
+            </nav>
         </div>
-        <div class="row-cols-3">
-
+        <div class="header-bottom">
+            <div class="shopline">
+                <a href="#">
+                    <img src="SHOPLINE/LOGO.png" alt="SHOPLINE">
+                </a>
+            </div>
+            <label class="hb" for="hb-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <nav>
+                <ul>
+                    <li>開店服務</li>
+                    <li>方案費用</li>
+                    <li>客戶案例</li>
+                    <li>開店說明會</li>
+                    <li>開店諮詢</li>
+                    <li>更多解決方案</li>
+                    <li>其他資源</li>
+                </ul>
+            </nav>
+            <div class="free">
+                <a href="#">免費試用</a>
+            </div>
         </div>
-    </header> -->
+    </header>
 
     <div class="banner">
         <div class="container">
@@ -462,23 +700,23 @@
                     <div class="item item-txt">
                         <h3>免寫程式、多款版型<br>輕鬆打造全能電商網站</h3>
                         <p>不會寫程式也能輕鬆架設品牌電商官網！任何產業都能找到合適的專業設計版型，以滑鼠拖曳就能完成網頁編輯，讓架設網站就像堆積木一樣簡單。</p>
-                        <ul class="row row-cols-2">
-                            <div class="col">
+                        <ul class="row row-cols-1 row-cols-md-2">
+                            <div class="col-12 col-md-6">
                                 <li>豐富版型主題與字型搭配</li>
                             </div>
-                            <div class="col">
+                            <div class="col-12 col-md-6">
                                 <li>RWD 響應式網頁設計</li>
                             </div>
-                            <div class="col">
+                            <div class="col-12 col-md-6">
                                 <li>獨有網址 ＆ SSL 安全憑證</li>
                             </div>
-                            <div class="col">
+                            <div class="col-12 col-md-6">
                                 <li>SEO 搜尋引擎優化</li>
                             </div>
-                            <div class="col">
+                            <div class="col-12 col-md-6">
                                 <li>一頁商店</li>
                             </div>
-                            <div class="col">
+                            <div class="col-12 col-md-6">
                                 <li>開放 HTML／CSS 編輯</li>
                             </div>
                         </ul>
@@ -500,23 +738,23 @@
                     <div class="item item-txt">
                         <h3>支持海內外電商<br>金流、物流一次搞定</h3>
                         <p>支持在地及國際金流、物流串接服務，提供海內外顧客最便利的付款及送貨服務，加速消費者完成下單交易，大幅降低購物車放棄率！</p>
-                        <ul class="row row-cols-2">
-                            <div class="col-6">
+                        <ul class="row row-cols-1 row-cols-md-2">
+                            <div class="col-12 col-md-6">
                                 <li>線上信用卡刷卡</li>
                             </div>
-                            <div class="col-6">
+                            <div class="col-12 col-md-6">
                                 <li>第三方金流／行動支付整合</li>
                             </div>
-                            <div class="col-6">
+                            <div class="col-12 col-md-6">
                                 <li>超商代碼／條碼繳費</li>
                             </div>
-                            <div class="col-6">
+                            <div class="col-12 col-md-6">
                                 <li>多溫層宅配並指定運費</li>
                             </div>
-                            <div class="col-6">
+                            <div class="col-12 col-md-6">
                                 <li>超商／宅配貨到付款</li>
                             </div>
-                            <div class="col-6">
+                            <div class="col-12 col-md-6">
                                 <li>發票開立與串接</li>
                             </div>
                         </ul>
@@ -538,23 +776,23 @@
                     <div class="item item-txt">
                         <h3>刺激下單，創造回購<br>行銷導流、促購模組任你玩</h3>
                         <p>多元優惠活動、會員集客機制、網紅分潤以及直播購物等豐富功能，將電商行銷玩法一網打盡，助你成功優化行銷活動成效，刺激顧客下單、吸引鐵粉回購！</p>
-                        <ul class="row row-cols-2">
-                            <div class="col-6">
+                        <ul class="row row-cols-1 row-cols-md-2">
+                            <div class="col-12 col-md-6">
                                 <li>超過 20 種優惠促銷功能</li>
                             </div>
-                            <div class="col-6">
+                            <div class="col-12 col-md-6">
                                 <li>社群直播購物系統</li>
                             </div>
-                            <div class="col-6">
+                            <div class="col-12 col-md-6">
                                 <li>會員分級／點數／購物金</li>
                             </div>
-                            <div class="col-6">
+                            <div class="col-12 col-md-6">
                                 <li>Facebook／Google／LINE 廣告追蹤</li>
                             </div>
-                            <div class="col-6">
+                            <div class="col-12 col-md-6">
                                 <li>Instagram 購物功能</li>
                             </div>
-                            <div class="col-6">
+                            <div class="col-12 col-md-6">
                                 <li>Facebook／LINE 對話式購物</li>
                             </div>
                         </ul>
@@ -576,23 +814,23 @@
                     <div class="item item-txt">
                         <h3>O2O 全通路無縫整併<br>輕鬆管理網店、門市以及其他通路</h3>
                         <p>不論是網店拓展門市，還是門市想發展網路生意，從商品、庫存、訂單等各項虛實店舖的資料都能完善整併，輕鬆實現全通路會員經營到多店營運。</p>
-                        <ul class="row row-cols-2">
-                            <div class="col-6">
+                        <ul class="row row-cols-1 row-cols-md-2">
+                            <div class="col-12 col-md-6">
                                 <li>門市 POS 系統</li>
                             </div>
-                            <div class="col-6">
+                            <div class="col-12 col-md-6">
                                 <li>線上線下會員／商品／庫存整合</li>
                             </div>
-                            <div class="col-6">
+                            <div class="col-12 col-md-6">
                                 <li>門市快速集客工具</li>
                             </div>
-                            <div class="col-6">
+                            <div class="col-12 col-md-6">
                                 <li>O2O 即時銷售報表分析</li>
                             </div>
-                            <div class="col-6">
+                            <div class="col-12 col-md-6">
                                 <li>進銷庫存／調撥／多店管理</li>
                             </div>
-                            <div class="col-6">
+                            <div class="col-12 col-md-6">
                                 <li>串接 Shopee 蝦皮購物庫存</li>
                             </div>
                         </ul>
