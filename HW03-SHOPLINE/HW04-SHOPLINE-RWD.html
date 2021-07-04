@@ -47,11 +47,39 @@
             color:#324255;
             line-height: 1.7;
         }
-        /* header{
-            z-index: 10;
-        } */
         #hb-btn{
             display: none;
+        }
+        .header-bottom .free a{
+            display: inline-block;
+            text-decoration: none;
+            background-color: #0061FF;
+            color: #fff;
+            padding: 15px 20px;
+            border-radius: 30px;
+        }
+        .header-bottom .free a:hover{
+            background-color: #0747A6;
+        }
+        .header-bottom .sub-menu h3{
+            color:#324255;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .sub-menu h4{
+            font-size: 16px;
+            color: #00142D;
+            padding: 10px 0;
+            border-bottom: 1px solid#c1c1c1;
+        }
+        .header-bottom .sub-menu p{
+            font-size: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid#c1c1c1;
+        }
+        .header-bottom .sub-menu a{
+            text-decoration: none;
+            color: #324255;
         }
         .banner{
             background-image: url(https://img.shoplineapp.com/media/image_clips/5f069a12dc4d9a00335656c2/original.png?1594268177);
@@ -109,7 +137,8 @@
             padding-bottom: 50px;
         }
         .info-body,
-        .info-body ul{
+        .info-body ul,
+        .info-title{
             margin: auto;
         }
         .info .title p{
@@ -131,6 +160,7 @@
             line-height: 1.7;
             position: relative;
             bottom: -22px;
+            padding: 0 5px;
         }
 
         .info .item-txt .link i::before,
@@ -190,7 +220,42 @@
             top: 3px;
             transform: rotate(315deg);
         }
+        .info-body{
+            align-items: center;
+        }
+        .info-body .item-txt .link i::before,
+        .info-body .item-txt .link i::after{
+            content: " ";
+            display: block;
+            position: absolute;
+            border: solid #0061FF;
 
+        }
+        .info-body .item-txt .link i::before{
+            border-width: 2px 0 0 0;
+            width: 15px;
+            height:2px;
+            top: 50%;
+            left: 100%;
+            transition: width .5s;
+        }
+        .info-body .item-txt .link i::after{
+            display: inline-block;
+            border-width: 2px 2px 0 0;
+            width: 7px;
+            height: 10px;
+            transform: rotate(45deg);
+            top: 3px;
+            left: calc(100% + 3px);
+            padding:0 0 0 3px;
+            transition: left .5s;
+        }
+        .info-body .item-txt .link:hover i::before{
+            width: 30px;
+        }
+        .info-body .item-txt .link:hover i::after{
+            left: calc(100% + 18px);
+        }
         .service{
             background-color: #f4f5f7;
             padding-bottom: 100px;
@@ -360,17 +425,18 @@
         }
 
         @media screen and (max-width: 991px){
-            .header-top,
-            .header-bottom .free{
+            .header-top{
                 display: none;
             }
             .header-bottom{
+                z-index: 100;
                 position: fixed;
                 top: 0;
                 background-color: #fff;
                 width: 100%;
                 display: flex;
                 justify-content: space-between;
+                align-items: center;
                 padding: 0 20px;
                 box-sizing: border-box;
             }
@@ -417,20 +483,48 @@
                 bottom: 0;
                 transform: rotate(-45deg);
             }
-            .header-bottom nav{
+            .header-bottom .sub-menu .row:first-child{
+                display: none;
+            }
+            .main-menu ul > li{
+                display: block;
+                padding: 20px 10px;
+            }
+            .main-menu{
                 position: absolute;
                 display: block;
                 width: 100vw;
-                height: calc(100vh - 80px);
+                height: calc(100vh - 55px);
                 top: 100%;
                 background-color: #fff;
                 right: -100vw;
                 transition: right .5s;   
+                padding: 30px;
+                box-sizing: border-box;
             }
-            #hb-btn:checked ~ header .header-bottom nav{
+            .main-menu nav{
+                margin-bottom: 2rem;
+            }
+            #hb-btn:checked ~ header .header-bottom .main-menu{
                 right: 0;
             }
-
+            .main-menu .free a{
+                width: 100%;
+                box-sizing: border-box;
+                text-align: center;
+            }
+            .header-bottom .main-menu .free :nth-child(2){
+                margin-top: 20px;
+                width: 100%;
+                box-sizing: border-box;
+                text-align: center;
+                background-color: #fff;
+                border: 1px solid #0747A6;
+                color: #0747A6;
+            }
+            .sub-menu{
+                display: none;
+            }
             .banner{
                 margin-top: 55px;
             }
@@ -447,6 +541,9 @@
             }
             .info-body .item-img{
                 margin-bottom: 50px;
+            }
+            .map .row{
+                justify-content: center;
             }
             .map .item-txt a{
                 width: 100%;
@@ -468,6 +565,7 @@
                 font-size: 35px;
                 margin-bottom: 30px;
                 font-weight: bold;
+                line-height: 1.7;
                 text-align: left;
             }
             h2{
@@ -496,7 +594,7 @@
                 color:#324255;
                 line-height: 1.7;
             }
-            .header,
+            header,
             .banner .row,
             .info .row,
             .service .row
@@ -507,10 +605,11 @@
             .info .col{
                 width: 50%;
             }
-            .header{
+            header{
                 position: fixed;
                 top:0;
                 font-size: 0;
+                z-index: 100;
             }
             .header-top{
                 text-align: end;
@@ -536,8 +635,9 @@
                 background-color: #fff;
                 height: 80px;
                 align-items: center;
-                padding: 0 60px;
+                padding: 0 40px;
                 justify-content: space-between;
+                border-bottom: 1px solid #ccc;
             }
             .header-bottom .shopline{
                 width: 160px;
@@ -545,26 +645,85 @@
             .header-bottom .hb{
                 display: none;
             }
+            .header-bottom .main-menu{
+                width: calc(100% - 160px);
+                justify-content: space-between;
+                display: flex;
+                align-items: center;
+                padding-left:40px;
+                box-sizing: border-box;
+                position: relative;
+            }
             .header-bottom ul{
                 display: flex;
+                text-align: left;
             }
-            .header-bottom nav{
-                padding: 0 50px;
-            }
-            .header-bottom nav ul > li{
+            .header-bottom nav > ul > li{
+                display: inline-block;
+                font-size: 15px;
                 position: relative;
-                padding: 0 20px;
+                padding: 30px 0;
+                margin: 0 5px;
+                color:#324255;
             }
-            .header-bottom nav ul li::after{
-                font-family: "Font Awesome 5 Free";
-                font-weight: 900;
-                content:"\f107";
-                padding: 0 5px;
+            .main-menu li:hover > .sub-menu{
+                display: block;
+                background-color: #fff;
+            }
+            .header-bottom .sub-menu{
+                width: 700px;
                 position: absolute;
-                top:0;
+                top: 100%;
+                display: none;
+                box-sizing: border-box;
+            }
+            .main-menu ul > li:nth-child(1) .sub-menu,
+            .main-menu ul > li:nth-child(2) .sub-menu{
+                left: 0;
+            }
+            .main-menu ul > li:nth-child(6) .sub-menu,
+            .main-menu ul > li:nth-child(7) .sub-menu{
                 right: 0;
             }
-            .header-bottom nav ul > li:hover{
+            .header-bottom .sub-menu .row{
+                margin: auto;
+            }
+            .header-bottom .sub-menu li:hover a{
+                color: #0061FF;
+                border-bottom: 1px solid #0061FF;
+            }
+            .main-menu li:hover > .sub-menu{
+                border: 1px solid #ccc;
+            }
+            .sub-menu .row:first-child,
+            .sub-menu ul.col{
+                flex-direction: column;
+                padding: 0px;
+            }
+            .sub-menu ul.col li{
+                padding: 15px 0;
+                font-size: 14px;
+            }
+
+
+            /* .header-bottom nav ul li:hover i{
+                opacity: 0;
+            }
+            .header-bottom nav ul li i::after{
+                font-family: "Font Awesome 5 Free";
+                color:#324255;
+                font-weight: 900;
+                content:"\f077";
+                padding: 0 5px;
+                position: absolute;
+                top: 30px;
+                right: -10px;
+                opacity: 0;
+            }
+            .header-bottom nav ul li:hover i::after{
+                opacity: 1;
+            } */
+            .header-bottom nav > ul > li:hover{
                 text-decoration: underline #0061FF solid;
                 text-decoration-thickness: 5px;
                 text-underline-offset: 27px;
@@ -572,17 +731,12 @@
                 transition: .3s ease;
                 color:#0061FF;
             }
-            .header-bottom .free a{
-                text-decoration: none;
-                background-color: #0061FF;
-                color: #fff;
-                padding: 15px 20px;
-                border-radius: 30px;
+            .header-bottom .main-menu .free :nth-child(2){
+                display: none;
             }
-            .header-bottom .free a:hover{
-                background-color: #0747A6;
+            .banner{
+                margin-top: 128px;
             }
-        
             .info .row:nth-child(even),
             .brand .container :nth-child(3){
                 flex-direction: row-reverse;
@@ -610,6 +764,9 @@
             display: flex;
             text-align: center;
             align-items: center;
+            }
+            .footer-info .path{
+                order: -1;
             }
             .footer-info .copyright p {
                 margin: 0;
@@ -639,20 +796,134 @@
                 <span></span>
                 <span></span>
             </label>
-            <nav>
-                <ul>
-                    <li>開店服務</li>
-                    <li>方案費用</li>
-                    <li>客戶案例</li>
-                    <li>開店說明會</li>
-                    <li>開店諮詢</li>
-                    <li>更多解決方案</li>
-                    <li>其他資源</li>
-                </ul>
-            </nav>
-            <div class="free">
-                <a href="#">免費試用</a>
+            <div class="main-menu">
+                <nav>
+                    <ul>
+                        <li class="menu row">開店服務
+                            <i class="fas fa-chevron-down"></i>
+                            <ul class="sub-menu col">
+                                <div class="row">                                 
+                                    <h3>想在哪開店？</h3>
+                                    <p>我們提供一應俱全的全通路開店服務，從社群、網店到實體零售門市，
+                                    <br>
+                                    都能依據品牌的需求、預算來彈性選配，一站讓你輕鬆開店！</p>
+                                </div>
+                                <div class="row row-cols-1 row-cols-lg-3">
+                                    <ul class="col">
+                                        <h4>網路開店</h4>
+                                        <li><a href="#">功能介紹</a></li>
+                                        <li><a href="#">版型主題</a></li>
+                                        <li><a href="#">開店秘技</a></li>
+                                        <li><a href="#">新手問答</a></li>
+                                    </ul>
+                                    <ul class="col">
+                                        <h4>社群購物</h4>
+                                        <li><a href="#">功能介紹</a></li>
+                                        <li><a href="#">新手問答</a></li>
+                                    </ul>
+                                    <ul class="col">
+                                        <h4>零售 POS</h4>
+                                        <li><a href="#">功能介紹</a></li>
+                                        <li><a href="#">週邊硬體</a></li>
+                                        <li><a href="#">新手問答</a></li>
+                                    </ul>
+                                </div>
+                            </ul>
+                        </li>
+                        <li class="menu row">方案費用
+                            <i class="fas fa-chevron-down"></i>
+                            <ul class="sub-menu col">
+                                <div class="row">                                 
+                                    <h3>方案費用</h3>
+                                    <p>不曉得自己適合哪個計畫？
+                                    <br>
+                                    歡迎聯繫開店顧問解答任何疑難，亦可申請開店免費試用 14 天！</p>
+                                </div>
+                                <div class="row row-cols-1">
+                                    <ul class="col">
+                                        <li><a href="#">開店方案</a></li>
+                                        <li><a href="#">功能模組</a></li>
+                                    </ul>
+                                </div>
+                            </ul>
+                        </li>
+                        <li class="row">客戶案例</li>
+                        <li class="row">開店說明會</li>
+                        <li class="row">開店諮詢</li>
+                        <li class="menu row">更多解決方案
+                            <i class="fas fa-chevron-down"></i>
+                            <ul class="sub-menu col">
+                                <div class="row">                                 
+                                    <h3>專為國際品牌企業量身打造</h3>
+                                    <p>從前期的需求訪談開始，我們將深入了解品牌端的作業流程，
+                                    <br>
+                                    明訂目標、擬定最合適的解決方案，協助品牌快速累積市場即戰力！</p>
+                                </div>
+                                <div class="row row-cols-1 row-cols-lg-3">
+                                    <ul class="col">
+                                        <h4>進階方案</h4>
+                                        <li><a href="#">企業旗艦方案</a></li>
+                                        <li><a href="#">跨境電商方案</a></li>
+                                    </ul>
+                                    <ul class="col">
+                                        <h4>數位廣告</h4>
+                                        <li><a href="#">廣告計畫方案</a></li>
+                                        <li><a href="#">Google 廣告</a></li>
+                                        <li><a href="#">Facebook 廣告</a></li>
+                                        <li><a href="#">LINE 廣告</a></li>
+                                        <li><a href="#">智慧廣告系統</a></li>
+                                    </ul>
+                                    <ul class="col">
+                                        <h4>功能及產業應用</h4>
+                                        <li><a href="#">實體零售</a></li>
+                                        <li><a href="#">實體零售</a></li>
+                                        <li><a href="#">社交商務</a></li>
+                                        <li><a href="#">社群電商工具包</a></li>
+                                    </ul>
+                                </div>
+                            </ul>
+                        </li>
+                        <li class="menu row">其他資源
+                            <i class="fas fa-chevron-down"></i>
+                            <ul class="sub-menu col">
+                                <div class="row">                                 
+                                    <h3>全通路生態圈服務</h3>
+                                    <p>SHOPLINE 的願景是打造一個資源豐饒且能互助、互利的生態圈體系，
+                                    <br>
+                                    期望我們能有機會成為品牌背後最有力商務夥伴，陪伴品牌一步步穩健成長、壯！</p>
+                                </div>
+                                <div class="row row-cols-1 row-cols-lg-3">
+                                    <ul class="col">
+                                        <h4>網店資源</h4>
+                                        <li><a href="#">開店秘技</a></li>
+                                        <li><a href="#">版型主題</a></li>
+                                        <li><a href="#">新手問答</a></li>
+                                    </ul>
+                                    <ul class="col">
+                                        <h4>電商知識庫與課程</h4>
+                                        <li><a href="#">電商教室</a></li>
+                                        <li><a href="#">充電工作坊</a></li>
+                                        <li><a href="#">DreamBig 創品牌</a></li>
+                                        <li><a href="#">電商成長學苑</a></li>
+                                    </ul>
+                                    <ul class="col">
+                                        <h4>影片專區</h4>
+                                        <li><a href="#">90 秒快速了解 SHOPLINE</a></li>
+                                        <li><a href="#">90 秒快速了解 Google 廣告計畫</a></li>
+                                        <li><a href="#">關於 SHOPLINE 電商成長學苑</a></li>
+                                        <li><a href="#">SHOPLINE 智慧廣告系統</a></li>
+                                    </ul>
+                                </div>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="free">
+                    <a href="#">免費試用</a>
+                    <a href="#">登入網站</a>
+                </div>
             </div>
+
         </div>
     </header>
 
@@ -701,22 +972,22 @@
                         <h3>免寫程式、多款版型<br>輕鬆打造全能電商網站</h3>
                         <p>不會寫程式也能輕鬆架設品牌電商官網！任何產業都能找到合適的專業設計版型，以滑鼠拖曳就能完成網頁編輯，讓架設網站就像堆積木一樣簡單。</p>
                         <ul class="row row-cols-1 row-cols-md-2">
-                            <div class="col-12 col-md-6">
+                            <div class="col">
                                 <li>豐富版型主題與字型搭配</li>
                             </div>
-                            <div class="col-12 col-md-6">
+                            <div class="col">
                                 <li>RWD 響應式網頁設計</li>
                             </div>
-                            <div class="col-12 col-md-6">
+                            <div class="col">
                                 <li>獨有網址 ＆ SSL 安全憑證</li>
                             </div>
-                            <div class="col-12 col-md-6">
+                            <div class="col">
                                 <li>SEO 搜尋引擎優化</li>
                             </div>
-                            <div class="col-12 col-md-6">
+                            <div class="col">
                                 <li>一頁商店</li>
                             </div>
-                            <div class="col-12 col-md-6">
+                            <div class="col">
                                 <li>開放 HTML／CSS 編輯</li>
                             </div>
                         </ul>
@@ -739,22 +1010,22 @@
                         <h3>支持海內外電商<br>金流、物流一次搞定</h3>
                         <p>支持在地及國際金流、物流串接服務，提供海內外顧客最便利的付款及送貨服務，加速消費者完成下單交易，大幅降低購物車放棄率！</p>
                         <ul class="row row-cols-1 row-cols-md-2">
-                            <div class="col-12 col-md-6">
+                            <div class="col">
                                 <li>線上信用卡刷卡</li>
                             </div>
-                            <div class="col-12 col-md-6">
+                            <div class="col">
                                 <li>第三方金流／行動支付整合</li>
                             </div>
-                            <div class="col-12 col-md-6">
+                            <div class="col">
                                 <li>超商代碼／條碼繳費</li>
                             </div>
-                            <div class="col-12 col-md-6">
+                            <div class="col">
                                 <li>多溫層宅配並指定運費</li>
                             </div>
-                            <div class="col-12 col-md-6">
+                            <div class="col">
                                 <li>超商／宅配貨到付款</li>
                             </div>
-                            <div class="col-12 col-md-6">
+                            <div class="col">
                                 <li>發票開立與串接</li>
                             </div>
                         </ul>
@@ -777,22 +1048,22 @@
                         <h3>刺激下單，創造回購<br>行銷導流、促購模組任你玩</h3>
                         <p>多元優惠活動、會員集客機制、網紅分潤以及直播購物等豐富功能，將電商行銷玩法一網打盡，助你成功優化行銷活動成效，刺激顧客下單、吸引鐵粉回購！</p>
                         <ul class="row row-cols-1 row-cols-md-2">
-                            <div class="col-12 col-md-6">
+                            <div class="col">
                                 <li>超過 20 種優惠促銷功能</li>
                             </div>
-                            <div class="col-12 col-md-6">
+                            <div class="col">
                                 <li>社群直播購物系統</li>
                             </div>
-                            <div class="col-12 col-md-6">
+                            <div class="col">
                                 <li>會員分級／點數／購物金</li>
                             </div>
-                            <div class="col-12 col-md-6">
+                            <div class="col">
                                 <li>Facebook／Google／LINE 廣告追蹤</li>
                             </div>
-                            <div class="col-12 col-md-6">
+                            <div class="col">
                                 <li>Instagram 購物功能</li>
                             </div>
-                            <div class="col-12 col-md-6">
+                            <div class="col">
                                 <li>Facebook／LINE 對話式購物</li>
                             </div>
                         </ul>
@@ -815,22 +1086,22 @@
                         <h3>O2O 全通路無縫整併<br>輕鬆管理網店、門市以及其他通路</h3>
                         <p>不論是網店拓展門市，還是門市想發展網路生意，從商品、庫存、訂單等各項虛實店舖的資料都能完善整併，輕鬆實現全通路會員經營到多店營運。</p>
                         <ul class="row row-cols-1 row-cols-md-2">
-                            <div class="col-12 col-md-6">
+                            <div class="col">
                                 <li>門市 POS 系統</li>
                             </div>
-                            <div class="col-12 col-md-6">
+                            <div class="col">
                                 <li>線上線下會員／商品／庫存整合</li>
                             </div>
-                            <div class="col-12 col-md-6">
+                            <div class="col">
                                 <li>門市快速集客工具</li>
                             </div>
-                            <div class="col-12 col-md-6">
+                            <div class="col">
                                 <li>O2O 即時銷售報表分析</li>
                             </div>
-                            <div class="col-12 col-md-6">
+                            <div class="col">
                                 <li>進銷庫存／調撥／多店管理</li>
                             </div>
-                            <div class="col-12 col-md-6">
+                            <div class="col">
                                 <li>串接 Shopee 蝦皮購物庫存</li>
                             </div>
                         </ul>
