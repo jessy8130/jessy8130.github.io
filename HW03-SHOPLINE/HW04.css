@@ -672,7 +672,6 @@ p{
     .header-bottom .container{
         display: flex;
         font-size: 17px;
-        height: 80px;
         align-items: center;
         padding: 0 40px;
         justify-content: space-between;
@@ -746,13 +745,19 @@ p{
     .header-bottom nav ul li:hover i{
         transform: rotate(180deg);
     }
-    .header-bottom nav > ul > li:hover{
-        text-decoration: underline #0061FF solid;
-        text-decoration-thickness: 5px;
-        text-underline-offset: 27px;
-        cursor: pointer;
-        transition: .3s ease;
-        color:#0061FF;
+    .header-bottom nav > ul > li::after{
+        content: "";
+        position: absolute;
+        background-color: #0061FF;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        transform:scaleX(0);
+        transition: transform .5s;
+    }
+    .header-bottom nav > ul > li:hover::after{
+        transform: scaleX(1);
     }
     .header-bottom .main-menu .free :nth-child(2){
         display: none;
@@ -761,7 +766,7 @@ p{
         margin: 0 40px;
     }
     .banner{
-        margin-top: 128px;
+        margin-top: 124px;
     }
     .info .row:nth-child(even),
     .brand-content .item{
@@ -792,7 +797,7 @@ p{
     }
 
 
-    /* .brand-logo .bonnyread:checked .brand-content .bonnyread{
+    /* .brand-logo .bonnyread:checked ~ .brand-content .bonnyread{
         display: block;
     }
 
