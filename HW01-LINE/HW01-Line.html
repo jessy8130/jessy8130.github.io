@@ -52,7 +52,6 @@
             
         }
 
-
         .banner img{
             width: 100%;
         }
@@ -87,15 +86,24 @@
 
         .lifeonline .item-pic {
             width: 480px;
+            min-height: 100%;
+            position: relative;
 
         }
         .lifeonline .item-pic img{
+            position: absolute;
+            top: 0px;
+            left: 0px;
             width: 100%;
-            vertical-align: middle;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            opacity: 1;
+            transition: opacity 500ms ease 0s;
+
         }
         .lifeonline .item-txt{
             width: 480px;
-
         }
 
         .item-txt img{
@@ -226,9 +234,16 @@
             font-size: 12px;
             text-decoration: none;
             line-height: 1.8;
-            margin: 0 14px 0 0;
             font-weight: bolder;
+
         }
+
+        .footer nav a+a{
+            border-left: 1px solid #000;
+        }
+
+        .
+
 
         .link{
             position:absolute;

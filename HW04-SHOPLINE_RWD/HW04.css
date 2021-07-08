@@ -258,11 +258,11 @@ p{
 .brand-content{
     position: relative;
 }
-.brand-content .bonnyread{
-    /* position: absolute;
+/* .brand-content .bonnyread{
+    position: absolute;
     top: 0;
-    left: 0; */
-}
+    left: 0;
+} */
 .brand-content .nuts{
     position: absolute;
     top: 0;
@@ -755,7 +755,7 @@ p{
         bottom: 0;
         left: 0;
         transform:scaleX(0);
-        transition: transform .5s;
+        transition: transform .7s;
     }
     .header-bottom nav > ul > li:hover::after{
         transform: scaleX(1);
