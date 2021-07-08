@@ -4,41 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-    <link rel="stylesheet" href="HW04.css">
+    <link rel="stylesheet" href="HW05.css">
+    <link rel="stylesheet" href="reset.css">
     <title>SHOPLINE 全球智慧開店平台 | 完整開店功能讓你生意不斷成長</title>
+    <style>
+        h1{
+            font-size: 30px;
+        }
+        h2,
+        h3,
+        h4{
+            font-size: 25px;
+        }
+        p,
+        li{
+            font-size: 16px;
+        }
+    </style>
 
 </head>
 <body>
-    <input type="checkbox" id="hb-btn">
+    <input class="d-none" type="checkbox" id="hb-btn">
     <header>
             <div class="header-top">
-                <div class="container">
-                    <nav>
-                        <a href="#"><i class="fas fa-globe"></i></a>
-                        <a href="#">幫助中心</a>
-                        <a href="#">登入網站</a>
+                <div class="container py-3">
+                    <nav class="text-end">
+                        <a class="text-decoration-none text-light px-2" href="#"><i class="fas fa-globe"></i></a>
+                        <a class="text-decoration-none text-light px-2" href="#">幫助中心</a>
+                        <a class="text-decoration-none text-light px-2" href="#">登入網站</a>
                     </nav>
                 </div>
             </div>
             <div class="header-bottom">
-                <div class="container">
+                <div class="container d-flex align-items-center">
                     <div class="shopline">
                         <a href="#">
-                            <img src="SHOPLINE/LOGO.png" alt="SHOPLINE">
+                            <img class="w-100 align-middle" src="SHOPLINE/LOGO.png" alt="SHOPLINE">
                         </a>
                     </div>
-                    <label class="hb" for="hb-btn">
+                    <label class="hb d-lg-none position-relative" for="hb-btn">
                         <span></span>
                         <span></span>
                         <span></span>
                     </label>
-                    <div class="main-menu">
+                    <div class="main-menu d-flex justify-content-between ms-4 d-none d-lg-flex">
                         <nav>
-                            <ul>
-                                <li class="menu row">開店服務
-                                    <i class="fas fa-chevron-down"></i>
-                                    <ul class="sub-menu col">
+                            <ul class="d-flex">
+                                <li class="menu row position-relative lh-lg py-4 mx-1">
+                                    開店服務
+                                    <!-- <i class="fas fa-chevron-down"></i> -->
+                                    <ul class="sub-menu col position-absolute d-none">
                                         <div class="row">                                 
                                             <h3>想在哪開店？</h3>
                                             <p>我們提供一應俱全的全通路開店服務，從社群、網店到實體零售門市，
@@ -67,9 +84,9 @@
                                         </div>
                                     </ul>
                                 </li>
-                                <li class="menu row">方案費用
-                                    <i class="fas fa-chevron-down"></i>
-                                    <ul class="sub-menu col">
+                                <li class="menu row position-relative lh-lg py-4 mx-1">方案費用
+                                    <!-- <i class="fas fa-chevron-down"></i> -->
+                                    <ul class="sub-menu col position-absolute d-none">
                                         <div class="row">                                 
                                             <h3>方案費用</h3>
                                             <p>不曉得自己適合哪個計畫？
@@ -84,12 +101,12 @@
                                         </div>
                                     </ul>
                                 </li>
-                                <li class="row">客戶案例</li>
-                                <li class="row">開店說明會</li>
-                                <li class="row">開店諮詢</li>
-                                <li class="menu row">更多解決方案
-                                    <i class="fas fa-chevron-down"></i>
-                                    <ul class="sub-menu col">
+                                <li class="row lh-lg py-4 mx-1">客戶案例</li>
+                                <li class="row lh-lg py-4 mx-1">開店說明會</li>
+                                <li class="row lh-lg py-4 mx-1">開店諮詢</li>
+                                <li class="menu row position-relative lh-lg py-4 mx-1">更多解決方案
+                                    <!-- <i class="fas fa-chevron-down"></i> -->
+                                    <ul class="sub-menu col position-absolute d-none">
                                         <div class="row">                                 
                                             <h3>專為國際品牌企業量身打造</h3>
                                             <p>從前期的需求訪談開始，我們將深入了解品牌端的作業流程，
@@ -120,9 +137,9 @@
                                         </div>
                                     </ul>
                                 </li>
-                                <li class="menu row">其他資源
-                                    <i class="fas fa-chevron-down"></i>
-                                    <ul class="sub-menu col">
+                                <li class="menu row position-relative lh-lg py-4 mx-1">其他資源
+                                    <!-- <i class="fas fa-chevron-down"></i> -->
+                                    <ul class="sub-menu col position-absolute d-none">
                                         <div class="row">                                 
                                             <h3>全通路生態圈服務</h3>
                                             <p>SHOPLINE 的願景是打造一個資源豐饒且能互助、互利的生態圈體系，
@@ -155,9 +172,9 @@
                                 </li>
                             </ul>
                         </nav>
-                        <div class="free">
-                            <a href="#">免費試用</a>
-                            <a href="#">登入網站</a>
+                        <div>
+                            <a class="d-inline-block bg-primary text-light py-2 px-4 align-middle rounded-pill text-decoration-none" href="#">免費試用</a>
+                            <a class="d-none" href="#">登入網站</a>
                         </div>
                     </div>
                 </div>
@@ -165,21 +182,21 @@
     </header>
 
     <div class="banner">
-        <div class="container">
-            <div class="banner-body row">
+        <div class="container py-5 mb-5">
+            <div class="banner-body row d-lg-flex flex-row-reverse align-items-center">
                 <div class="col col-12 col-lg-6">
                     <div class="item item-img">
-                        <img src="SHOPLINE/banner.png" alt="SHOPLINE">
+                        <img class="w-100 align-middle" src="SHOPLINE/banner.png" alt="SHOPLINE">
                     </div>
                 </div>
                 <div class="col col-12 col-lg-6">
                     <div class="item item-txt">
-                        <h1>想在哪開店創業？<br><span>網路開店一站式輕鬆開賣</span></h1>
-                        <p>超過 25 萬品牌使用！從個人賣家到國際品牌，都能以 SHOPLINE 實現全通路零售，快速拓展市場到世界各地，輕鬆開始你的『 店 』商生意！</p>
+                        <h1 class="text-light pb-4 lh-base">想在哪開店創業？<br><span class="text-primary">網路開店一站式輕鬆開賣</span></h1>
+                        <p class="text-light pb-4 lh-base">超過 25 萬品牌使用！從個人賣家到國際品牌，都能以 SHOPLINE 實現全通路零售，快速拓展市場到世界各地，輕鬆開始你的『 店 』商生意！</p>
                         <form action="">
-                            <label>
-                                <input class="submit-email" type="email" placeholder="請在此輸入電子信箱(可隨時更換)">
-                                <button type="submit">免費試用</button>
+                            <label class="d-flex">
+                                <input class="submit-email border-0 border-bottom border-light bg-transparent text-light w-75 px-4 py-3 fs-5 me-2" type="email" placeholder="請在此輸入電子信箱(可隨時更換)">
+                                <button class=" border-0 bg-primary text-light px-4 py-3 rounded-pill fs-5"type="submit">免費試用</button>
                             </label>
                         </form>
                     </div>
@@ -189,161 +206,161 @@
     </div>
 
     <section class="info">
-        <div class="container">
+        <div class="container py-5 my-5">
             <div class="info-title row">
                 <div class="col-12">
                     <div class="item title item-txt">
-                        <h2>單一平台就能助你<br>在全通路輕鬆開店創業</h2>
-                        <p>從網路商店架站到實體門市管理，只需要一個平台，就能輕鬆實現開店創業，<br>並能同步管理所有銷售管道，SHOPLINE 助你賣得更多、賣得更好！</p>
+                        <h2 class="text-center mb-4 fw-bold lh-base">單一平台就能助你<br>在全通路輕鬆開店創業</h2>
+                        <p class="text-center lh-lg mb-5">從網路商店架站到實體門市管理，只需要一個平台，就能輕鬆實現開店創業，<br>並能同步管理所有銷售管道，SHOPLINE 助你賣得更多、賣得更好！</p>
                     </div>
                 </div>
             </div>
-            <div class="info-body row">
+            <div class="info-body row flex-row-reverse py-5 my-5 border-bottom align-items-center">
                 <div class="col col-12 col-lg-6">
                     <div class="item item-img">
-                        <img src="SHOPLINE/01.png" alt="">
+                        <img class="w-100 align-middle" src="SHOPLINE/01.png" alt="">
                     </div>
                 </div>
                 <div class="col col-12 col-lg-6">
                     <div class="item item-txt">
-                        <h3>免寫程式、多款版型<br>輕鬆打造全能電商網站</h3>
-                        <p>不會寫程式也能輕鬆架設品牌電商官網！任何產業都能找到合適的專業設計版型，以滑鼠拖曳就能完成網頁編輯，讓架設網站就像堆積木一樣簡單。</p>
+                        <h3 class="fw-bold lh-base mb-4">免寫程式、多款版型<br>輕鬆打造全能電商網站</h3>
+                        <p class="lh-lg mb-4">不會寫程式也能輕鬆架設品牌電商官網！任何產業都能找到合適的專業設計版型，以滑鼠拖曳就能完成網頁編輯，讓架設網站就像堆積木一樣簡單。</p>
                         <ul class="row row-cols-1 row-cols-md-2">
-                            <div class="col">
-                                <li>豐富版型主題與字型搭配</li>
+                            <div class="col mb-3">
+                                <li><i class="fas fa-check-circle pe-3 text-primary"></i>豐富版型主題與字型搭配</li>
                             </div>
-                            <div class="col">
-                                <li>RWD 響應式網頁設計</li>
+                            <div class="col mb-3">
+                                <li><i class="fas fa-check-circle pe-3 text-primary"></i>RWD 響應式網頁設計</li>
                             </div>
-                            <div class="col">
-                                <li>獨有網址 ＆ SSL 安全憑證</li>
+                            <div class="col mb-3">
+                                <li><i class="fas fa-check-circle pe-3 text-primary"></i>獨有網址 ＆ SSL 安全憑證</li>
                             </div>
-                            <div class="col">
-                                <li>SEO 搜尋引擎優化</li>
+                            <div class="col mb-3">
+                                <li><i class="fas fa-check-circle pe-3 text-primary"></i>SEO 搜尋引擎優化</li>
                             </div>
-                            <div class="col">
-                                <li>一頁商店</li>
+                            <div class="col mb-3">
+                                <li><i class="fas fa-check-circle pe-3 text-primary"></i>一頁商店</li>
                             </div>
-                            <div class="col">
-                                <li>開放 HTML／CSS 編輯</li>
+                            <div class="col mb-3">
+                                <li><i class="fas fa-check-circle pe-3 text-primary"></i>開放 HTML／CSS 編輯</li>
                             </div>
                         </ul>
-                        <div class="link">
-                            <a href="#">看看開店祕技
+                        <div class="link my-3 ">
+                            <a class="text-decoration-none fw-bold" href="#">看看開店祕技
                                 <i></i>
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="info-body row">
+            <div class="info-body row py-5 my-5  border-bottom align-items-center">
                 <div class="col col-12 col-lg-6">
                     <div class="item item-img">
-                        <img src="SHOPLINE/02.png" alt="">
+                        <img class="w-100 align-middle" src="SHOPLINE/02.png" alt="">
                     </div>
                 </div>
                 <div class="col col-12 col-lg-6">
                     <div class="item item-txt">
-                        <h3>支持海內外電商<br>金流、物流一次搞定</h3>
-                        <p>支持在地及國際金流、物流串接服務，提供海內外顧客最便利的付款及送貨服務，加速消費者完成下單交易，大幅降低購物車放棄率！</p>
+                        <h3 class="fw-bold lh-base mb-4">支持海內外電商<br>金流、物流一次搞定</h3>
+                        <p class="lh-lg mb-4">支持在地及國際金流、物流串接服務，提供海內外顧客最便利的付款及送貨服務，加速消費者完成下單交易，大幅降低購物車放棄率！</p>
                         <ul class="row row-cols-1 row-cols-md-2">
-                            <div class="col">
-                                <li>線上信用卡刷卡</li>
+                            <div class="col mb-3">
+                                <li><i class="fas fa-check-circle pe-3 text-primary"></i>線上信用卡刷卡</li>
                             </div>
-                            <div class="col">
-                                <li>第三方金流／行動支付整合</li>
+                            <div class="col mb-3">
+                                <li><i class="fas fa-check-circle pe-3 text-primary"></i>第三方金流／行動支付整合</li>
                             </div>
-                            <div class="col">
-                                <li>超商代碼／條碼繳費</li>
+                            <div class="col mb-3">
+                                <li><i class="fas fa-check-circle pe-3 text-primary"></i>超商代碼／條碼繳費</li>
                             </div>
-                            <div class="col">
-                                <li>多溫層宅配並指定運費</li>
+                            <div class="col mb-3">
+                                <li><i class="fas fa-check-circle pe-3 text-primary"></i>多溫層宅配並指定運費</li>
                             </div>
-                            <div class="col">
-                                <li>超商／宅配貨到付款</li>
+                            <div class="col mb-3">
+                                <li><i class="fas fa-check-circle pe-3 text-primary"></i>超商／宅配貨到付款</li>
                             </div>
-                            <div class="col">
-                                <li>發票開立與串接</li>
+                            <div class="col mb-3">
+                                <li><i class="fas fa-check-circle pe-3 text-primary"></i>發票開立與串接</li>
                             </div>
                         </ul>
-                        <div class="link">
-                            <a href="#">了解更多金物流
+                        <div class="link my-3 ">
+                            <a class="text-decoration-none fw-bold" href="#">了解更多金物流
                                 <i></i>
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="info-body row">
+            <div class="info-body row flex-row-reverse py-5 my-5  border-bottom align-items-center">
                 <div class="col col-12 col-lg-6">
                     <div class="item item-img">
-                        <img src="SHOPLINE/03.png" alt="">
+                        <img class="w-100 align-middle" src="SHOPLINE/03.png" alt="">
                     </div>
                 </div>
                 <div class="col col-12 col-lg-6">
                     <div class="item item-txt">
-                        <h3>刺激下單，創造回購<br>行銷導流、促購模組任你玩</h3>
-                        <p>多元優惠活動、會員集客機制、網紅分潤以及直播購物等豐富功能，將電商行銷玩法一網打盡，助你成功優化行銷活動成效，刺激顧客下單、吸引鐵粉回購！</p>
+                        <h3 class="fw-bold lh-base mb-4">刺激下單，創造回購<br>行銷導流、促購模組任你玩</h3>
+                        <p class="lh-lg mb-4">多元優惠活動、會員集客機制、網紅分潤以及直播購物等豐富功能，將電商行銷玩法一網打盡，助你成功優化行銷活動成效，刺激顧客下單、吸引鐵粉回購！</p>
                         <ul class="row row-cols-1 row-cols-md-2">
-                            <div class="col">
-                                <li>超過 20 種優惠促銷功能</li>
+                            <div class="col mb-3">
+                                <li><i class="fas fa-check-circle pe-3 text-primary"></i>超過 20 種優惠促銷功能</li>
                             </div>
-                            <div class="col">
-                                <li>社群直播購物系統</li>
+                            <div class="col mb-3">
+                                <li><i class="fas fa-check-circle pe-3 text-primary"></i>社群直播購物系統</li>
                             </div>
-                            <div class="col">
-                                <li>會員分級／點數／購物金</li>
+                            <div class="col mb-3">
+                                <li><i class="fas fa-check-circle pe-3 text-primary"></i>會員分級／點數／購物金</li>
                             </div>
-                            <div class="col">
-                                <li>Facebook／Google／LINE 廣告追蹤</li>
+                            <div class="col mb-3">
+                                <li><i class="fas fa-check-circle pe-3 text-primary"></i>Facebook／Google／LINE 廣告追蹤</li>
                             </div>
-                            <div class="col">
-                                <li>Instagram 購物功能</li>
+                            <div class="col mb-3">
+                                <li><i class="fas fa-check-circle pe-3 text-primary"></i>Instagram 購物功能</li>
                             </div>
-                            <div class="col">
-                                <li>Facebook／LINE 對話式購物</li>
+                            <div class="col mb-3">
+                                <li><i class="fas fa-check-circle pe-3 text-primary"></i>Facebook／LINE 對話式購物</li>
                             </div>
                         </ul>
-                        <div class="link">
-                            <a href="#">看更多優惠模組
+                        <div class="link my-3 ">
+                            <a class="text-decoration-none fw-bold" href="#">看更多優惠模組
                                 <i></i>
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="info-body row">
+            <div class="info-body row py-5 my-5">
                 <div class="col col-12 col-lg-6">
                     <div class="item item-img">
-                        <img src="SHOPLINE/04.png" alt="">
+                        <img class="w-100 align-middle" src="SHOPLINE/04.png" alt="">
                     </div>
                 </div>
                 <div class="col col-12 col-lg-6">
                     <div class="item item-txt">
-                        <h3>O2O 全通路無縫整併<br>輕鬆管理網店、門市以及其他通路</h3>
-                        <p>不論是網店拓展門市，還是門市想發展網路生意，從商品、庫存、訂單等各項虛實店舖的資料都能完善整併，輕鬆實現全通路會員經營到多店營運。</p>
+                        <h3 class="fw-bold lh-base mb-4">O2O 全通路無縫整併<br>輕鬆管理網店、門市以及其他通路</h3>
+                        <p class="lh-lg mb-4">不論是網店拓展門市，還是門市想發展網路生意，從商品、庫存、訂單等各項虛實店舖的資料都能完善整併，輕鬆實現全通路會員經營到多店營運。</p>
                         <ul class="row row-cols-1 row-cols-md-2">
-                            <div class="col">
-                                <li>門市 POS 系統</li>
+                            <div class="col mb-3">
+                                <li><i class="fas fa-check-circle pe-3 text-primary"></i>門市 POS 系統</li>
                             </div>
-                            <div class="col">
-                                <li>線上線下會員／商品／庫存整合</li>
+                            <div class="col mb-3">
+                                <li><i class="fas fa-check-circle pe-3 text-primary"></i>線上線下會員／商品／庫存整合</li>
                             </div>
-                            <div class="col">
-                                <li>門市快速集客工具</li>
+                            <div class="col mb-3">
+                                <li><i class="fas fa-check-circle pe-3 text-primary"></i>門市快速集客工具</li>
                             </div>
-                            <div class="col">
-                                <li>O2O 即時銷售報表分析</li>
+                            <div class="col mb-3">
+                                <li><i class="fas fa-check-circle pe-3 text-primary"></i>O2O 即時銷售報表分析</li>
                             </div>
-                            <div class="col">
-                                <li>進銷庫存／調撥／多店管理</li>
+                            <div class="col mb-3">
+                                <li><i class="fas fa-check-circle pe-3 text-primary"></i>進銷庫存／調撥／多店管理</li>
                             </div>
-                            <div class="col">
-                                <li>串接 Shopee 蝦皮購物庫存</li>
+                            <div class="col mb-3">
+                                <li><i class="fas fa-check-circle pe-3 text-primary"></i>串接 Shopee 蝦皮購物庫存</li>
                             </div>
                         </ul>
-                        <div class="link">
-                            <a href="#">了解更多全通路整合
+                        <div class="link my-3 ">
+                            <a class="text-decoration-none fw-bold" href="#">了解更多全通路整合
                                 <i></i>
                             </a>
                         </div>
@@ -354,78 +371,78 @@
     </section>
 
     <section class="service">
-        <div class="container">
-            <div class="service-title row">
+        <div class="container py-5 my-5">
+            <div class="service-title row py-3 my-3">
                 <div class="col-12">
                     <div class="item title item-txt">
-                        <h2>更多功能與服務</h2>
+                        <h2 class="text-center fw-bold lh-base">更多功能與服務</h2>
                     </div>
                 </div>
             </div>
             <div class="service-body row row-cols-2 row-cols-md-3">
                 <div class="col">
-                    <div class="item">
-                        <div class="item-img">
-                            <img src="SHOPLINE/2-01.png" alt="">
+                    <div class="item d-flex flex-column align-items-center ">
+                        <div class="item-img bg-light rounded-circle shadow py-3 mb-4">
+                            <img class="w-30 ps-3 align-middle" src="SHOPLINE/2-01.png" alt="">
                         </div>
                         <div class="item-txt">
-                            <h3>強大庫存及訂單系統</h3>
-                            <p>從商品數量、貨況到訂單付款狀態、物流貨態一目瞭然，提升營運效率超有感。</p>
+                            <h3 class="text-center fw-bold mb-4">強大庫存及訂單系統</h3>
+                            <p class="text-center lh-base mb-5 px-md-5">從商品數量、貨況到訂單付款狀態、物流貨態一目瞭然，提升營運效率超有感。</p>
                         </div>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="item">
-                        <div class="item-img">
-                            <img src="SHOPLINE/2-02.png" alt="">
+                    <div class="item d-flex flex-column align-items-center">
+                        <div class="item-img bg-light rounded-circle shadow py-3 mb-4">
+                            <img class="w-30 ps-3 align-middle" src="SHOPLINE/2-02.png" alt="">
                         </div>
                         <div class="item-txt">
-                            <h3>即時化商店業績分析</h3>
-                            <p>圖表化報表助你一手掌握商店概況，讓數據助攻企業成長，營運策略更有方向。</p>
+                            <h3 class="text-center fw-bold mb-4">即時化商店業績分析</h3>
+                            <p class="text-center lh-base mb-5 px-md-5">圖表化報表助你一手掌握商店概況，讓數據助攻企業成長，營運策略更有方向。</p>
                         </div>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="item">
-                        <div class="item-img">
-                            <img src="SHOPLINE/2-03.png" alt="">
+                    <div class="item d-flex flex-column align-items-center">
+                        <div class="item-img bg-light rounded-circle shadow py-3 mb-4">
+                            <img class="w-30 ps-3 align-middle" src="SHOPLINE/2-03.png" alt="">
                         </div>
                         <div class="item-txt">
-                            <h3>多國語系、幣值切換</h3>
-                            <p>想做跨境電商也ＯＫ！提供語言、幣別、稅金等進階功能，友善應對海外消費需求。</p>
+                            <h3 class="text-center fw-bold mb-4">多國語系、幣值切換</h3>
+                            <p class="text-center lh-base mb-5 px-md-5">想做跨境電商也ＯＫ！提供語言、幣別、稅金等進階功能，友善應對海外消費需求。</p>
                         </div>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="item">
-                        <div class="item-img">
-                            <img src="SHOPLINE/2-04.png" alt="">
+                    <div class="item d-flex flex-column align-items-center">
+                        <div class="item-img bg-light rounded-circle shadow py-3 mb-4">
+                            <img class="w-30 ps-3 align-middle" src="SHOPLINE/2-04.png" alt="">
                         </div>
                         <div class="item-txt">
-                            <h3>專業顧問線上支援</h3>
-                            <p>迅速、透明的溝通管道，協助你快速解決從線上到線下、從在地到海外的網店疑難。</p>
+                            <h3 class="text-center fw-bold mb-4">專業顧問線上支援</h3>
+                            <p class="text-center lh-base mb-5 px-md-5">迅速、透明的溝通管道，協助你快速解決從線上到線下、從在地到海外的網店疑難。</p>
                         </div>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="item">
-                        <div class="item-img">
-                            <img src="SHOPLINE/2-05.png" alt="">
+                    <div class="item d-flex flex-column align-items-center">
+                        <div class="item-img bg-light rounded-circle shadow py-3 mb-4">
+                            <img class="w-30 ps-3 align-middle" src="SHOPLINE/2-05.png" alt="">
                         </div>
                         <div class="item-txt">
-                            <h3>廣告行銷加值服務</h3>
-                            <p>由官方認證的專業投手團隊，協助品牌投遞 Facebook、Google、LINE 等廣告。</p>
+                            <h3 class="text-center fw-bold mb-4">廣告行銷加值服務</h3>
+                            <p class="text-center lh-base mb-5 px-md-5">由官方認證的專業投手團隊，協助品牌投遞 Facebook、Google、LINE 等廣告。</p>
                         </div>
                     </div>
                 </div>
                 <div class="col">
-                    <div class="item">
-                        <div class="item-img">
-                            <img src="SHOPLINE/2-06.png" alt="">
+                    <div class="item d-flex flex-column align-items-center">
+                        <div class="item-img bg-light rounded-circle shadow py-3 mb-4">
+                            <img class="w-30 ps-3 align-middle" src="SHOPLINE/2-06.png" alt="">
                         </div>
                         <div class="item-txt">
-                            <h3>老闆專屬成長社群</h3>
-                            <p>致力為品牌店家打造能深度交流且互助的生態體系，是拓展人脈、商機的絕佳場域。</p>
+                            <h3 class="text-center fw-bold mb-4">老闆專屬成長社群</h3>
+                            <p class="text-center lh-base mb-5 px-md-5">致力為品牌店家打造能深度交流且互助的生態體系，是拓展人脈、商機的絕佳場域。</p>
                         </div>
                     </div>
                 </div>
@@ -434,58 +451,58 @@
     </section>
 
     <section class="brand">
-       <div class="container">
-            <div class="brand-title row">
+       <div class="container my-5">
+            <div class="brand-title row py-3 my-3">
                 <div class="col-12">
                     <div class="item title item-txt">
-                        <h2><span>人氣品牌</span>一致推薦使用</h2>
+                        <h2 class="text-center fw-bold lh-base"><span class="text-primary">人氣品牌</span>一致推薦使用</h2>
                     </div>
                 </div>
             </div>
-            <div class="brand-logo row row-cols-lg-5">
-                <div class="col bonnyread">
-                    <div class="item item-img">
+            <div class="brand-logo row row-cols-lg-5 d-none d-lg-flex justify-content-m pt-3 my-3 border-bottom">
+                <div class="col">
+                    <div class="item item-img d-flex justify-content-center pb-3">
                         <img class="logo" src="SHOPLINE/301.png" alt="">
                     </div>
                 </div>
-                <div class="col nuts">
-                    <div class="item item-img">
+                <div class="col">
+                    <div class="item item-img d-flex justify-content-center pb-3">
                         <img class="logo" src="SHOPLINE/302.png" alt="">
                     </div>
                 </div>
-                <div class="col snatch">
-                    <div class="item item-img">
+                <div class="col">
+                    <div class="item item-img d-flex justify-content-center pb-3">
                         <img class="logo" src="SHOPLINE/303.png" alt="">
                     </div>
                 </div>
-                <div class="col excelsior">
-                    <div class="item item-img">
+                <div class="col">
+                    <div class="item item-img d-flex justify-content-center pb-3">
                         <img class="logo" src="SHOPLINE/304.png" alt="">
                     </div>
                 </div>
-                <div class="col nature">
-                    <div class="item item-img">
+                <div class="col">
+                    <div class="item item-img d-flex justify-content-center pb-3">
                         <img class="logo" src="SHOPLINE/305.png" alt="">
                     </div>
                 </div>
             </div>
             <div class="brand-content row">
-                <div class="col-12 bonnyread">
-                    <div class="item">
+                <div class="col-12">
+                    <div class="item d-lg-flex flex-row-reverse">
                         <div class="item-img">
-                            <img src="SHOPLINE/3-01.jpg" alt="">
+                            <img class="w-100 align-middle" src="SHOPLINE/3-01.jpg" alt="">
                         </div>
-                        <div class="item-txt">
-                            <a href="#">bonnyread.com.tw</a>
-                            <p>SHOPLINE 在行動裝置上操作的順暢度很高；使用者給的建議與意見會採納，處理的速度也不錯；還一直有新功能推出，不斷成長。</p>
-                            <span>- BONNY & READ 店長, Stan</span>
+                        <div class="item-txt py-4 position-relative">
+                            <a class="text-decoration-none lh-lg fw-bold" href="#">bonnyread.com.tw</a>
+                            <p class="lh-lg">SHOPLINE 在行動裝置上操作的順暢度很高；使用者給的建議與意見會採納，處理的速度也不錯；還一直有新功能推出，不斷成長。</p>
+                            <span class="position-absolute bottom-0 left-0">- BONNY & READ 店長, Stan</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 nuts">
+                <div class="col-12 d-none">
                     <div class="item">
                         <div class="item-img">
-                            <img src="SHOPLINE/3-02.jpg" alt="">
+                            <img class="w-100 align-middle" src="SHOPLINE/3-02.jpg" alt="">
                         </div>
                         <div class="item-txt">
                             <a href="#">tuanyuannuts.com</a>
@@ -494,10 +511,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 snatch">
+                <div class="col-12 d-none">
                     <div class="item">
                         <div class="item-img">
-                            <img src="SHOPLINE/3-03.jpg" alt="">
+                            <img class="w-100 align-middle" src="SHOPLINE/3-03.jpg" alt="">
                         </div>
                         <div class="item-txt">
                             <a href="#">snatch-store.com</a>
@@ -506,10 +523,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 excelsior">
+                <div class="col-12 d-none">
                     <div class="item">
                         <div class="item-img">
-                            <img src="SHOPLINE/3-04.jpg" alt="">
+                            <img class="w-100 align-middle" src="SHOPLINE/3-04.jpg" alt="">
                         </div>
                         <div class="item-txt">
                             <a href="#">excelsiorshop.co</a>
@@ -518,10 +535,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 nature">
+                <div class="col-12 d-none">
                     <div class="item">
                         <div class="item-img">
-                            <img src="SHOPLINE/3-05.jpg" alt="">
+                            <img class="w-100 align-middle" src="SHOPLINE/3-05.jpg" alt="">
                         </div>
                         <div class="item-txt">
                             <a href="#">naturefruittw.com</a>
@@ -530,7 +547,7 @@
                         </div>
                     </div>
                 </div>
-            <div class="brand-select row-cols-5">
+            <div class="brand-select row-cols-5  d-none">
                 <div class="col bonnyread">
                     <span></span>
                 </div>
@@ -547,30 +564,17 @@
                     <span></span>
                 </div>
             </div>
-                <!-- 
-                <div class="col col-12 col-lg-6">
-                    <div class="item item-img">
-                        <img class="logo-img" src="SHOPLINE/3-01.jpg" alt="">
-                    </div>
-                </div>
-                <div class="col col-12 col-lg-6">
-                    <div class="item item-txt">
-                        <a href="#">bonnyread.com.tw</a>
-                        <p>SHOPLINE 在行動裝置上操作的順暢度很高；使用者給的建議與意見會採納，處理的速度也不錯；還一直有新功能推出，不斷成長。</p>
-                        <span>- BONNY & READ 店長, Stan</span>
-                    </div>
-                </div> -->
-            </div>
-       </div>
+        </div>
+    </div>
     </section>
 
     <div class="map">
-        <div class="container">
-            <div class="row">
+        <div class="container py-5">
+            <div class="row  py-3 my-3">
                 <div class="col">
                     <div class="item item-txt">
-                        <h3>全亞洲超過<br><span>250,000</span>個品牌都在使用 SHOPLINE</h3>
-                        <a href="#">免費試用14天</a>
+                        <h3 class="text-light lh-lg fw-bold mb-5">全亞洲超過<br><span class="position-relative">250,000</span>個品牌都在使用 SHOPLINE</h3>
+                        <a class="text-decoration-none text-light bg-primary px-5 py-3 rounded-pill" href="#">免費試用14天</a>
                     </div>
                 </div>
             </div>
@@ -578,13 +582,13 @@
     </div>
 
     <div class="footer">
-      <div class="container">
-        <ul class="footer-btn row row-cols-1 row-cols-lg-7">
+      <div class="container py-5">
+        <ul class="footer-btn row row-cols-1 row-cols-lg-7 d-flex border-top border-bottom border-secondary py-4 my-4">
             <li class="col shopline">
-                <h4>SHOPLINE</h4>
-                <ul class="row shopline-li">
-                    <li class="col-12"><a href="#">關於我們</a></li>
+                <h4 class="text-light">SHOPLINE</h4>
+                <ul class="row shopline-li d-flex">
                     <li class="col-12"><a href="#">認識團隊</a></li>
+                    <li class="col-12"><a href="#">關於我們</a></li>
                     <li class="col-12"><a href="#">人才招募</a></li>
                     <li class="col-12"><a href="#">合作機會</a></li>
                     <li class="col-12"><a href="#">精選夥伴</a></li>
@@ -592,8 +596,8 @@
                 </ul>
             </li>
             <li class="col open">
-                <h4>我要開店</h4>
-                <ul class="row open-li">
+                <h4 class="text-light">我要開店</h4>
+                <ul class="row open-li d-flex">
                     <li class="col-12"><a href="#">方案費用</a></li>
                     <li class="col-12"><a href="#">功能模組</a></li>
                     <li class="col-12"><a href="#">客戶案例</a></li>
@@ -602,8 +606,8 @@
                 </ul>
             </li>
             <li class="col function">
-                <h4>功能特色</h4>
-                <ul class="row function-li">
+                <h4 class="text-light">功能特色</h4>
+                <ul class="row function-li d-flex">
                     <li class="col-12"><a href="#">網路開店</a></li>
                     <li class="col-12"><a href="#">社群購物</a></li>
                     <li class="col-12"><a href="#">零售 POS</a></li>
@@ -613,8 +617,8 @@
                 </ul>
             </li>
             <li class="col resouces">
-                <h4>開店資源</h4>
-                <ul class="row resouces-li">
+                <h4 class="text-light">開店資源</h4>
+                <ul class="row resouces-li d-flex">
                     <li class="col-12"><a href="#">開店秘技</a></li>
                     <li class="col-12"><a href="#">版型主題</a></li>
                     <li class="col-12"><a href="#">新手問答</a></li>
@@ -622,16 +626,16 @@
                 </ul>
             </li>
             <li class="col coporation">
-                <h4>更多解決方案</h4>
-                <ul class="row coporation-li">
+                <h4 class="text-light">更多解決方案</h4>
+                <ul class="row coporation-li d-flex">
                     <li class="col-12"><a href="#">企業旗艦方案</a></li>
                     <li class="col-12"><a href="#">跨境電商方案</a></li>
                     <li class="col-12"><a href="#">廣告計畫方案</a></li>
                 </ul>
             </li>
             <li class="col learn">
-                <h4>其他資源</h4>
-                <ul class="row learn-li">
+                <h4 class="text-light">其他資源</h4>
+                <ul class="row learn-li d-flex">
                     <li class="col-12"><a href="#">電商教室</a></li>
                     <li class="col-12"><a href="#">充電工作坊</a></li>
                     <li class="col-12"><a href="#">DreamBig 創品牌</a></li>
@@ -640,8 +644,8 @@
                 </ul>
             </li>
             <li class="col application">
-                <h4>應用案例</h4>
-                <ul class="row application-li">
+                <h4 class="text-light">應用案例</h4>
+                <ul class="row application-li d-flex">
                     <li class="col-12"><a href="#">實體零售</a></li>
                     <li class="col-12"><a href="#">O2O 全通路</a></li>
                     <li class="col-12"><a href="#">社交商務</a></li>
@@ -649,26 +653,26 @@
                 </ul>
             </li>
         </ul>
-        <div class="footer-info row row-cols-1 row-cols-lg-3">
+        <div class="footer-info row row-cols-1 row-cols-lg-3 align-items-center">
             <div class="group col-12 col-lg-4">
-                <div class="item">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="far fa-comment-dots"></i></a>
-                    <a href="#"><i class="far fa-envelope"></i></a>
+                <div class="item py-2 my-2">
+                    <a class="text-light me-3 pt-2 fs-4 rounded-circle"href="#"><i class="fab fa-instagram"></i></a>
+                    <a class="text-light me-3 pt-2 fs-4 rounded-circle"href="#"><i class="fab fa-youtube"></i></a>
+                    <a class="text-light me-3 pt-2 fs-4 rounded-circle"href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="text-light me-3 pt-2 fs-4  rounded-circle"href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="text-light me-3 pt-2 fs-4  rounded-circle"href="#"><i class="far fa-comment-dots"></i></a>
+                    <a class="text-light me-3 pt-2 fs-4  rounded-circle"href="#"><i class="far fa-envelope"></i></a>
                 </div>
             </div>
-            <div class="path col-12 col-lg-4">
-                <div class="item">
-                    <a href="#">網站地圖</a>
-                    <a href="#">隱私權政策</a>
-                    <a href="#">會員條款</a>
+            <div class="path col-12 col-lg-4 order-lg-first">
+                <div class="item py-2 my-2">
+                    <a class="text-light text-decoration-none px-2" href="#">網站地圖</a>
+                    <a class="text-light text-decoration-none px-2" href="#">隱私權政策</a>
+                    <a class="text-light text-decoration-none px-2" href="#">會員條款</a>
                 </div>
             </div>
             <div class="copyright col-12 col-lg-4">
-                <div class="item">
+                <div class="item py-2 my-2">
                     <p>服務時間 星期一至五 上午 10 點至晚上 7 點<br> &copy; Copyright 2013-21 SHOPLINE Limited.
                     </p>
                 </div>
@@ -677,7 +681,7 @@
       </div>
     </div>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>
 </html>

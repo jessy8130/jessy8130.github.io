@@ -1,0 +1,146 @@
+.hb{
+    width: 35px;
+    height: 35px;
+    position: relative;
+}
+.hb span{
+    position: absolute;
+    display: block;
+    width: 80%;
+    height: 2px;
+    background-color: #000;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.hb span:first-child{
+    top: 12px;
+}
+.hb span:nth-of-type(2){
+    opacity: 1;
+}
+.hb span:last-child{
+    bottom: 12px;
+}
+#hb-btn:checked ~ header .hb span:first-child{
+    top: 0;
+    transform: rotate(45deg);
+}
+#hb-btn:checked ~ header .hb span:nth-of-type(2){
+    opacity: 0;
+}
+#hb-btn:checked ~ header .hb span:last-child{
+    bottom: 0;
+    transform: rotate(-45deg);
+}
+.banner{
+    background-image: url(https://img.shoplineapp.com/media/image_clips/5f069a12dc4d9a00335656c2/original.png?1594268177);
+    background-size: cover;
+}
+
+.service{
+    background-color: #f4f5f7;
+}
+.service .item-img{
+    width:120px;
+    height: 120px;
+}
+
+.map{
+    background-color: #172b4d;
+    background-image: url(SHOPLINE/footage01.png),url(SHOPLINE/footage02.png);
+    background-repeat: no-repeat;
+    background-position: right bottom, left top;
+}
+.map h3{
+    font-size: 40px;
+}
+.map h3 span{
+    z-index: 0;
+}
+.map h3 span::after{
+    content: " ";
+    position: absolute;
+    background-color:#0061FF;
+    height: 20px;
+    width: 135px;
+    bottom: 0;
+    left: -4px;
+    z-index: -1;
+}
+.footer{
+    background-color: #00142D;
+}
+.footer .group a{
+    color: #fff;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-color: #172B4D;
+    border-radius: 50%;
+    font-size: 20px;
+    margin: 0 4px;
+    text-align: center;
+}
+.footer .path a + a{
+    border-left: 1px solid #fff; 
+ }
+ .footer .copyright P{
+    color:#748094;
+}
+/*  */
+
+
+@media screen and (min-width: 992px){
+    .container{
+        max-width: 1500px;
+        margin: auto;
+    }
+    h1{
+        font-size: 35px;
+    }
+    h2{
+        font-size: 35px;
+    }
+    h3{
+        font-size: 30px;
+    }
+    h4{
+        font-size: 20px;
+    }
+    p{
+        font-size: 17px;
+        color:#324255;
+    }
+    .header-top{
+        background-color: #00142D;
+    }
+    .header-top nav a:first-of-type{
+        border-right: 1px solid #fff;
+    }
+    .header-top nav a:hover{
+        color:#0061FF;
+    }
+    .header-bottom .shopline{
+        width: 160px;
+    }
+    .header-bottom .main-menu{
+        width: calc(100% - 160px);
+        justify-content: space-between;
+        box-sizing: border-box;
+    }
+    .brand .container .row:nth-of-type(2) .col{
+        border-bottom: 4px solid transparent;
+    }
+    .brand .container .row:nth-of-type(2) .col:hover{
+        border-bottom: 4px solid #0061FF;
+    }
+    .brand-content .item-img{
+        width: 55%;
+    }
+    .brand-content .item-txt{
+        width: 45%;
+    }
+}
