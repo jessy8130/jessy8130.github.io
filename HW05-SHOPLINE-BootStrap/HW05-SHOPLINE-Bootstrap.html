@@ -14,20 +14,22 @@
             font-size: 30px;
         }
         h2,
-        h3,
-        h4{
+        h3{
             font-size: 25px;
+        }
+        h4{
+            font-size: 17px;
         }
         p,
         li{
-            font-size: 16px;
+            font-size: 15px;
         }
     </style>
 
 </head>
 <body>
     <input class="d-none" type="checkbox" id="hb-btn">
-    <header>
+    <header class="position-fixed top-0 start-0 w-100">
             <div class="header-top">
                 <div class="container py-3">
                     <nav class="text-end">
@@ -37,7 +39,7 @@
                     </nav>
                 </div>
             </div>
-            <div class="header-bottom">
+            <div class="header-bottom bg-light">
                 <div class="container d-flex align-items-center">
                     <div class="shopline">
                         <a href="#">
@@ -54,7 +56,7 @@
                             <ul class="d-flex">
                                 <li class="menu row position-relative lh-lg py-4 mx-1">
                                     開店服務
-                                    <!-- <i class="fas fa-chevron-down"></i> -->
+                                    <i class="fas fa-chevron-down w-auto"></i>
                                     <ul class="sub-menu col position-absolute d-none">
                                         <div class="row">                                 
                                             <h3>想在哪開店？</h3>
@@ -85,7 +87,7 @@
                                     </ul>
                                 </li>
                                 <li class="menu row position-relative lh-lg py-4 mx-1">方案費用
-                                    <!-- <i class="fas fa-chevron-down"></i> -->
+                                    <i class="fas fa-chevron-down w-auto"></i>
                                     <ul class="sub-menu col position-absolute d-none">
                                         <div class="row">                                 
                                             <h3>方案費用</h3>
@@ -105,7 +107,7 @@
                                 <li class="row lh-lg py-4 mx-1">開店說明會</li>
                                 <li class="row lh-lg py-4 mx-1">開店諮詢</li>
                                 <li class="menu row position-relative lh-lg py-4 mx-1">更多解決方案
-                                    <!-- <i class="fas fa-chevron-down"></i> -->
+                                    <i class="fas fa-chevron-down w-auto"></i>
                                     <ul class="sub-menu col position-absolute d-none">
                                         <div class="row">                                 
                                             <h3>專為國際品牌企業量身打造</h3>
@@ -138,7 +140,7 @@
                                     </ul>
                                 </li>
                                 <li class="menu row position-relative lh-lg py-4 mx-1">其他資源
-                                    <!-- <i class="fas fa-chevron-down"></i> -->
+                                    <i class="fas fa-chevron-down w-auto"></i>
                                     <ul class="sub-menu col position-absolute d-none">
                                         <div class="row">                                 
                                             <h3>全通路生態圈服務</h3>
@@ -172,8 +174,8 @@
                                 </li>
                             </ul>
                         </nav>
-                        <div>
-                            <a class="d-inline-block bg-primary text-light py-2 px-4 align-middle rounded-pill text-decoration-none" href="#">免費試用</a>
+                        <div class="d-flex align-items-center ">
+                            <a class="bg-primary text-light py-3 px-4 rounded-pill text-decoration-none" href="#">免費試用</a>
                             <a class="d-none" href="#">登入網站</a>
                         </div>
                     </div>
@@ -492,7 +494,7 @@
                         <div class="item-img">
                             <img class="w-100 align-middle" src="SHOPLINE/3-01.jpg" alt="">
                         </div>
-                        <div class="item-txt py-4 position-relative">
+                        <div class="item-txt py-4 pe-3 position-relative">
                             <a class="text-decoration-none lh-lg fw-bold" href="#">bonnyread.com.tw</a>
                             <p class="lh-lg">SHOPLINE 在行動裝置上操作的順暢度很高；使用者給的建議與意見會採納，處理的速度也不錯；還一直有新功能推出，不斷成長。</p>
                             <span class="position-absolute bottom-0 left-0">- BONNY & READ 店長, Stan</span>
@@ -582,103 +584,103 @@
     </div>
 
     <div class="footer">
-      <div class="container py-5">
-        <ul class="footer-btn row row-cols-1 row-cols-lg-7 d-flex border-top border-bottom border-secondary py-4 my-4">
-            <li class="col shopline">
-                <h4 class="text-light">SHOPLINE</h4>
-                <ul class="row shopline-li d-flex">
-                    <li class="col-12"><a href="#">認識團隊</a></li>
-                    <li class="col-12"><a href="#">關於我們</a></li>
-                    <li class="col-12"><a href="#">人才招募</a></li>
-                    <li class="col-12"><a href="#">合作機會</a></li>
-                    <li class="col-12"><a href="#">精選夥伴</a></li>
-                    <li class="col-12"><a href="#">媒體報導</a></li>
-                </ul>
-            </li>
-            <li class="col open">
-                <h4 class="text-light">我要開店</h4>
-                <ul class="row open-li d-flex">
-                    <li class="col-12"><a href="#">方案費用</a></li>
-                    <li class="col-12"><a href="#">功能模組</a></li>
-                    <li class="col-12"><a href="#">客戶案例</a></li>
-                    <li class="col-12"><a href="#">開店說明會</a></li>
-                    <li class="col-12"><a href="#">開店諮詢</a></li>
-                </ul>
-            </li>
-            <li class="col function">
-                <h4 class="text-light">功能特色</h4>
-                <ul class="row function-li d-flex">
-                    <li class="col-12"><a href="#">網路開店</a></li>
-                    <li class="col-12"><a href="#">社群購物</a></li>
-                    <li class="col-12"><a href="#">零售 POS</a></li>
-                    <li class="col-12"><a href="#">電商物流</a></li>
-                    <li class="col-12"><a href="#">訂單管理</a></li>
-                    <li class="col-12"><a href="#">一頁商店</a></li>
-                </ul>
-            </li>
-            <li class="col resouces">
-                <h4 class="text-light">開店資源</h4>
-                <ul class="row resouces-li d-flex">
-                    <li class="col-12"><a href="#">開店秘技</a></li>
-                    <li class="col-12"><a href="#">版型主題</a></li>
-                    <li class="col-12"><a href="#">新手問答</a></li>
-                    <li class="col-12"><a href="#">POS 硬體</a></li>
-                </ul>
-            </li>
-            <li class="col coporation">
-                <h4 class="text-light">更多解決方案</h4>
-                <ul class="row coporation-li d-flex">
-                    <li class="col-12"><a href="#">企業旗艦方案</a></li>
-                    <li class="col-12"><a href="#">跨境電商方案</a></li>
-                    <li class="col-12"><a href="#">廣告計畫方案</a></li>
-                </ul>
-            </li>
-            <li class="col learn">
-                <h4 class="text-light">其他資源</h4>
-                <ul class="row learn-li d-flex">
-                    <li class="col-12"><a href="#">電商教室</a></li>
-                    <li class="col-12"><a href="#">充電工作坊</a></li>
-                    <li class="col-12"><a href="#">DreamBig 創品牌</a></li>
-                    <li class="col-12"><a href="#">電商成長學苑</a></li>
-                    <li class="col-12"><a href="#">LINE 官方帳號</a></li>
-                </ul>
-            </li>
-            <li class="col application">
-                <h4 class="text-light">應用案例</h4>
-                <ul class="row application-li d-flex">
-                    <li class="col-12"><a href="#">實體零售</a></li>
-                    <li class="col-12"><a href="#">O2O 全通路</a></li>
-                    <li class="col-12"><a href="#">社交商務</a></li>
-                    <li class="col-12"><a href="#">社群電商工具包</a></li>
-                </ul>
-            </li>
-        </ul>
-        <div class="footer-info row row-cols-1 row-cols-lg-3 align-items-center">
-            <div class="group col-12 col-lg-4">
-                <div class="item py-2 my-2">
-                    <a class="text-light me-3 pt-2 fs-4 rounded-circle"href="#"><i class="fab fa-instagram"></i></a>
-                    <a class="text-light me-3 pt-2 fs-4 rounded-circle"href="#"><i class="fab fa-youtube"></i></a>
-                    <a class="text-light me-3 pt-2 fs-4 rounded-circle"href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="text-light me-3 pt-2 fs-4  rounded-circle"href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a class="text-light me-3 pt-2 fs-4  rounded-circle"href="#"><i class="far fa-comment-dots"></i></a>
-                    <a class="text-light me-3 pt-2 fs-4  rounded-circle"href="#"><i class="far fa-envelope"></i></a>
+        <div class="container py-5">
+            <ul class="footer-btn row d-flex border-top border-bottom border-secondary py-4 my-4">
+                <li class="col-12 col-lg-1 shopline">
+                    <h4 class="text-light mb-5">SHOPLINE</h4>
+                    <ul class="row d-none d-lg-block shopline-li">
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">認識團隊</a></li>
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">關於我們</a></li>
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">人才招募</a></li>
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">合作機會</a></li>
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">精選夥伴</a></li>
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">媒體報導</a></li>
+                    </ul>
+                </li>
+                <li class="col-12 col-lg-1 open">
+                    <h4 class="text-light mb-5">我要開店</h4>
+                    <ul class="row d-none d-lg-block open-li">
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">方案費用</a></li>
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">功能模組</a></li>
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">客戶案例</a></li>
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">開店說明會</a></li>
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">開店諮詢</a></li>
+                    </ul>
+                </li>
+                <li class="col-12 col-lg-1 function">
+                    <h4 class="text-light mb-5">功能特色</h4>
+                    <ul class="row d-none d-lg-block function-li">
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">網路開店</a></li>
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">社群購物</a></li>
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">零售 POS</a></li>
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">電商物流</a></li>
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">訂單管理</a></li>
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">一頁商店</a></li>
+                    </ul>
+                </li>
+                <li class="col-12 col-lg-1 resouces">
+                    <h4 class="text-light mb-5">開店資源</h4>
+                    <ul class="row d-none d-lg-block resouces-li">
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">開店秘技</a></li>
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">版型主題</a></li>
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">新手問答</a></li>
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">POS 硬體</a></li>
+                    </ul>
+                </li>
+                <li class="col-12 col-lg-1 coporation">
+                    <h4 class="text-light mb-5">更多解決方案</h4>
+                    <ul class="row d-none d-lg-block coporation-li">
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">企業旗艦方案</a></li>
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">跨境電商方案</a></li>
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">廣告計畫方案</a></li>
+                    </ul>
+                </li>
+                <li class="col-12 col-lg-1 learn">
+                    <h4 class="text-light mb-5">其他資源</h4>
+                    <ul class="row d-none d-lg-block learn-li">
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">電商教室</a></li>
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">充電工作坊</a></li>
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">DreamBig 創品牌</a></li>
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">電商成長學苑</a></li>
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">LINE 官方帳號</a></li>
+                    </ul>
+                </li>
+                <li class="col-12 col-lg-1 application">
+                    <h4 class="text-light mb-5">應用案例</h4>
+                    <ul class="row d-none d-lg-block application-li">
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">實體零售</a></li>
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">O2O 全通路</a></li>
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">社交商務</a></li>
+                        <li class="col-12"><a href="#" class="text-decoration-none d-block pb-4">社群電商工具包</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="footer-info row row-cols-1 row-cols-lg-3 align-items-center">
+                <div class="group col-12 col-lg-4">
+                    <div class="item py-2 my-2">
+                        <a class="text-light me-3 pt-2 fs-4 rounded-circle"href="#"><i class="fab fa-instagram"></i></a>
+                        <a class="text-light me-3 pt-2 fs-4 rounded-circle"href="#"><i class="fab fa-youtube"></i></a>
+                        <a class="text-light me-3 pt-2 fs-4 rounded-circle"href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="text-light me-3 pt-2 fs-4  rounded-circle"href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="text-light me-3 pt-2 fs-4  rounded-circle"href="#"><i class="far fa-comment-dots"></i></a>
+                        <a class="text-light me-3 pt-2 fs-4  rounded-circle"href="#"><i class="far fa-envelope"></i></a>
+                    </div>
                 </div>
-            </div>
-            <div class="path col-12 col-lg-4 order-lg-first">
-                <div class="item py-2 my-2">
-                    <a class="text-light text-decoration-none px-2" href="#">網站地圖</a>
-                    <a class="text-light text-decoration-none px-2" href="#">隱私權政策</a>
-                    <a class="text-light text-decoration-none px-2" href="#">會員條款</a>
+                <div class="path col-12 col-lg-4 order-lg-first">
+                    <div class="item py-2 my-2">
+                        <a class="text-light text-decoration-none px-2" href="#">網站地圖</a>
+                        <a class="text-light text-decoration-none px-2" href="#">隱私權政策</a>
+                        <a class="text-light text-decoration-none px-2" href="#">會員條款</a>
+                    </div>
                 </div>
-            </div>
-            <div class="copyright col-12 col-lg-4">
-                <div class="item py-2 my-2">
-                    <p>服務時間 星期一至五 上午 10 點至晚上 7 點<br> &copy; Copyright 2013-21 SHOPLINE Limited.
-                    </p>
+                <div class="copyright col-12 col-lg-4">
+                    <div class="item py-2 my-2">
+                        <p>服務時間 星期一至五 上午 10 點至晚上 7 點<br> &copy; Copyright 2013-21 SHOPLINE Limited.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

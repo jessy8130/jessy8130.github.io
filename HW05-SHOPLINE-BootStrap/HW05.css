@@ -1,3 +1,4 @@
+
 .hb{
     width: 35px;
     height: 35px;
@@ -35,7 +36,11 @@
     bottom: 0;
     transform: rotate(-45deg);
 }
+.header-bottom .main-menu i{
+    line-height: inherit;
+}
 .banner{
+    margin-top: 127px;
     background-image: url(https://img.shoplineapp.com/media/image_clips/5f069a12dc4d9a00335656c2/original.png?1594268177);
     background-size: cover;
 }
@@ -88,6 +93,12 @@
     border-left: 1px solid #fff; 
  }
  .footer .copyright P{
+    color:#748094;
+}
+.footer .col-12{
+    flex-grow: 1;
+}
+.footer .col-12 a{
     color:#748094;
 }
 /*  */
