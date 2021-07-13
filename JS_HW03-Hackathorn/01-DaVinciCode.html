@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>終極密碼</title>
+    <style>
+        .container{
+            max-width: 500px;
+            margin: auto;
+            margin-top: 100px;
+            text-align: center;
+        }
+        .num-display,
+        .start-btn,
+        .guess,
+        .btn-group{
+            margin:10px auto;
+        }
+        .num-display{
+            width: 300px;
+            height: 50px;
+            border: 1px solid #000;
+            font-size: 30px;
+            line-height: 50px;
+        }
+        .start-btn{
+            padding: 5px 10px;
+            color: #fff;
+            background-color: #0061FF;
+        }
+        .start-btn:hover{
+            background-color: #0747A6;
+        }
+        .guess{
+            width: 150px;
+            height: 30px;
+            border: 1px solid #000;
+        }
+        .btn-group{
+            width: 200px;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .btn-group button{
+            width: 35px;
+            margin: 5px;
+            font-weight: bold;
+        }
+        .btn-group button:hover{
+            background-color: #888;
+        }
+        .btn-group button:first-child{
+            order: 1;
+        }
+        .btn-group .clear{
+            color: red;
+        }
+        .btn-group .enter{
+            color: green;
+            order: 1;
+        }
+    </style>
+  </head>
+  <body>
+      <div class="container">
+          <div class="num-display">
+              <p>0~100</p>
+          </div>
+          <button class="start-btn">產生數字</button>
+          <div class="guess"></div>
+          <div iv class="btn-group">
+              <button class="number">0</button>
+              <button class="number">1</button>
+              <button class="number">2</button>
+              <button class="number">3</button>
+              <button class="number">4</button>
+              <button class="number">5</button>
+              <button class="number">6</button>
+              <button class="number">7</button>
+              <button class="number">8</button>
+              <button class="number">9</button>
+              <button class="clear">X</button>
+              <button class="enter">V</button>
+          </div>
+      </div>
+
+      <script>
+            //開始遊戲
+            let answer;
+            let startBtn = document.querySelector('.start-btn');
+            startBtn.addEventListener('click', function(){
+                answer = createRandom();
+                startBtn.style.backgroundColor='#0747A6';
+            })
+            //亂數產生答案
+            function createRandom(){
+                return Math.floor(Math.random()*100);
+            }
+
+            //按鈕數字輸入
+            let guess = document.querySelector('.guess');
+            let number = document.querySelectorAll('.number');
+            number.forEach((btn,index)=>{
+                number[index].addEventListener('click', function(){
+                    guess.append(index);
+                });
+            });
+
+            //clear
+            let clear = document.querySelector('.clear');
+            clear.addEventListener('click', function(){
+                guess.innerText='';
+            });
+
+            //enter
+            let start=0, end=100;
+            let display = document.querySelector('.num-display p');
+            let enter = document.querySelector('.enter');
+            enter.addEventListener('click', enterNum);
+
+            //輸入判斷
+            function enterNum(){
+                if(guess.innerText>100 || guess.innerText==0){
+                    alert('輸入數字無效，請重新輸入');
+                }
+                else if(guess.innerText==answer){
+                    alert('恭喜猜對了!!');
+                    display.innerText='0~100';
+                    startBtn.style.backgroundColor='#0061FF';
+                }
+                else{
+                    guessNum();
+                }
+                 guess.innerText='';
+            }
+            //數字比較
+            function guessNum(){
+                if(guess.innerText > answer){
+                    end = guess.innerText;
+                }
+                else{
+                    start = guess.innerText;
+                }
+                display.innerHTML = `${start}~${end}`;
+            }
+
+      </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>
