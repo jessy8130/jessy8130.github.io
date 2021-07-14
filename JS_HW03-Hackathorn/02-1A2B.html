@@ -71,9 +71,8 @@
             let inputArray;
             function inputNum(){
                 inputArray = Array.from(input.value);
-                let inputSet = new Set(inputArray);
-                console.log(inputSet);
-                if(inputSet.size == 4 && inputArray.length ==4 ){
+                let inputSet =[... new Set(inputArray)];
+                if(inputSet.length == 4 && inputArray.length ==4 ){
                     AB();
                     addListGroup();
                     input.value= '';
