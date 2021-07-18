@@ -1,0 +1,186 @@
+{
+    "iphone": {
+        "i12pro": {
+            "model": {
+                "item": "iPhone 12 Pro",
+                "url": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-pro-family-hero-all?wid=470&amp;hei=556&amp;fmt=jpeg&amp;qlt=95&amp;.v=1604021662000",
+                "price": "NT$33,900"
+            },
+            "appearance": [
+                {
+                    "color": "石磨色",
+                    "colorImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-finish-graphite-2020?wid=102&hei=102&fmt=jpeg&qlt=95&.v=1601054548000",
+                    "itemImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-pro-graphite-hero?wid=470&hei=556&fmt=png-alpha&.v=1604021660000"
+                },
+                {
+                    "color": "銀色",
+                    "colorImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-finish-silver-2020?wid=102&hei=102&fmt=jpeg&qlt=95&.v=1601054548000",
+                    "itemImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-pro-silver-hero?wid=470&hei=556&fmt=png-alpha&.v=1604021661000"
+                },
+                {
+                    "color": "金色",
+                    "colorImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-finish-gold-2020?wid=102&hei=102&fmt=jpeg&qlt=95&.v=1601054548000",
+                    "itemImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-pro-gold-hero?wid=470&hei=556&fmt=png-alpha&.v=1604021659000"
+                },
+                {
+                    "color": "太平洋藍色",
+                    "colorImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-finish-blue-2020?wid=102&hei=102&fmt=jpeg&qlt=95&.v=1601054547000",
+                    "itemImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-pro-blue-hero?wid=470&hei=556&fmt=png-alpha&.v=1604021661000"
+                }
+            ],
+            "storage": [
+                {
+                    "gb": "128 GB²",
+                    "price": "NT$ 33,900"
+                },
+                {
+                    "gb": "256 GB²",
+                    "price": "NT$ 37,400"
+                },
+                {
+                    "gb": "512 GB²",
+                    "price": "NT$ 44,400"
+                }
+            ]
+        },
+        "i12promax": {
+            "model": {
+                "item": "iPhone 12 Pro Max",
+                "url": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-pro-max-family-hero-all?wid=470&amp;hei=556&amp;fmt=jpeg&amp;qlt=95&amp;.v=1604021663000",
+                "price": "NT$37,900"
+            },
+            "appearance": [
+                {
+                    "color": "石磨色",
+                    "colorImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-finish-graphite-2020?wid=102&hei=102&fmt=jpeg&qlt=95&.v=1601054548000",
+                    "itemImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-pro-max-graphite-hero?wid=470&hei=556&fmt=png-alpha&.v=1604021658000"
+                },
+                {
+                    "color": "銀色",
+                    "colorImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-finish-silver-2020?wid=102&hei=102&fmt=jpeg&qlt=95&.v=1601054548000",
+                    "itemImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-pro-max-silver-hero?wid=470&hei=556&fmt=png-alpha&.v=1604021658000"
+                },
+                {
+                    "color": "金色",
+                    "colorImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-finish-gold-2020?wid=102&hei=102&fmt=jpeg&qlt=95&.v=1601054548000",
+                    "itemImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-pro-max-gold-hero?wid=470&hei=556&fmt=png-alpha&.v=1604021660000"
+                },
+                {
+                    "color": "太平洋藍色",
+                    "colorImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-finish-blue-2020?wid=102&hei=102&fmt=jpeg&qlt=95&.v=1601054547000",
+                    "itemImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-12-pro-max-blue-hero?wid=470&hei=556&fmt=png-alpha&.v=1604021658000"
+                }
+            ],
+            "storage": [
+                {
+                    "gb": "128 GB²",
+                    "price": "NT$ 37,900"
+                },
+                {
+                    "gb": "256 GB²",
+                    "price": "NT$ 41,400"
+                },
+                {
+                    "gb": "512 GB²",
+                    "price": "NT$ 48,400"
+                }
+            ]
+        }
+    },
+    "ipad": {
+        "ipad": {
+            "model": {
+                "item": "iPad",
+                "url": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-2020-hero-landing?wid=372&hei=606&fmt=jpeg&qlt=95&.v=1598913494000"
+            },
+            "appearance": [
+                {
+                    "color": "太空灰",
+                    "colorImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-spacegray-201903?wid=102&amp;hei=102&amp;fmt=png-alpha&amp;.v=1552422652805",
+                    "itemImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-2020-hero-space-wifi-select?wid=470&hei=556&fmt=png-alpha&.v=1598915064000"
+                },
+                {
+                    "color": "銀色",
+                    "colorImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-finish-silver-2020?wid=102&hei=102&fmt=jpeg&qlt=95&.v=1601054548000",
+                    "itemImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-2020-hero-silver-wifi-select?wid=470&hei=556&fmt=png-alpha&.v=1598915073000"
+                },
+                {
+                    "color": "金色",
+                    "colorImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/iphone-finish-gold-2020?wid=102&hei=102&fmt=jpeg&qlt=95&.v=1601054548000",
+                    "itemImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-2020-hero-gold-wifi-select?wid=470&hei=556&fmt=png-alpha&.v=1598915069000"
+                }
+            ],
+            "storage": 
+            {
+                "32":
+                {
+                    "item" : "32 GB²",
+                    "price": "NT$ 9,900",
+                    "connectivity" :
+                    [
+                        {"connect":"Wi-Fi", "price": "NT$ 9,900"},
+                        {"connect":"Wi-Fi + 行動網路", "price": "NT$ 14,200"}
+                    ]
+                },
+                "128":
+                {
+                    "item" : "128 GB²",
+                    "price": "NT$ 12,900",
+                    "connectivity" :
+                    [
+                        {"connect":"Wi-Fi", "price": "NT$ 12,900"},
+                        {"connect":"Wi-Fi + 行動網路", "price": "NT$ 17,200"}
+                    ]
+                }
+            }
+        }
+    },
+    "watch": {
+        "watch": {
+            "model": {
+                "item": "Apple Watch",
+                "url": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MXU82_VW_34FR+watch-40-alum-spacegray-nc-6s_VW_34FR_WF_CO_GEO_TW+watch-face-40-newzealand6s_VW_34FR_WF_CO?wid=700&hei=700&trim=1,0&fmt=p-jpg&qlt=95&.v=1623798332000,1601922171000,1623910941000"
+            },
+            "appearance": [
+                {
+                    "color": "紐西蘭版",
+                    "colorImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MXUW2_SW_COLOR?wid=32&hei=32&fmt=jpeg&qlt=95&.v=1623443463000",
+                    "itemImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MXU82_VW_34FR+watch-40-alum-spacegray-nc-6s_VW_34FR_WF_CO_GEO_TW+watch-face-40-newzealand6s_VW_34FR_WF_CO?wid=700&hei=700&trim=1,0&fmt=p-jpg&qlt=95&.v=1623798332000,1601922171000,1623910941000"
+                },
+                {
+                    "color": "澳洲版",
+                    "colorImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MXUD2_SW_COLOR?wid=32&hei=32&fmt=jpeg&qlt=95&.v=1623443456000",
+                    "itemImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MXTQ2_VW_34FR+watch-40-alum-spacegray-nc-6s_VW_34FR_WF_CO_GEO_TW+watch-face-40-australia6s_VW_34FR_WF_CO?wid=700&hei=700&trim=1,0&fmt=p-jpg&qlt=95&.v=1623798038000,1601922171000,1623870391000"
+                },
+                {
+                    "color": "比利時版",
+                    "colorImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MXUE2_SW_COLOR?wid=32&hei=32&fmt=jpeg&qlt=95&.v=1623443456000",
+                    "itemImg": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/MXTR2_VW_34FR+watch-40-alum-spacegray-nc-6s_VW_34FR_WF_CO_GEO_TW+watch-face-40-belgium6s_VW_34FR_WF_CO?wid=700&hei=700&trim=1,0&fmt=p-jpg&qlt=95&.v=1623798173000,1601922171000,1623870395000"
+                }
+            ],
+            "storage": 
+            {
+                "sm":
+                {
+                    "item" : "40 公釐",
+                    "price": "NT$ 12,900",
+                    "connectivity" :
+                    [
+                        {"connect":"GPS", "price": "NT$ 12,900"},
+                        {"connect":"GPS + 行動網路", "price": "NT$ 15,900"}
+                    ]
+                },
+                "md":
+                {
+                    "item" : "44 公釐",
+                    "price": "NT$ 13,900",
+                    "connectivity" :
+                    [
+                        {"connect":"GPS", "price": "NT$ 13,900"},
+                        {"connect":"GPS + 行動網路", "price": "NT$ 16,900"}
+                    ]
+                }
+            }
+        }
+    }
+}

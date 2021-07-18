@@ -10,11 +10,22 @@ fetch(url)
     let watchObject =result.watch.watch;
 
     //nav種類
-    // let itemChhose;
-    // let aIphone = document.querySelector('.main-menu :nth-of-type(1)');
-    // aIphone.addEventListener('click', function(){
-    //     itemChoose = 
-    // });
+    let itemChhose;
+    let aIphone = document.querySelector('.main-menu :nth-of-type(1)');
+    aIphone.addEventListener('click', function(){
+        itemChoose = result.iphone;
+        //建出內容
+    });
+    let aIpad = document.querySelector('.main-menu :nth-of-type(2)');
+    aIpad.addEventListener('click', function(){
+        itemChoose = result.ipad;
+        //建出內容
+    });
+    let aWatch = document.querySelector('.main-menu :nth-of-type(3)');
+    aWatch.addEventListener('click', function(){
+        itemChoose = result.watch;
+        //建出內容
+    });
     
 
     let iphoneChoose;
@@ -22,6 +33,9 @@ fetch(url)
     let modelBtn = document.querySelectorAll('.model input');
     let img = document.querySelector('.container .row .col-12 .item-img img');
     let hPrice = document.querySelector('header .header-bottom .container .row span span');
+
+
+
     
     modelBtn[0].addEventListener('click', function(){
         iphoneChoose = i12Object;
@@ -41,6 +55,8 @@ fetch(url)
         });
     }
 
+    //建造按鈕
+    
     //選擇顏色
     let appearanceBtn = document.querySelectorAll('.exterior input');
     let appearenceIndex;

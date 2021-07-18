@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)http://127.0.0.1:5500/JS_HW03-Hackathorn/02-1A2B.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./1A2B_files/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>1A2B</title>
+    <style>
+        .guess-list ul{
+            padding: 0 .75em;
+        }
+    </style>
+  </head>
+  <body>
+      <div class="container">
+          <div class="row menu my-3">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-outline-secondary">開始</button>
+                <button type="button" disabled="" class="btn btn-outline-secondary">放棄重來</button>
+                <button type="button" disabled="" class="btn btn-outline-secondary">看答案</button>
+              </div>
+          </div>
+          <div class="row guess-list my-3">
+            <ul class="list-group">
+                <li class="list-group-item"><span class="badge bg-primary">1A2B</span> An item</li>
+              </ul>
+          </div>
+          <div class="row guess my-3">
+            <div class="input-group mb-3">
+                <span class="input-group-text">猜答案</span>
+                <input type="number" class="form-control">
+                <button disabled="" class="input-group-text btn btn-outline-secondary">猜！</button>
+            </div>
+          </div>
+      </div>
+      <script>
+            let answer =[];
+            //開始
+            let btnGroup = document.querySelectorAll('button');
+            btnGroup[0].addEventListener('click', function(){
+                    btnStart();
+                    gameStart();
+
+                });
+
+            //看答案
+            btnGroup[2].addEventListener('click', function(){
+                alert(`答案為：${answer.join(' ')}`);
+            });
+
+            //猜！
+            // btnGroup[3].addEventListener('click', inputNum);
+
+            //輸入數字
+            let inputArray = [];
+            let input = document.querySelector('input');
+            inputArray = Array.from(input.value);
+            console.log(inputArray);
+
+            // function inputNum(){
+            //     let inputSet = new Set(inputArray);
+            //     if(inputSet.length==3){
+            //         AB();
+            //     }
+            //     else{
+            //         alert('輸入數字不正確');
+            //     }
+            // }
+
+            // //判斷AB
+            // let numA,numB;
+            // function AB(){
+            //     let output = intersection(inputArray,answer);
+            //     output.forEach((item =>{
+            //         if(inputArray[item]==answer[item]){
+            //             numA++;
+            //         }
+            //         else{
+            //             numB++;
+            //         }
+            //     }));               
+            // }
+
+            // //連動list-group
+            // let list = document.querySelector('.list-group');
+            // function addListGroup(){
+            //     let li = document.createElement('li');
+            //     li.append(badge());
+            //     li.innerText = input.innerText;
+            //     list.appendChild(li);
+            // }
+
+            // //AB badge
+
+            // function badge(){
+            //     let span = document.createElement('span');
+            //     span.classList.add('badge');
+            //     span.innerText(`${numA}A${numB}B`);
+            // }
+            //產生不重複亂數
+            function gameStart(){
+                while(answer.length < 4){
+                    let num = Math.floor(Math.random() * 10);
+                    if(answer.includes(num)){ }
+                    else{
+                        answer.push(num);
+                    }
+                }
+            }
+            //遊戲開始
+            function btnStart(){
+                btnGroup.forEach((btn)=>{
+                    btn.removeAttribute('disabled','');
+                });
+                btnGroup[0].setAttribute('disabled','');
+            }
+            //遊戲結束
+            function btnOpen(){
+                btnGroup.forEach((btn)=>{
+                    btn.setAttribute('disabled',''); 
+                });
+                btnGroup[0].removeAttribute('disable','');
+            }
+            //清空紀錄
+            function clear(){
+
+            }
+
+      </script>
+    <script src="./1A2B_files/bootstrap.bundle.min.js.下載" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body></html>
