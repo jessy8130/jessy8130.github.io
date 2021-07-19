@@ -5,6 +5,7 @@ fetch(url)
     let model = document.querySelector('.model');
     let finish = document.querySelector('.finish');
     let storage = document.querySelector('.storage');
+    let h1Title = document.querySelector('h1');
 
     let keys = [];
 
@@ -34,12 +35,16 @@ fetch(url)
     aIpad.addEventListener('click', function(){
         itemChoose = padObject;
         initialComponent();
-        priceSet(padObject.ipad.model.url, padObject.ipad.storage[0].price)
+        h1Title.innerText="購買 iPad";
+        priceSet(padObject.ipad.model.url, padObject.ipad.storage[0].price);
+
+        
     });
     let aWatch = document.querySelector('.main-menu :nth-of-type(3)');
     aWatch.addEventListener('click', function(){
         itemChoose = watchObject;
         initialComponent();
+        h1Title.innerText="購買 Apple Watch";
         priceSet(watchObject.watch.model.url,watchObject.watch.storage[0].price);
     });
 
