@@ -2,6 +2,11 @@ let url = 'https://raw.githubusercontent.com/jessy8130/FileStorage/main/Apple.js
 fetch(url)
 .then(response => response.json())
 .then(result => {
+    let model = document.querySelector('.model');
+    let finish = document.querySelector('.finish');
+    let storage = document.querySelector('.storage');
+
+    let keys = [];
 
     //Apple抓資料
     let phoneObject = result.iphone;
@@ -15,12 +20,9 @@ fetch(url)
     let amountSpan = document.querySelector('.price .amount h2');
 
     // nav種類
-    // let body = document.querySelector('body');
-    // body.addEventListener('load', function(){
-    //     itemChoose = phoneObject;
-    //     initialComponent();
-    //     priceSet(i12Object.model.url,i12Object.storage[0].price);
-    // });
+    let itemChoose = phoneObject;
+    initialComponent();
+    priceSet(i12Object.model.url,i12Object.storage[0].price);
 
     let aIphone = document.querySelector('.main-menu :nth-of-type(1)');
     aIphone.addEventListener('click', function(){
@@ -48,12 +50,7 @@ fetch(url)
         amountSpan.innerText = pricePath;
     }
 
-
-    let model = document.querySelector('.model');
-    let finish = document.querySelector('.finish');
-    let storage = document.querySelector('.storage');
-
-    let keys;
+   
     //初始化欄位
     function initialComponent(){
         //清空原本畫面
@@ -274,7 +271,8 @@ fetch(url)
         });
     }
 })
-.catch(ex =>{})
-.finally(() =>{})
+.catch(ex =>{
+    console.log(ex);
+})
 
 
