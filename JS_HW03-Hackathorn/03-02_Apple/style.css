@@ -2,16 +2,16 @@
     font-family:"SF Pro TC","HanHei TC","SF Pro Text","Myriad Set Pro","SF Pro Icons","PingFang TC","Helvetica Neue","Helvetica","Arial",sans-serif;
 }
 .model,
-.exterior,
+.finish,
 .storage{
     padding:25px 0 ;
 }
-.amount{
+.price{
     background-color: #FBFBFD;
     margin-top: 25px;
 }
 .model,
-.exterior{
+.finish{
     border-bottom: 1px solid #ccc;
 }
 .model a,
@@ -19,6 +19,10 @@
     display: block;
     font-size: 14px;
     margin-bottom: 8px;
+    text-decoration: none;
+}
+input{
+    display: none;
 }
 h1{
     font-size: 40px;
@@ -44,7 +48,12 @@ header{
 .main-menu{
     justify-content: space-between;
 }
-.header-top a{
+.main-menu div{
+    color: #F5F5F7;
+    cursor: pointer;
+}
+.header-top a,
+.main-menu div{
     display: block;
     line-height: 40px;
     padding: 0 20px;
@@ -68,7 +77,7 @@ section h1 div{
     font-size: 17px;
     color: #BF4800;
 }
-.exterior img {
+.finish img {
     width: 32px;
     height: 32px;
 }
@@ -81,12 +90,12 @@ section h1 div{
     display: flex;
     justify-content: center;
 }
-.amount .btn-group button{
+.price .btn-group button{
     min-height: auto;
-    border-top-right-radius: .25rem;
-    border-top-right-radius: .25rem;
+    border-top-right-radius: auto;
+    border-bottom-right-radius: auto;
 }
-.amount a{
+.price a{
     text-decoration: none;
 }
 input:checked ~ label{
@@ -120,11 +129,11 @@ input:checked ~ label{
         left: 0;
         opacity: 1;
     }
-    .main-menu a{
+    .main-menu div{
         margin: 0 20px;
         padding: 10px 0;
     }
-    .main-menu a:not(:last-child){
+    .main-menu div:not(:last-child){
         border-bottom: 1px solid #888;
     }
     .hb{
