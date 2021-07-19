@@ -29,6 +29,7 @@ fetch(url)
     aIphone.addEventListener('click', function(){
         itemChoose = phoneObject;
         initialComponent();
+        h1Title.innerText="購買 iPhone 12 Pro";
         priceSet(i12Object.model.url,i12Object.storage[0].price);
     });
     let aIpad = document.querySelector('.main-menu :nth-of-type(2)');
