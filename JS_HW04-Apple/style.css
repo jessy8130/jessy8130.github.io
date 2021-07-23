@@ -1,0 +1,61 @@
+*{
+    font-family:"SF Pro TC","HanHei TC","SF Pro Text","Myriad Set Pro","SF Pro Icons","PingFang TC","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+.container{
+    max-width: 1024px;
+    margin: auto;
+}
+h1{
+    font-size: 40px;
+    font-weight: bolder;
+    margin-top: 30px;
+}
+h2{
+    font-size: 17px;
+    font-weight: bolder;
+}
+img{
+    width: 100%;
+    vertical-align: middle;
+}
+.color img{
+    width: 32px;
+    height: 32px;
+}
+label.btn{
+    width: 100%;
+    min-height: 6rem;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+label:hover{
+    border: 1px solid #888;
+}
+input:checked ~ label{
+    border: 2px solid #0061FF;
+}
+.info{
+    font-size: 17px;
+    font-weight: bold;
+}
+.desc{
+    font-size: 12px;
+    color: #1D1D1F;
+}
+.price{
+    background-color: #FBFBFD;
+}
+.disableSection{
+    opacity: .3;
+    pointer-events: none;
+}
+.item .accordion-button{
+    color: #1D1D1F;
+    font-weight: bolder;
+    background-color: transparent;
+    box-shadow: none;
+}
