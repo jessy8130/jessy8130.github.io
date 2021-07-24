@@ -1,6 +1,9 @@
         //按鈕綁click事件 findIpad
         let colorBtns, storageBtns, networkBtns;     
-        let _color, _storage, _network;  
+        let _color, _storage, _network;
+        let accordianBtn = document.querySelectorAll('.accordion-button');
+        let collapseBtn = document.querySelectorAll('.container .row .col-12 .row');
+
         window.onload = function(){
             ResponseIpad();
             colorBtns = document.querySelectorAll('.color label');
@@ -10,7 +13,13 @@
                     findIpad();
                     displayImg();
                     btnOpen();
-                    SetAccordion();
+
+                    //accordian設定
+                    accordianBtn[0].classList.add('collapsed');
+                    accordianBtn[0].classList.remove('d-none');
+                    collapseBtn[0].classList.remove('show');
+                    let btn0 = ipadArray.filter(x => x.picture.includes(_color))[0];
+                    accordianBtn[0].innerText = btn0.color;
                 });
             });
             storageBtns = document.querySelectorAll('.storage label');
@@ -20,7 +29,13 @@
                     displayAmount();
                     findIpad();
                     btnOpen();
-                    SetAccordion();
+                    
+                    //accordian設定                   
+                    accordianBtn[1].classList.add('collapsed');
+                    accordianBtn[1].classList.remove('d-none');
+                    collapseBtn[1].classList.remove('show');
+                    let btn1 = ipadArray.filter(x => x.storage == _storage)[0];
+                    accordianBtn[1].innerText = btn1.storage;
                 });
             });
             networkBtns = document.querySelectorAll('.network label');
@@ -29,7 +44,19 @@
                     _network = btn.htmlFor;
                     findIpad();
                     btnOpen();
-                    SetAccordion();
+
+                    //accordian設定
+                    accordianBtn[2].classList.add('collapsed');
+                    accordianBtn[2].classList.remove('d-none');
+                    collapseBtn[2].classList.remove('show');
+                    let btn2 = ipadArray.filter(x => x.network == _network)[0];
+                    if(btn2.network == 'Cellular'){
+                        accordianBtn[2].innerText = `Wi-Fi + 行動網路`;
+                    }
+                    else{
+                        accordianBtn[2].innerText = btn2.network;
+                    }
+
                 });
             });
 
@@ -68,7 +95,6 @@
             }
             else{
                 let ipad = ipadArray.filter(x=> x.picture.includes(_color) && x.storage == _storage && x.network == _network);
-                console.log(ipad[0]);
                 amount.innerText = `NT$ ${Intl.NumberFormat().format(ipad[0].price)}`;
             }
         }
@@ -78,7 +104,6 @@
             let storageIpad = ipadArray.filter(x=> x.storage == _storage);
             let sm = storageIpad.filter(x => x.network == "Wi-Fi")[0];
             let lg = storageIpad.filter(x => x.network == "Cellular")[0];
-            console.log(storageIpad)
             networkAmount.forEach((desc,index)=>{
                 networkAmount[0].innerText = `NT$ ${Intl.NumberFormat().format(sm.price)}`;
                 networkAmount[1].innerText = `NT$ ${Intl.NumberFormat().format(lg.price)}`;
@@ -97,14 +122,4 @@
             { network.classList.remove('disableSection');}
             else if(_color != undefined)
             { storage.classList.remove('disableSection');}
-        }
-
-        //手風琴資料呈現
-        let accordianBtn = document.querySelectorAll('.accordion-button');
-        function SetAccordion(){
-            accordianBtn.forEach((btn,index)=>{
-            accordianBtn[0].innerText = _color;
-            accordianBtn[1].innerText = _storage;
-            accordianBtn[2].innerText = _network;
-        });
         }
