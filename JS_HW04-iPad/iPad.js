@@ -1,7 +1,7 @@
         //按鈕綁click事件 findIpad
         let colorBtns, storageBtns, networkBtns;     
         let _color, _storage, _network;
-        let accordianBtn = document.querySelectorAll('.accordion-button');
+        let accordionBtn = document.querySelectorAll('.accordion-button');
         let collapseBtn = document.querySelectorAll('.container .row .col-12 .row');
 
         window.onload = function(){
@@ -14,12 +14,12 @@
                     displayImg();
                     btnOpen();
 
-                    //accordian設定
-                    accordianBtn[0].classList.add('collapsed');
-                    accordianBtn[0].classList.remove('d-none');
+                    //accordion設定
+                    accordionBtn[0].classList.add('collapsed');
+                    accordionBtn[0].classList.remove('d-none');
                     collapseBtn[0].classList.remove('show');
                     let btn0 = ipadArray.filter(x => x.picture.includes(_color))[0];
-                    accordianBtn[0].innerText = btn0.color;
+                    accordionBtn[0].innerText = btn0.color;
                 });
             });
             storageBtns = document.querySelectorAll('.storage label');
@@ -30,12 +30,12 @@
                     findIpad();
                     btnOpen();
                     
-                    //accordian設定                   
-                    accordianBtn[1].classList.add('collapsed');
-                    accordianBtn[1].classList.remove('d-none');
+                    //accordion設定                   
+                    accordionBtn[1].classList.add('collapsed');
+                    accordionBtn[1].classList.remove('d-none');
                     collapseBtn[1].classList.remove('show');
                     let btn1 = ipadArray.filter(x => x.storage == _storage)[0];
-                    accordianBtn[1].innerText = btn1.storage;
+                    accordionBtn[1].innerText = btn1.storage;
                 });
             });
             networkBtns = document.querySelectorAll('.network label');
@@ -45,22 +45,19 @@
                     findIpad();
                     btnOpen();
 
-                    //accordian設定
-                    accordianBtn[2].classList.add('collapsed');
-                    accordianBtn[2].classList.remove('d-none');
+                    //accordion設定
+                    accordionBtn[2].classList.add('collapsed');
+                    accordionBtn[2].classList.remove('d-none');
                     collapseBtn[2].classList.remove('show');
                     let btn2 = ipadArray.filter(x => x.network == _network)[0];
                     if(btn2.network == 'Cellular'){
-                        accordianBtn[2].innerText = `Wi-Fi + 行動網路`;
+                        accordionBtn[2].innerText = `Wi-Fi + 行動網路`;
                     }
                     else{
-                        accordianBtn[2].innerText = btn2.network;
+                        accordionBtn[2].innerText = btn2.network;
                     }
-
                 });
             });
-
-
         }
         
         //匯入資料
