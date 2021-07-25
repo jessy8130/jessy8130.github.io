@@ -16,96 +16,104 @@
             </div>
             <div class="col-12 col-md-6">
                 <h1 class="text-center text-md-start">購買 iPad Air</h1>
-                <div class="color item py-4 my-4 border-bottom border-bottom-3 accordion" id="accordionColor">
 
-                    <div class="accordion-button collapsed d-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"></div>
+                <div class="accordion" id="accordionIpad">
 
-                    <div class="row accordion-collapse collapse show" data-bs-parent ="accordionColor" id="collapseOne">
-                        <h2>外觀</h2>
-                        <div class="col-6 my-2">
-                            <input type="radio" id="gray" class="d-none" name="color">
-                            <label for="gray" class="btn">
-                                <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-spacegray-201903?wid=102&amp;hei=102&amp;fmt=png-alpha&amp;.v=1552422652805" alt="">
-                                <div class="desc">太空灰色</div>
-                            </label>
+                    <div class="color accordion-item item py-4 my-4 border-0 border-bottom">
+                        <h2 class="accordion-header d-none" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"></button>
+                        </h2>
+    
+                        <div class="row accordion-collapse collapse show" aria-labelledby="headingOne" id="collapseOne">
+                            <h2>外觀</h2>
+                            <div class="col-6 my-2">
+                                <input type="radio" id="gray" class="d-none" name="color">
+                                <label for="gray" class="btn" data-bs-toggle="collapse" data-bs-target=".multi-collapse">
+                                    <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-spacegray-201903?wid=102&amp;hei=102&amp;fmt=png-alpha&amp;.v=1552422652805" alt="">
+                                    <div class="desc">太空灰色</div>
+                                </label>
+                            </div>
+                            <div class="col-6 my-2">
+                                <input type="radio" id="silver" class="d-none" name="color">
+                                <label for="silver" class="btn">
+                                    <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-silver-201903?wid=102&amp;hei=102&amp;fmt=png-alpha&amp;.v=1552422655664" alt="">
+                                    <div class="desc">銀色</div>
+                                </label>
+                            </div>
+                            <div class="col-6 my-2">
+                                <input type="radio" id="rose" class="d-none" name="color">
+                                <label for="rose" class="btn">
+                                    <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-gold-202009?wid=102&amp;hei=102&amp;fmt=jpeg&amp;qlt=95&amp;.v=1599240136000" alt="">
+                                    <div class="desc">玫瑰金色</div>
+                                </label>
+                            </div>
+                            <div class="col-6 my-2">
+                                <input type="radio" id="green" class="d-none" name="color">
+                                <label for="green" class="btn">
+                                    <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-green-202009?wid=102&amp;hei=102&amp;fmt=jpeg&amp;qlt=95&amp;.v=1599240136000" alt="">
+                                    <div class="desc">綠色</div>
+                                </label>
+                            </div>
+                            <div class="col-6 my-2">
+                                <input type="radio" id="blue" class="d-none" name="color">
+                                <label for="blue" class="btn">
+                                    <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-blue-202009?wid=102&amp;hei=102&amp;fmt=png-alpha&amp;.v=1599240136000" alt="">
+                                    <div class="desc">天藍色</div>
+                                </label>
+                            </div>
                         </div>
-                        <div class="col-6 my-2">
-                            <input type="radio" id="silver" class="d-none" name="color">
-                            <label for="silver" class="btn">
-                                <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-silver-201903?wid=102&amp;hei=102&amp;fmt=png-alpha&amp;.v=1552422655664" alt="">
-                                <div class="desc">銀色</div>
-                            </label>
+                    </div>
+    
+                    <div class="storage accordion-item item py-4 my-4 border-0 border-bottom disableSection">
+    
+                        <h2 class="accordion-header d-none" id="headingTwo">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo"></button>
+                        </h2>
+    
+                        <div class="row accordion-collapse collapse show" id="collapseTwo">
+                            <h2>儲存裝置</h2>
+                            <div class="col-6 my-2">
+                                <input type="radio" class="d-none" id="64GB" name="storage">
+                                <label for="64GB" class="btn">
+                                    <div class="info">64 GB¹</div>
+                                    <div class="desc">NT$17,400 起</div>
+                                </label>
+                            </div>
+                            <div class="col-6 my-2">
+                                <input type="radio" class="d-none" id="256GB" name="storage">
+                                <label for="256GB" class="btn">
+                                    <div class="info">265 GB¹</div>
+                                    <div class="desc">NT$22,400 起</div>
+                                </label>
+                            </div>
                         </div>
-                        <div class="col-6 my-2">
-                            <input type="radio" id="rose" class="d-none" name="color">
-                            <label for="rose" class="btn">
-                                <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-gold-202009?wid=102&amp;hei=102&amp;fmt=jpeg&amp;qlt=95&amp;.v=1599240136000" alt="">
-                                <div class="desc">玫瑰金色</div>
-                            </label>
-                        </div>
-                        <div class="col-6 my-2">
-                            <input type="radio" id="green" class="d-none" name="color">
-                            <label for="green" class="btn">
-                                <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-green-202009?wid=102&amp;hei=102&amp;fmt=jpeg&amp;qlt=95&amp;.v=1599240136000" alt="">
-                                <div class="desc">綠色</div>
-                            </label>
-                        </div>
-                        <div class="col-6 my-2">
-                            <input type="radio" id="blue" class="d-none" name="color">
-                            <label for="blue" class="btn">
-                                <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/finish-blue-202009?wid=102&amp;hei=102&amp;fmt=png-alpha&amp;.v=1599240136000" alt="">
-                                <div class="desc">天藍色</div>
-                            </label>
+                    </div>
+     
+                    <div class="network accordion-item item py-4 my-4 border-0 border-bottom disableSection"> 
+                        <h2 class="accordion-header d-none" id="headingThree">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree"></button>
+                        </h2>  
+    
+                        <div class="row accordion-collapse collapse show" id="collapseThree">
+                            <h2>連線能力</h2>
+                            <div class="col-6 my-2">
+                                <input type="radio" class="d-none" id="Wi-Fi" name="network">
+                                <label for="Wi-Fi" class="btn">
+                                    <div class="info">Wi-Fi</div>
+                                    <div class="desc">NT$17,400</div>
+                                </label>
+                            </div>
+                            <div class="col-6 my-2">
+                                <input type="radio" class="d-none" id="Cellular" name="network">
+                                <label for="Cellular" class="btn">
+                                    <div class="info">Wi-Fi + 行動網路</div>
+                                    <div class="desc">NT$21,700</div>
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="storage item py-4 my-4 border-bottom border-bottom-3 disableSection accordion" id="accordionStorage">
-
-                    <div class="accordion-button d-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"></div>
-
-                    <div class="row accordion-collapse collapse show" data-bs-parent="#accordionStorage" id="collapseTwo">
-                        <h2>儲存裝置</h2>
-                        <div class="col-6 my-2">
-                            <input type="radio" class="d-none" id="64GB" name="storage">
-                            <label for="64GB" class="btn">
-                                <div class="info">64 GB¹</div>
-                                <div class="desc">NT$17,400 起</div>
-                            </label>
-                        </div>
-                        <div class="col-6 my-2">
-                            <input type="radio" class="d-none" id="256GB" name="storage">
-                            <label for="256GB" class="btn">
-                                <div class="info">265 GB¹</div>
-                                <div class="desc">NT$22,400 起</div>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="network item py-4 my-4 disableSection accordion" id="accordionNetwork">
-
-                    <div class="accordion-button d-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"></div>
-
-                    <div class="row accordion-collapse collapse show" data-bs-parent="accordionNetwork" id="collapseThree">
-                        <h2>連線能力</h2>
-                        <div class="col-6 my-2">
-                            <input type="radio" class="d-none" id="Wi-Fi" name="network">
-                            <label for="Wi-Fi" class="btn">
-                                <div class="info">Wi-Fi</div>
-                                <div class="desc">NT$17,400</div>
-                            </label>
-                        </div>
-                        <div class="col-6 my-2">
-                            <input type="radio" class="d-none" id="Cellular" name="network">
-                            <label for="Cellular" class="btn">
-                                <div class="info">Wi-Fi + 行動網路</div>
-                                <div class="desc">NT$21,700</div>
-                            </label>
-                        </div>
-                    </div>
-                </div>
                 <div class="price d-none">
                     <div class="group p-4">
                         <div class="amount">

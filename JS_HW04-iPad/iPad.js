@@ -2,7 +2,9 @@
         let colorBtns, storageBtns, networkBtns;     
         let _color, _storage, _network;
         let accordionBtn = document.querySelectorAll('.accordion-button');
-        let collapseBtn = document.querySelectorAll('.container .row .col-12 .row');
+        let headingOne = document.querySelector('#headingOne');
+        let headingTwo = document.querySelector('#headingTwo');
+        let headingThree = document.querySelector('#headingThree');
 
         window.onload = function(){
             ResponseIpad();
@@ -15,9 +17,8 @@
                     btnOpen();
 
                     //accordion設定
-                    accordionBtn[0].classList.add('collapsed');
-                    accordionBtn[0].classList.remove('d-none');
-                    collapseBtn[0].classList.remove('show');
+                    accordionBtn[0].click();
+                    headingOne.classList.remove('d-none');
                     let btn0 = ipadArray.filter(x => x.picture.includes(_color))[0];
                     accordionBtn[0].innerText = btn0.color;
                 });
@@ -30,10 +31,9 @@
                     findIpad();
                     btnOpen();
                     
-                    //accordion設定                   
-                    accordionBtn[1].classList.add('collapsed');
-                    accordionBtn[1].classList.remove('d-none');
-                    collapseBtn[1].classList.remove('show');
+                    //accordion設定
+                    accordionBtn[1].click();
+                    headingTwo.classList.remove('d-none');
                     let btn1 = ipadArray.filter(x => x.storage == _storage)[0];
                     accordionBtn[1].innerText = btn1.storage;
                 });
@@ -46,9 +46,8 @@
                     btnOpen();
 
                     //accordion設定
-                    accordionBtn[2].classList.add('collapsed');
-                    accordionBtn[2].classList.remove('d-none');
-                    collapseBtn[2].classList.remove('show');
+                    accordionBtn[2].click();
+                    headingThree.classList.remove('d-none');
                     let btn2 = ipadArray.filter(x => x.network == _network)[0];
                     if(btn2.network == 'Cellular'){
                         accordionBtn[2].innerText = `Wi-Fi + 行動網路`;
