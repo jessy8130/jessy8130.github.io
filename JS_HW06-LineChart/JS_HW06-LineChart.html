@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+   <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Line Chart 2020台積電股價走勢圖</title>
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron alert-success">
+            <h2>以Line Chart折線圖繪製2020台積電股價走勢圖</h2>
+        </div>
+        <canvas id="myChart" width="400" height="400"></canvas>
+    </div>
+
+    <script>
+        let url2330 ='https://raw.githubusercontent.com/jessy8130/FileStorage/main/2330.json';
+
+
+        var ctx,chart;
+        let promise;
+        window.onload = ()=>{
+            promise = dataXHR(url2330);
+
+            //分析資料
+            promise
+            .then(result=>
+            drawChart(result.map(x=>x.Date),result.map(x=>x.Price))
+            )
+            .catch()
+        }
+
+        //資料抓入，promise
+        function dataXHR(url){
+            let promise = new Promise((resolve,reject)=>{
+                let xhr = new XMLHttpRequest();
+                xhr.onload = ()=>{resolve(xhr.response);}
+                xhr.onerror =()=>{reject(xhr.status);}
+                xhr.responseType='json';
+                xhr.open('GET', url);
+                xhr.send();
+            });
+            return promise;
+        }
+
+        //設定chart
+        function drawChart(xArray,yArray){
+            ctx = document.querySelector('#myChart');
+            chart = new Chart(ctx,{
+                type:'line',
+                data:{
+                    labels: xArray,
+                    datasets:[{
+                        label:'台積電',
+                        data: yArray,
+                        // backgorungColor:'rgba(255,165,0,0.3)',
+                        borderColor:'rgba(255,165,0)',
+                        pointStyle:'circle',
+                        pointBackgroundColor:'rgb(0,255,0)',
+                        pointRadius:5,
+                        pointHoverRadius:10,
+                    }]
+                },
+                options:{
+                    responsive: true,
+                    title: {
+                        display: true,
+                        fontSize: 26,
+                        text: '2020台積電股價'
+                    },
+                    tooltips: {
+                        mode: 'point',
+                        intersect: true,
+                    },
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            fontColor: 'black',
+                        }
+                    }
+                }
+            })
+        }
+    </script>
+</body>
+</html>
