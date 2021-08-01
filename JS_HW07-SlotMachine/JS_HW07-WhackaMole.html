@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <title>Whack A Mole</title>
+    <style>
+
+        body{
+            background: url(./Mole/grass.png);
+            background-size: cover;
+
+        }
+
+        header h2 {
+            font-size: 50px;
+            text-align: center;
+            margin: 30px 0 20px;
+        }
+
+        .container {
+            max-width: 1024px;
+            margin-top: 20px;
+            padding-top: 80px;
+            cursor: url(./Mole/hammer.png), default;
+        }
+
+        #score {
+            background-color: #ccc;
+            box-sizing: border-box;
+            width: 200px;
+            height: 50px;
+            border: 1px solid #000;
+            text-align: center;
+        }
+
+        span {
+            display: inline-block;
+            text-align: center;
+            width: 50px;
+            height: 50px;
+            font-weight: bold;
+        }
+
+        .row {
+            justify-content: space-evenly;
+            margin-bottom: 10px;
+
+        }
+
+        .btn {
+            border: 1px solid #888;
+            background-color: #ccc;
+            border-radius: 200px;
+            box-shadow: 0 -5px 1px 0 #000 inset;
+            transform: .5s;
+        }
+
+        .btn:focus {
+            background-color: #888;
+            box-shadow: 0 5px 1px 0 #000 inset;
+        }
+
+        [box-id] {
+            position: relative;
+        }
+
+        .rounded-circle {
+            position: relative;
+            width: 80px;
+            height: 20px;
+            margin: 15px auto 0;
+            background-color: #452B1E;
+            overflow: hidden;
+        }
+
+        img {
+            position: absolute;
+            width: 90%;
+            top: 0;
+            bottom: -35px;
+            right: 0;
+            left: 0;
+            margin: auto;
+            transition: transform 1s;
+        }
+
+        [box-id].active img {
+            bottom: 20px;
+        }
+
+        [box-id].active .rounded-circle{
+            overflow: unset;
+        }
+
+        @media screen and (min-width:768px) {
+            img {
+                width: 100%;
+                bottom:-87px;
+            }
+
+            [box-id].active img {
+                bottom: 40px;
+            }
+
+            .rounded-circle {
+                width: 150px;
+                height: 50px;
+                margin-bottom: 40px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2>Whack A Mole</h2>
+    </header>
+    <div>
+        <div class="d-flex justify-content-center align-items-center">
+            <button id="medium" type="radio" name="level" class="btn mx-2">普通</button>
+            <button id="hard" type="radio" name="level" class="btn mx-2">困難</button>
+            <button id="extrahard" type="radio" name="level" class="btn mx-2">地獄</button>
+            <div id="score">計分：<span class="fs-2">0</span>/12</div>
+            <button id="start" class="btn mx-2" disabled>開始遊戲</button>
+            <button id="stop" class="btn mx-2" disabled>再來一局</button>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div box-id="1" class="col-3 active">
+                    <div class="rounded-circle"><img src="./Mole/one.png" alt="">
+                    </div>
+
+                </div>
+                <div box-id="2" class="col-3 active">
+                    <div class="rounded-circle"><img src="./Mole/one.png" alt=""></div>
+                </div>
+                <div box-id="3" class="col-3 active">
+                    <div class="rounded-circle"><img src="./Mole/one.png" alt=""></div>
+                </div>
+                <div box-id="4" class="col-3 active">
+                    <div class="rounded-circle"><img src="./Mole/one.png" alt=""></div>
+                </div>
+            </div>
+            <div class="row">
+                <div box-id="5" class="col-3 active">
+                    <div class="rounded-circle"><img src="./Mole/one.png" alt=""></div>
+                </div>
+                <div box-id="6" class="col-3 active">
+                    <div class="rounded-circle"><img src="./Mole/one.png" alt=""></div>
+                </div>
+                <div box-id="7" class="col-3 active">
+                    <div class="rounded-circle"><img src="./Mole/one.png" alt=""></div>
+                </div>
+                <div box-id="8" class="col-3 active">
+                    <div class="rounded-circle"><img src="./Mole/one.png" alt=""></div>
+                </div>
+            </div>
+            <div class="row">
+                <div box-id="9" class="col-3 active">
+                    <div class="rounded-circle"><img src="./Mole/one.png" alt=""></div>
+                </div>
+                <div box-id="10" class="col-3 active">
+                    <div class="rounded-circle"><img src="./Mole/one.png" alt=""></div>
+                </div>
+                <div box-id="11" class="col-3 active">
+                    <div class="rounded-circle"><img src="./Mole/one.png" alt=""></div>
+                </div>
+                <div box-id="12" class="col-3 active">
+                    <div class="rounded-circle"><img src="./Mole/one.png" alt=""></div>
+                </div>
+            </div>
+            <div class="row">
+                <div box-id="13" class="col-3 active">
+                    <div class="rounded-circle"><img src="./Mole/one.png" alt=""></div>
+                </div>
+                <div box-id="14" class="col-3 active">
+                    <div class="rounded-circle"><img src="./Mole/one.png" alt=""></div>
+                </div>
+                <div box-id="15" class="col-3 active">
+                    <div class="rounded-circle"><img src="./Mole/one.png" alt=""></div>
+                </div>
+                <div box-id="16" class="col-3 active">
+                    <div class="rounded-circle"><img src="./Mole/one.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let stopgame = true;
+        let randomArray = [];
+        let boxs = document.querySelectorAll('[box-id]');
+        let startBtn = document.querySelector('#start');
+        let stopBtn = document.querySelector('#stop');
+        let medium = document.querySelector('#medium');
+        let hard = document.querySelector('#hard');
+        let extrahard = document.querySelector('#extrahard');
+        let scorePoint = document.querySelector('span');
+        let speed; //速度設定
+        let score = 0; //分數計算
+        let timer;
+
+
+        window.onload = function () {
+            startBtn.addEventListener('click', function () {
+                stopgame = false;
+                Start();
+                Random();
+                MoleShow();
+            });
+            stopBtn.addEventListener('click', StopGame);
+            medium.addEventListener('click', function () {
+                speed = 1500;
+                startBtn.removeAttribute('disabled', '');
+            })
+            hard.addEventListener('click', function () {
+                speed = 1100;
+                startBtn.removeAttribute('disabled', '');
+            })
+            extrahard.addEventListener('click', function () {
+                speed = 800;
+                startBtn.removeAttribute('disabled', '');
+            })
+            boxs.forEach(box=>{
+                box.onclick = function(){
+                    if(Array.from(box.classList).includes('active')) {
+                        score ++;
+                        scorePoint.innerText = score;
+                        box.classList.remove('active');
+                    }
+                }
+            });
+        }
+
+        //遊戲開始
+        function Start() {
+            startBtn.setAttribute('disabled', '');
+            medium.setAttribute('disabled', '');
+            hard.setAttribute('disabled', '');
+            extrahard.setAttribute('disabled', '');
+            stopBtn.removeAttribute('disabled', '');
+            boxs.forEach(box => {
+                box.classList.remove('active');
+            });
+            score = 0;
+            scorePoint.innerText = score;
+        }
+
+        //產生隨機數列
+        function Random() {
+
+            while (randomArray.length < 12) {
+                let random = Math.floor(Math.random() * boxs.length);
+                randomArray.push(random);
+            }
+            console.log(randomArray);
+        }
+
+        let round = 0;
+        //地鼠
+        function MoleShow() {
+            timer = setInterval(function () {
+                round++;
+                randomArray.forEach((num, index) => {
+                    setTimeout(function () {
+                        if(stopgame) return;
+                        if (num > 1) { num = num - 1; }
+                        boxs[num].classList.add('active');
+                    }, speed * index);
+
+                    setTimeout(function () {
+                        if(stopgame) return;
+                        boxs[num].classList.remove('active');
+                    }, (speed * index) + 600)
+                    if (round = 1) clearInterval(timer);
+                });
+            }, 3000);
+        }
+
+
+        //結束遊戲
+        function StopGame() {
+            stopgame = true;
+            stopBtn.setAttribute('disabled', '');
+            medium.removeAttribute('disabled', '');
+            hard.removeAttribute('disabled', '');
+            extrahard.removeAttribute('disabled', '');
+            randomArray = [];
+            clearInterval(timer);
+            score = 0;
+            boxs.forEach(box => {
+                box.classList.add('active');
+            });
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
