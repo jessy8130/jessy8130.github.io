@@ -25,9 +25,9 @@
 
         .container {
             max-width: 1024px;
-            margin-top: 20px;
-            padding-top: 80px;
-            cursor: url(./Mole/hammer.png), default;
+            /* margin-top: 20px; */
+            padding-top: 60px;
+            /* cursor: url(./Mole/hammer.png), default; */
         }
 
         #score {
@@ -67,51 +67,52 @@
         }
 
         [box-id] {
+            height: 100px;
             position: relative;
+            overflow: hidden;
         }
 
         .rounded-circle {
-            position: relative;
-            width: 80px;
-            height: 20px;
-            margin: 15px auto 0;
+            position: absolute;
+            width: 100px;
+            height: 40px;
+            left: 0;
+            right: 0;
+            margin: auto;
             background-color: #452B1E;
             overflow: hidden;
+            bottom: 0;
         }
 
         img {
             position: absolute;
-            width: 90%;
+            width: 80%;
             top: 0;
-            bottom: -35px;
+            bottom: -120px;
             right: 0;
             left: 0;
             margin: auto;
-            transition: transform 1s;
+            transition: .5s;
         }
 
         [box-id].active img {
-            bottom: 20px;
-        }
-
-        [box-id].active .rounded-circle{
-            overflow: unset;
+            bottom: -47px;
         }
 
         @media screen and (min-width:768px) {
             img {
-                width: 100%;
-                bottom:-87px;
+                width: 55%;
+                bottom:-135px;
             }
 
             [box-id].active img {
-                bottom: 40px;
+                bottom: -15px;
             }
 
             .rounded-circle {
                 width: 150px;
                 height: 50px;
-                margin-bottom: 40px;
+                /* margin: 20px auto; */
             }
         }
 
@@ -134,60 +135,75 @@
         <div class="container">
             <div class="row">
                 <div box-id="1" class="col-3 active">
-                    <div class="rounded-circle"><img src="./Mole/one.png" alt="">
-                    </div>
+                    <div class="rounded-circle"></div>
+                    <img class="mx-auto" src="./Mole/one.png" alt="">
 
                 </div>
                 <div box-id="2" class="col-3 active">
-                    <div class="rounded-circle"><img src="./Mole/one.png" alt=""></div>
+                    <div class="rounded-circle"></div>
+                    <img class="mx-auto" src="./Mole/one.png" alt="">
                 </div>
                 <div box-id="3" class="col-3 active">
-                    <div class="rounded-circle"><img src="./Mole/one.png" alt=""></div>
+                    <div class="rounded-circle"></div>
+                    <img class="mx-auto" src="./Mole/one.png" alt="">
                 </div>
                 <div box-id="4" class="col-3 active">
-                    <div class="rounded-circle"><img src="./Mole/one.png" alt=""></div>
+                    <div class="rounded-circle"></div>
+                    <img class="mx-auto" src="./Mole/one.png" alt="">
                 </div>
             </div>
             <div class="row">
                 <div box-id="5" class="col-3 active">
-                    <div class="rounded-circle"><img src="./Mole/one.png" alt=""></div>
+                    <div class="rounded-circle"></div>
+                    <img class="mx-auto" src="./Mole/one.png" alt="">
                 </div>
                 <div box-id="6" class="col-3 active">
-                    <div class="rounded-circle"><img src="./Mole/one.png" alt=""></div>
+                    <div class="rounded-circle"></div>
+                    <img class="mx-auto" src="./Mole/one.png" alt="">
                 </div>
                 <div box-id="7" class="col-3 active">
-                    <div class="rounded-circle"><img src="./Mole/one.png" alt=""></div>
+                    <div class="rounded-circle"></div>
+                    <img class="mx-auto" src="./Mole/one.png" alt="">
                 </div>
                 <div box-id="8" class="col-3 active">
-                    <div class="rounded-circle"><img src="./Mole/one.png" alt=""></div>
+                    <div class="rounded-circle"></div>
+                    <img class="mx-auto" src="./Mole/one.png" alt="">
                 </div>
             </div>
             <div class="row">
                 <div box-id="9" class="col-3 active">
-                    <div class="rounded-circle"><img src="./Mole/one.png" alt=""></div>
+                    <div class="rounded-circle"></div>
+                    <img class="mx-auto" src="./Mole/one.png" alt="">
                 </div>
                 <div box-id="10" class="col-3 active">
-                    <div class="rounded-circle"><img src="./Mole/one.png" alt=""></div>
+                    <div class="rounded-circle"></div>
+                    <img class="mx-auto" src="./Mole/one.png" alt="">
                 </div>
                 <div box-id="11" class="col-3 active">
-                    <div class="rounded-circle"><img src="./Mole/one.png" alt=""></div>
+                    <div class="rounded-circle"></div>
+                    <img class="mx-auto" src="./Mole/one.png" alt="">
                 </div>
                 <div box-id="12" class="col-3 active">
-                    <div class="rounded-circle"><img src="./Mole/one.png" alt=""></div>
+                    <div class="rounded-circle"></div>
+                    <img class="mx-auto" src="./Mole/one.png" alt="">
                 </div>
             </div>
             <div class="row">
                 <div box-id="13" class="col-3 active">
-                    <div class="rounded-circle"><img src="./Mole/one.png" alt=""></div>
+                    <div class="rounded-circle"></div>
+                    <img class="mx-auto" src="./Mole/one.png" alt="">
                 </div>
                 <div box-id="14" class="col-3 active">
-                    <div class="rounded-circle"><img src="./Mole/one.png" alt=""></div>
+                    <div class="rounded-circle"></div>
+                    <img class="mx-auto" src="./Mole/one.png" alt="">
                 </div>
                 <div box-id="15" class="col-3 active">
-                    <div class="rounded-circle"><img src="./Mole/one.png" alt=""></div>
+                    <div class="rounded-circle"></div>
+                    <img class="mx-auto" src="./Mole/one.png" alt="">
                 </div>
                 <div box-id="16" class="col-3 active">
-                    <div class="rounded-circle"><img src="./Mole/one.png" alt=""></div>
+                    <div class="rounded-circle"></div>
+                    <img class="mx-auto" src="./Mole/one.png" alt="">
                 </div>
             </div>
         </div>
