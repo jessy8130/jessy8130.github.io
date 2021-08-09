@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <!-- axios -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <title>UBike</title>
+    <style>
+        * {
+            list-style: none;
+        }
+
+        .col-8 {
+            height: 100vh;
+        }
+
+        #map {
+            height: 100%;
+        }
+
+        table {
+            width: 100%;
+            font-size: 15px;
+            margin-top: 20px;
+        }
+
+        tbody,
+        td,
+        tfoot,
+        th,
+        thead,
+        tr {
+            border-width: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <div id="map"></div>
+            </div>
+            <div class="col-4">
+                <h2 class="w-100 text-center mt-3">YouBike即時資訊</h2>
+                <div class="row">
+                    <label class="d-block">請選擇 縣市/行政區</label>
+                    <div class="form-group col-12 d-flex">
+                        <select id="city" class="form-control w-50">
+                            <!-- option -->
+                        </select>
+                        <select id="district" class="form-control w-50">
+                            <!-- option -->
+                        </select>
+                        <select id="station" class="form-control w-100">
+                            <!-- option -->
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12" id="info">
+                        <!-- table -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        //初始化畫面
+        let map = L.map('map', {
+            center: [25.03416068163684, 121.56454962636319],
+            zoom: 9
+        });
+
+        //引入地圖資料
+        let mapUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+        let mapLayer = L.tileLayer(mapUrl, { maxZoom: 19, minZoom: 9 });
+        map.addLayer(mapLayer);
+
+        //資料準備
+        let bikeAreaArray=[]; //腳踏車資料
+        let bikeArray=[];
+        let markers = L.markerClusterGroup(); //地圖上marker
+        let taipeiArray = [];
+        let newtaipeiArray = [];
+        let info = document.querySelector('#info');
+        let citySelect = document.querySelector('#city');
+        let districtSelect = document.querySelector('#district');
+        let stationSelect = document.querySelector('#station');
+        let cityText;
+
+        let taipeiRequest = axios.get('https://raw.githubusercontent.com/jessy8130/FileStorage/main/YouBike_Taipei.json');
+        let newtaipeiRequest = axios.get('https://raw.githubusercontent.com/jessy8130/FileStorage/main/YouBike_NewTaipei.json');
+        let taoyuanRequest = axios.get('https://raw.githubusercontent.com/jessy8130/FileStorage/main/YouBike_Taoyuan.json');
+        let taichungRequest = axios.get('https://raw.githubusercontent.com/jessy8130/FileStorage/main/YouBike_Taichung.json');
+        let kaohsiungRequest = axios.get('https://raw.githubusercontent.com/jessy8130/FileStorage/main/YouBike_Kaohsiung.json');
+
+
+        window.onload = function () {
+            Promise.all([taipeiRequest, newtaipeiRequest, taichungRequest, kaohsiungRequest])
+                .then(response => {
+                    let [taipeiData, newTaipeiData, taichungData, kaohsiungData] = response;
+
+                    //台北新北資料整理
+                    taipeiData.data.forEach(x => {
+                        x.scity = '台北市';
+                        taipeiArray.push(x);
+                    });
+                    newTaipeiData.data.forEach(x => {
+                        x.scity = '新北市';
+                        newtaipeiArray.push(x);
+                    });
+
+                    let bikeDistrictArray = [...taipeiArray, ...newtaipeiArray, ...taichungData.data.retVal, ...kaohsiungData.data.data.retVal];
+
+                    bikeDistrictArray.forEach(x=>{
+                        x.CountryTown = x.scity + x.sarea;
+                        bikeArray.push(x);
+                    });
+                    
+                    bikeAreaArray = bikeArray.groupBy('scity');
+                    //設定marker
+                    SetMarker();
+
+                    //初始化下拉式選單
+                    let option1 = document.createElement('option');
+                    option1.text='請選擇縣市'
+                    option1.value = '-1';
+                    citySelect.add(option1,null);
+                    Object.keys(bikeAreaArray).forEach((city,index)=>{
+                        let option = document.createElement('option');
+                        option.text = city;
+                        option.value = index;
+                        citySelect.add(option);
+                    });
+                    citySelect.addEventListener('change', cityChange);
+
+                    districtSelect.disabled = true;
+                    let option2 = document.createElement('option');
+                    option2.text='請選擇行政區'
+                    option2.value = '-1';
+                    districtSelect.add(option2,null);
+                    districtSelect.addEventListener('change', districtChange);
+
+                    stationSelect.disabled = true;
+                    let option3 = document.createElement('option');
+                    option3.text='請選擇站牌'
+                    option3.value = '-1';
+                    stationSelect.add(option3,null);
+                    stationSelect.addEventListener('change', function(){
+                        console.log(this)
+
+                        if(this.value != '-1'){
+                            let station = bikeAreaArray[cityText].find(x => x.sna == this.selectedOptions[0].text);
+                            console.log(markers.getLayers())
+                            console.log(L.latLng(station.lat, station.lng))
+                            console.log(markers.getLayers()[0]._latlng)
+                            console.log(markers.getLayers()[0])
+
+                            map.setView([station.lat,station.lng], 18);
+
+                            let marker = Array.from(markers.getLayers()).find(x => x._latlng.equals(L.latLng(station.lat, station.lng)));
+                            
+                            console.log(marker)
+                            marker._events.click[1].fn();
+                            marker.openPopup()
+
+                            
+                        }
+                    });
+                })
+        }
+
+        //縣市下拉式表單設定
+        function cityChange(){
+            info.innerText='';
+
+            districtSelect.length = 1;
+            stationSelect.length = 1;
+            districtSelect.disabled = true;
+            stationSelect.disabled = true;
+
+            if(citySelect.value == '-1'){
+                districtSelect.disabled = true;
+                return;
+            }
+            else{
+                districtSelect.disabled = false;
+
+                cityText = citySelect.selectedOptions[0].text;
+                console.log(bikeAreaArray[cityText]);
+
+                let district=[];
+                bikeAreaArray[cityText].forEach((x, index)=>{
+                    district.push(x.sarea)
+                });
+                [...new Set(district)].forEach((x,index)=>{
+                    let option = document.createElement('option');
+                    option.text = x;
+                    option.value = index;
+                    districtSelect.add(option);
+                });
+            }
+        }
+        
+        //行政區下拉式選單設定
+        function districtChange(){
+            stationSelect.length = 1;
+            stationSelect.disabled = true;
+
+            if(districtSelect.value == '-1'){
+                stationSelect.disabled = true;
+                return;
+            }
+            else{
+                stationSelect.disabled = false;
+
+                let districtText = districtSelect.selectedOptions[0].text;
+
+                bikeAreaArray[cityText].filter(x=> x.sarea == districtText).forEach((y,index)=>{
+                    let option = document.createElement('option');
+                    option.text = y.sna;
+                    option.value = index;
+                    stationSelect.add(option);
+                });
+            }
+        }
+
+        function stationChange(){
+
+        }
+        
+        function SetMarker() {
+            if (markers) markers.clearLayers();
+
+            bikeArray.forEach(area => {
+                let marker = L.marker([area.lat, area.lng]);
+
+                if (Array.from(area.sna).includes('_')) { area.sna = (area.sna).split('_')[1] }
+                if (Array.from(area.snaen).includes('_')) { area.snaen = (area.snaen).split('_')[1] }
+
+                marker.bindPopup(
+                    `
+                    <p class="m-0">${area.sarea}</p>
+                    <h5>${area.sna}<br>
+                        ${area.snaen}</h5>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th class="w-75">自行車數量</th>
+                                <td>${area.sbi}</td>
+                            </tr>
+                            <tr>
+                                <th>空位數量</th>
+                                <td>${area.bemp}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    `
+                );
+
+                marker.addEventListener('click', function () {
+
+                    info.innerText ='';
+                    
+                    let data = bikeAreaArray[area.scity].filter(x=> x.lat == marker._latlng.lat && x.lng == marker._latlng.lng);
+                    console.log(data[0])
+                    let infoTable = document.createElement('table');
+                    infoTable.classList.add('table');
+                        
+                    //標題
+                    let h3 = document.createElement('h2');
+                    h3.classList.add('w-100', 'text-center', 'mt-5');
+                    h3.innerText = `${data[0].sna}站`;
+
+                    //更新時間
+                    let p = document.createElement('p');
+                    p.innerHTML = `更新時間：${data[0].mday}`;
+                 
+                    //表格
+                    let tr0 = document.createElement('tr');
+                    let th0 = document.createElement('th');
+                    th0.innerText='站名';
+                    let td0 = document.createElement('td');
+                    td0.innerText = data[0].sna + data[0].snaen;
+                    tr0.append(th0,td0);
+
+                    let tr1 = document.createElement('tr');
+                    let th1 = document.createElement('th');
+                    th1.innerText='地址';
+                    let td1 = document.createElement('td');
+                    td1.innerText = data[0].CountryTown + data[0].ar;
+                    tr1.append(th1,td1);
+
+                    let tr2 = document.createElement('tr');
+                    let th2 = document.createElement('th');
+                    th2.innerText='自行車數量';
+                    let td2 = document.createElement('td');
+                    td2.innerText = data[0].bemp;
+                    tr2.append(th2,td2);
+
+                    let tr3 = document.createElement('tr');
+                    let th3 = document.createElement('th');
+                    th3.innerText='空位數量';
+                    let td3 = document.createElement('td');
+                    td3.innerText = data[0].sbi;
+                    tr3.append(th3,td3);
+
+                    infoTable.append(tr0,tr1,tr2,tr3);
+                    info.append(h3,p,infoTable);
+                })
+
+                markers.addLayer(marker);
+            });
+            map.addLayer(markers);
+        }
+
+        //groupBy方法
+        Array.prototype.groupBy = function(prop){
+            return this.reduce(function(groups,item){
+                const val = item[prop];
+                groups[val] = groups[val] || [];
+                groups[val].push(item);
+                return groups;
+            },{});
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
