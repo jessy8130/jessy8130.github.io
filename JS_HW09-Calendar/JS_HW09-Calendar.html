@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <title>MY CALENDAR</title>
+    <style>
+        * {
+            list-style: none;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: #181319 url(./image/bg1.PNG) no-repeat left bottom;
+        }
+
+        .container {
+            margin: 80px auto auto;
+            max-width: 1200px;
+            background-color: rgba(255, 255, 255, .8);
+            border-radius: 20px;
+        }
+
+        h4 {
+            color: #888;
+        }
+
+        .row {
+            padding: 15px 15px 0;
+            margin: 15px 15px 10px;
+        }
+
+        .row:first-child {
+            border: 1px solid #888;
+            border-radius: 20px;
+        }
+
+        th {
+            height: 50px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        td {
+            min-width: 115px;
+            height: 100px;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .title {
+            border: none;
+            padding: 10px 0;
+        }
+
+        label {
+            font-weight: 600;
+        }
+
+        input.flex-grow-1 {
+            border: 1px solid #ced4da;
+            border-radius: .25em;
+            padding: 5px 0;
+        }
+
+        .modal-content {
+            border-radius: 30px;
+        }
+
+        colorSelect.form-colorSelect {
+            width: auto;
+        }
+
+        .modal-footer button:last-child {
+            color: #fff;
+        }
+
+        .modal-footer button:last-child:hover {
+            filter: brightness(0.95);
+        }
+
+        .btn-secondary {
+            opacity: .7;
+        }
+
+        .text-Black {
+            color: #000;
+        }
+
+        .text-Green {
+            color: #2ECC87;
+        }
+
+        .text-Cyan {
+            color: #3DC2C8;
+        }
+
+        .text-Brown {
+            color: #948078;
+        }
+
+        .text-Pink {
+            color: #FB7F77;
+        }
+
+        .text-Orange {
+            color: #FDC02D;
+        }
+
+        .text-Violet {
+            color: #B38BDC;
+        }
+
+        .bg-Black {
+            background-color: #000;
+            border-color: #000;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .bg-Green {
+            background-color: #2ECC87;
+            border-color: #2ECC87;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .bg-Cyan {
+            background-color: #3DC2C8;
+            border-color: #3DC2C8;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .bg-Brown {
+            background-color: #948078;
+            border-color: #948078;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .bg-Pink {
+            background-color: #FB7F77;
+            border-color: #FB7F77;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .bg-Orange {
+            background-color: #FDC02D;
+            border-color: #FDC02D;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .bg-Violet {
+            background-color: #B38BDC;
+            border-color: #B38BDC;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .form-check-input:checked {
+            background-color: #888;
+            border: #888;
+        }
+
+        .form-check-input:focus {
+            box-shadow: none;
+        }
+
+        .form-check input {
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container d-flex justify-content-between">
+        <div class="row w-25">
+            <div class="col-12">
+                <h4 class="text-center mt-2 mb-4">Monthly Goal</h4>
+                <div id="monthlyGoal">
+                    <div class="input-group">
+                        <span class="input-group-text" id="goalAdd"><i class="fas fa-plus"></i></span>
+                        <input id="goalInput" type="text" class="form-control" placeholder="write down your goal"
+                            aria-describedby="basic-addon1">
+                    </div>
+                    <div id="content">
+                        <!-- template -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row w-75 calendar">
+            <div class="d-flex justify-content-between mb-3">
+                <div class="fs-3" onclick="LastMonth()"><i class="fas fa-angle-double-left"></i></div>
+                <h3 class="text-center"> 0000/00</h3>
+                <div class="fs-3" onclick="NextMonth()"><i class="fas fa-angle-double-right"></i></div>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>日</th>
+                        <th>一</th>
+                        <th>二</th>
+                        <th>三</th>
+                        <th>四</th>
+                        <th>五</th>
+                        <th>六</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 日期渲染 -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- template -->
+    <template id="goalItem">
+        <div class="form-check d-flex justify-content-between align-items-center py-3">
+            <input class="form-check-input" type="checkbox" value="">
+            <label class="form-check-label flex-grow-1 ps-2">
+                <!-- 內容 -->AAA
+            </label>
+            <i class="fas fa-trash-alt"></i>
+        </div>
+    </template>
+
+
+    <!-- 新增行程 Modal -->
+    <div class="modal fade" id="addCalendar" tabindex="-1" aria-labelledby="addCalendarLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header pt-4">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- 標題 -->
+                    <input type="text" placeholder="標題" class="border-bottom d-block w-100 mb-2 title">
+                    <!-- 日期 -->
+                    <div class="d-flex mt-2">
+                        <label for="date" class="w-25 my-auto">日期</label>
+                        <input id="date" type="date" class="flex-grow-1">
+                    </div>
+                    <!-- 時間 -->
+                    <div class="d-flex mt-2">
+                        <label for="time" class="w-25 my-auto">時間</label>
+                        <input id="time" type="time" class="flex-grow-1">
+                    </div>
+                    <!-- 顏色 -->
+                    <div class="d-flex mt-2">
+                        <label for="color" class="w-25 my-auto">顏色</label>
+
+                        <select id="color" class="form-colorSelect flex-grow-1"
+                            aria-label="Default colorSelect example">
+                            <option value="Black">Black</option>
+                            <option value="Green">Emerald Green</option>
+                            <option value="Cyan">Morden Cyan</option>
+                            <option value="Brown">Pastel Brown</option>
+                            <option value="Pink">Coral Pink</option>
+                            <option value="Orange">Bright Orange</option>
+                            <option value="Violet">Soft Violet</option>
+                        </select>
+                    </div>
+                    <!-- 備註 -->
+                    <div class="d-flex mt-2">
+                        <label for="memo" class="w-25 my-auto">備註</label>
+                        <input type="text" id="memo" class="flex-grow-1">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn bg-Black" onclick="addTodoList()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 修改 & 刪除 -->
+    <div class="modal fade" id="modifyCalendar" tabindex="-1" aria-labelledby="modifyCalendarLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- 標題 -->
+                    <input type="text" placeholder="標題" class="border-bottom d-block w-100 mb-2 title modify-title">
+                    <!-- 日期 -->
+                    <div class="d-flex mt-2">
+                        <label for="modify-date" class="w-25 my-auto">日期</label>
+                        <input id="modify-date" type="date" class="flex-grow-1">
+                    </div>
+                    <!-- 時間 -->
+                    <div class="d-flex mt-2">
+                        <label for="modify-time" class="w-25 my-auto">時間</label>
+                        <input id="modify-time" type="time" class="flex-grow-1">
+                    </div>
+                    <!-- 顏色 -->
+                    <div class="d-flex mt-2">
+                        <label for="modify-color" class="w-25 my-auto">顏色</label>
+
+                        <select id="modify-color" class="form-colorSelect flex-grow-1"
+                            aria-label="Default colorSelect example">
+                            <option value="Black">Black</option>
+                            <option value="Green">Emerald Green</option>
+                            <option value="Cyan">Morden Cyan</option>
+                            <option value="Brown">Pastel Brown</option>
+                            <option value="Pink">Coral Pink</option>
+                            <option value="Orange">Bright Orange</option>
+                            <option value="Violet">Soft Violet</option>
+                        </select>
+                    </div>
+                    <!-- 備註 -->
+                    <div class="d-flex mt-2">
+                        <label for="modify-memo" class="w-25 my-auto">備註</label>
+                        <input type="text" id="modify-memo" class="flex-grow-1">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" onclick="deleteTodoList()">Delete</button>
+                    <button type="button" class="btn bg-Black" onclick="modifyTodoList()">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        //今天
+        let today = new Date();
+        let year = today.getFullYear();
+        let month = today.getMonth();
+        let date = today.getDate();
+        let colorSelect = document.querySelector('select#color');
+        let mcolorSelect = document.querySelector('select#modify-color');
+        let btnSave = document.querySelectorAll('.modal-footer button')[1];
+        let btnClose = document.querySelector('.btn-close');
+        let mbtnClose = document.querySelector('#modifyCalendar .btn-close');
+
+        //monthly goal
+        let goalIndex = 1;
+        let goalAdd = document.querySelector('#goalAdd');
+        let template = document.querySelector('#goalItem');
+        let content = document.querySelector('#content');
+        let h3 = document.querySelector('h3').innerText;
+        let goalList =[];
+
+        goalAdd.addEventListener('click', function () {
+            let goalInput = document.querySelector('#goalInput');
+            //新增
+            if (goalInput.value == '') {
+                alert('尚未填寫內容唷');
+                return;
+            }
+            else {
+                let h3 = document.querySelector('h3').innerText;
+                let cloneContent = template.content.cloneNode(true);
+                cloneContent.querySelector('input').setAttribute('id', goalIndex);
+                cloneContent.querySelector('label').setAttribute('for', goalIndex);
+                cloneContent.querySelector('label').innerText = goalInput.value;
+
+                goalObj={
+                    content : goalInput.value
+                }
+
+                if(localStorage.getItem(String(h3))){
+                    goalList = JSON.parse(localStorage.getItem(String(h3)));
+                    goalList.push(goalObj);
+                }
+                else{
+                    goalList.push(goalObj);
+                }
+                localStorage.setItem(String(h3),JSON.stringify(goalList));
+
+                goalInput.value = '';
+                content.append(cloneContent);
+                goalIndex++;
+            }
+        });
+
+        //localstorage
+        //刪除
+
+        //修改行程索引
+        let currentIndex;
+
+        window.onload = function () {
+            Init();
+            colorSelect.addEventListener('change', modalColor);
+            mcolorSelect.addEventListener('change', modifyColor);
+        }
+
+        function monthlygoal(){
+            if(localStorage.getItem(String(`${year}/${String(month + 1).padStart(2, '0')}`))){
+                content.innerHTML ='';
+                let todoList = JSON.parse(localStorage.getItem(String(`${year}/${String(month + 1).padStart(2, '0')}`)))
+                let cloneContent = template.content.cloneNode(true);
+                cloneContent.querySelector('input').setAttribute('id', goalIndex);
+                cloneContent.querySelector('label').setAttribute('for', goalIndex);
+                cloneContent.querySelector('label').innerText = goalInput.value;
+                content.append(cloneContent);
+            }
+        }
+
+        function Init() {
+            let tbody = document.querySelector('tbody');
+            tbody.innerHTML = '';
+            let h3 = document.querySelector('h3').innerText = `${year}/${(month + 1).toString().padStart(2, '0')}`;
+
+            let calendarDay = 1; //日曆日期
+            let lastCalendarDay = 0; //上月日期
+            let nextCalendarDay = 1;
+
+            //當第一天星期幾
+            let weekOfFirstDay = new Date(year, month, 1).getDay();
+            //當多少天
+            let dayOfMonth = new Date(year, month + 1, 0).getDate();
+            //一年幾周
+            let rows = Math.ceil((dayOfMonth + weekOfFirstDay) / 7);
+            //上月有幾天 減去 這月開始星期
+            let dayOfLastMonth = new Date(year, month, 0).getDate();
+            lastCalendarDay = dayOfLastMonth - weekOfFirstDay + 1;
+            //這個月最後一天星期幾，下個月加幾天
+            let weekOfLastDay = new Date(year, month + 1, 0).getDay();
+
+
+            for (let row = 1; row <= rows; row++) {
+                let tr = document.createElement('tr');
+
+                for (let column = 0; column < 7; column++) {
+                    let td = document.createElement('td');
+                    if (row == 1 && column < weekOfFirstDay) {
+                        //上個月
+                        td.innerText = lastCalendarDay;
+                        td.classList.add('text-secondary');
+                        lastCalendarDay++;
+                    }
+                    else {
+                        if (calendarDay <= dayOfMonth) {
+                            td.innerText = calendarDay;
+                            td.setAttribute('style', 'font-weight:bold');
+
+                            if (year == today.getFullYear() && month == today.getMonth() && calendarDay == date) {
+                                td.setAttribute('style', 'background-color:rgb(180, 180, 180, .5)');
+                            }
+
+                            if (localStorage.getItem(`${year}-${String(month + 1).padStart(2, '0')}-${String(calendarDay).padStart(2, '0')}`) != null) {
+                                //今天有行程
+                                let todoList = JSON.parse(localStorage.getItem(`${year}-${String(month + 1).padStart(2, '0')}-${String(calendarDay).padStart(2, '0')}`));
+
+                                let ul = document.createElement('ul');
+                                todoList.forEach((list, index) => {
+                                    let li = document.createElement('li');
+                                    li.innerText = list.title;
+                                    li.classList.add(`bg-${list.color}`);
+
+
+                                    li.addEventListener('click', function (event) {
+                                        bootstrap.Modal.getOrCreateInstance(document.querySelector('#modifyCalendar')).show();
+
+                                        currentIndex = index;
+
+                                        //渲染modify memo
+                                        document.querySelector('.modify-title').value = list.title;
+                                        document.querySelector('#modify-date').value = `${year}-${String(month + 1).padStart(2, '0')}-${String(event.target.offsetParent.childNodes[0].data).padStart(2, '0')}`;
+                                        document.querySelector('#modify-time').value = list.time;
+                                        document.querySelector('#modify-color').value = list.color;
+                                        document.querySelector('#modify-memo').value = list.memo;
+
+                                        let mLabel = document.querySelectorAll('#modifyCalendar label');
+                                        let modifyBtn = document.querySelectorAll('#modifyCalendar .modal-footer button')[2];
+
+                                        mLabel.forEach(label => {
+                                            label.classList.remove(label.classList.item(2));
+                                            label.classList.add(`text-${list.color}`);
+                                        });
+
+                                        modifyBtn.classList.remove(modifyBtn.classList.item(2));
+                                        modifyBtn.classList.add(`bg-${list.color}`);
+
+                                        event.stopPropagation();
+                                    });
+                                    ul.append(li);
+                                });
+                                td.append(ul);
+                            }
+
+                            td.addEventListener('click', function (event) {
+                                let target;
+                                // console.log(event)
+                                //防呆
+                                if (event.target.localName == 'td') {
+                                    target = event.target;
+                                }
+
+                                bootstrap.Modal.getOrCreateInstance(document.querySelector('#addCalendar')).show();
+
+                                //modal內容日期變更
+                                document.querySelector('.title').value = '';
+                                document.querySelector('#date').value = `${year}-${String(month + 1).padStart(2, '0')}-${String(event.target.childNodes[0].data).padStart(2, '0')}`;
+                            });
+                            calendarDay++;
+                        }
+                        else {
+                            //下個月
+                            td.innerText = nextCalendarDay;
+                            td.classList.add('text-secondary');
+                            nextCalendarDay++;
+                        }
+                    }
+                    tr.append(td);
+                }
+                tbody.append(tr);
+            }
+        }
+
+        //modal顏色選擇
+        function modalColor() {
+            let modalLabel = document.querySelectorAll('label');
+            let optionValue = colorSelect.selectedOptions[0].value;
+
+            if (optionValue != '-1') {
+                btnSave.classList.remove(btnSave.classList.item(2));
+                btnSave.classList.add(`bg-${optionValue}`);
+                modalLabel.forEach(label => {
+                    label.classList.remove(label.classList.item('2'));
+                    label.classList.add(`text-${optionValue}`);
+                })
+            }
+        }
+
+        function modifyColor() {
+            let mLabel = document.querySelectorAll('#modifyCalendar label');
+            let modifyBtn = document.querySelectorAll('#modifyCalendar .modal-footer button')[2];
+
+            let optionValue = mcolorSelect.selectedOptions[0].value;
+
+            modifyBtn.classList.remove(modifyBtn.classList.item(2));
+            modifyBtn.classList.add(`bg-${optionValue}`);
+            mLabel.forEach(label => {
+                label.classList.remove(label.classList.item('2'));
+                label.classList.add(`text-${optionValue}`);
+            })
+
+        }
+
+        function addTodoList() {
+            let date = document.querySelector('#date').value;
+
+            let titleInput = document.querySelector('.title').value;
+            let timeInput = document.querySelector('#time').value;
+            let colorInput = document.querySelector('#color').value;
+            let memoInput = document.querySelector('#memo').value;
+
+            if (titleInput == '') {
+                alert('尚未填寫標題唷');
+                return;
+            }
+            else {
+                let todoObj = {
+                    title: titleInput,
+                    time: timeInput,
+                    color: colorInput,
+                    memo: memoInput
+                }
+                let todoList = [];
+
+                if (localStorage.getItem(date) == null) {
+                    //沒行程
+                    todoList.push(todoObj);
+                }
+                else {
+                    //有行程
+                    todoList = JSON.parse(localStorage.getItem(date))
+                    todoList.push(todoObj);
+                }
+                localStorage.setItem(date, JSON.stringify(todoList));
+            }
+            Init();
+            btnClose.click();
+        }
+
+        function modifyTodoList() {
+            let mTitle = document.querySelector('.modify-title').value;
+            let mDate = document.querySelector('#modify-date').value;
+            let mTime = document.querySelector('#modify-time').value;
+            let mColor = document.querySelector('#modify-color').value;
+            let mMemo = document.querySelector('#modify-memo').value;
+
+            let todoObj = {
+                title: mTitle,
+                time: mTime,
+                color: mColor,
+                memo: mMemo
+            }
+
+            let todoList = JSON.parse(localStorage.getItem(mDate));
+            todoList[currentIndex] = todoObj;
+
+            localStorage.setItem(mDate, JSON.stringify(todoList));
+
+            Init();
+            mbtnClose.click();
+        }
+
+        function deleteTodoList() {
+            let mDate = document.querySelector('#modify-date').value;
+
+            let todoList = JSON.parse(localStorage.getItem(mDate))
+            todoList.splice(currentIndex, 1);
+            localStorage.setItem(mDate, JSON.stringify(todoList));
+
+            Init();
+            mbtnClose.click();
+        }
+
+        function LastMonth() {
+            month--;
+            if (month < 0) {
+                month = 11;
+                year--;
+            }
+            Init();
+        }
+
+        function NextMonth() {
+            month++;
+            if (month > 11) {
+                month = 0;
+                year++;
+            }
+            Init();
+        }
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
