@@ -235,9 +235,9 @@
         <div class="form-check d-flex justify-content-between align-items-center py-3">
             <input class="form-check-input" type="checkbox" value="">
             <label class="form-check-label flex-grow-1 ps-2">
-                <!-- 內容 -->AAA
+                <!-- 內容 -->
             </label>
-            <i class="fas fa-trash-alt"></i>
+            <i class="fas fa-trash-alt delete"></i>
         </div>
     </template>
 
@@ -353,69 +353,75 @@
         let btnSave = document.querySelectorAll('.modal-footer button')[1];
         let btnClose = document.querySelector('.btn-close');
         let mbtnClose = document.querySelector('#modifyCalendar .btn-close');
+        let deleteBtn = document.querySelector('.delete');
 
         //monthly goal
         let goalIndex = 1;
         let goalAdd = document.querySelector('#goalAdd');
         let template = document.querySelector('#goalItem');
         let content = document.querySelector('#content');
-        let h3 = document.querySelector('h3').innerText;
         let goalList =[];
+        
+        //修改行程索引
+        let currentIndex;
 
         goalAdd.addEventListener('click', function () {
+            let h3 = document.querySelector('h3');
             let goalInput = document.querySelector('#goalInput');
-            //新增
+            //判斷目標輸入框有沒有資料
             if (goalInput.value == '') {
                 alert('尚未填寫內容唷');
                 return;
             }
             else {
-                let h3 = document.querySelector('h3').innerText;
-                let cloneContent = template.content.cloneNode(true);
-                cloneContent.querySelector('input').setAttribute('id', goalIndex);
-                cloneContent.querySelector('label').setAttribute('for', goalIndex);
-                cloneContent.querySelector('label').innerText = goalInput.value;
-
                 goalObj={
                     content : goalInput.value
                 }
-
-                if(localStorage.getItem(String(h3))){
-                    goalList = JSON.parse(localStorage.getItem(String(h3)));
-                    goalList.push(goalObj);
+                //目標
+                if(localStorage.getItem(String(h3.innerText))){
+                    goalList = JSON.parse(localStorage.getItem(String(h3.innerText)));
+                    if(goalList.length < 9){
+                        goalList.push(goalObj);
+                    }
+                    else{
+                        alert('目標請精簡');
+                    }
                 }
                 else{
                     goalList.push(goalObj);
                 }
-                localStorage.setItem(String(h3),JSON.stringify(goalList));
-
+                localStorage.setItem(String(h3.innerText),JSON.stringify(goalList));
+                monthlygoal();
                 goalInput.value = '';
-                content.append(cloneContent);
-                goalIndex++;
             }
         });
 
-        //localstorage
-        //刪除
-
-        //修改行程索引
-        let currentIndex;
 
         window.onload = function () {
             Init();
             colorSelect.addEventListener('change', modalColor);
             mcolorSelect.addEventListener('change', modifyColor);
+            monthlygoal();
+
         }
 
         function monthlygoal(){
+            content.innerHTML ='';
             if(localStorage.getItem(String(`${year}/${String(month + 1).padStart(2, '0')}`))){
-                content.innerHTML ='';
                 let todoList = JSON.parse(localStorage.getItem(String(`${year}/${String(month + 1).padStart(2, '0')}`)))
-                let cloneContent = template.content.cloneNode(true);
-                cloneContent.querySelector('input').setAttribute('id', goalIndex);
-                cloneContent.querySelector('label').setAttribute('for', goalIndex);
-                cloneContent.querySelector('label').innerText = goalInput.value;
-                content.append(cloneContent);
+
+                todoList.forEach((goal,index) =>{
+                    let cloneContent = template.content.cloneNode(true);
+                    cloneContent.querySelector('input').setAttribute('id', index);
+                    cloneContent.querySelector('label').setAttribute('for', index);
+                    cloneContent.querySelector('label').innerText = goal.content;
+                    cloneContent.querySelector('i').addEventListener('click', function(){
+                        todoList.splice(index,1);
+                        localStorage.setItem(String(`${year}/${String(month + 1).padStart(2, '0')}`),JSON.stringify(todoList));
+                        monthlygoal();
+                    });
+                    content.append(cloneContent);
+                });
             }
         }
 
@@ -638,6 +644,7 @@
                 year--;
             }
             Init();
+            monthlygoal();
         }
 
         function NextMonth() {
@@ -647,6 +654,7 @@
                 year++;
             }
             Init();
+            monthlygoal();
         }
 
 
