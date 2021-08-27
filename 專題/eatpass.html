@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>Hello, world!</title>
+    <style>
+        .container{
+            max-width: 1100px;
+        }
+        .discount,
+        .area,
+        .common{
+            margin: 20px 12px 0;
+        }
+        p {
+            font-size: 14px;
+        }
+        img{
+            width: 100%;
+        }
+        .banner .item-txt.container{
+            margin: 20px;
+            padding: 0;
+            width: calc(100% - 40px);
+        }
+        .banner .item-txt span{
+            font-size: 18px;
+            padding: 10px 0;
+        }
+        .banner .item-txt button{
+            background-color: #000;
+            color: #fff;
+            position: fixed;
+            width: calc(100% - 20px);
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            padding: 15px;
+            z-index: 10;
+        }
+        .banner .item-txt button:hover{
+            background-color: rgb(26, 26, 26);
+        }
+        .banner .item-img{
+            width: 100%;
+            height: 160px;
+            background: url(https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/88a5e1bdef17324712364769703d49ab.svg) right center / contain no-repeat rgb(255, 192, 67);
+        }
+        .discount .item{
+            display: flex;
+            padding-bottom: 30px;
+        }
+        .discount .item:last-child{
+            border-bottom: 1px solid #CCC;
+        }
+        .discount img{
+            width: 40px;
+            height: 40px;
+        }
+        .discount .item-img{
+            padding-right: 20px;
+        }
+        .area .item-img {
+            width: 100%;
+            height: 320px;
+            overflow: hidden;
+            background: url(https://dkt2lhvp7vusi.cloudfront.net/eats_pass_94-min.png) center center / cover;
+        }
+        .common :last-child{
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+        }
+        @media screen and (min-width:1024px) {
+            h2{
+                font-size: 44px;
+                margin-bottom: 20px;
+            }
+            .banner{
+                position: relative;
+            }
+            .banner .item-img{
+                height: 320px;
+            }
+            .banner .item-txt.container{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin:auto;
+                top: 30%;
+                font-weight: bold;
+                width: 100%;
+            }
+            .container{
+                margin:auto;
+            }
+            .banner .item-txt button{
+                position: unset;
+                background-color: #EEEEEE;
+                color: #000;
+                width: auto;
+                display: block;
+                margin-top: 20px;
+                border-radius: 200px;
+            }
+            .banner .item-txt button:hover{
+                background-color: #CCC;
+            }
+            .discount,
+            .area,
+            .common{
+                margin: 40px 0;
+            }
+            .discount .item{
+                margin-top: 50px;
+                display: block;
+                text-align: center;
+            }
+            .discount .item-img{
+                padding: 0;
+            }
+            .discount .item-img img{
+                width: 64px;
+                height: 64px;
+            }
+            .discount .item:last-child{
+                border-bottom: 0;
+            }
+            .discount .item .item-txt{
+                margin-top: 20px;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="item-img"></div>
+        <div class="item-txt container">
+            <h2>立即加入即可享不限次數 $0 外送費</h2>
+            <span>僅需支付 $120.00/月</span>
+            <button class="btn">立即啟用您的 Uber Eats 優饗方案</button>
+        </div>
+    </div>
+    <section class="container">
+        <div class="discount row">
+            <div class="item col-12 col-lg-4">
+                <div class="item-img">
+                    <img src="https://dkl8of78aprwd.cloudfront.net/2020-07-28/icon-0-dollar-delivery@4x.png" alt="">
+                </div>
+                <div class="item-txt">
+                    找到票券圖示，訂單消費滿 $199 即可享 $0 外送費。
+                </div>
+            </div>
+            <div class="item col-12 col-lg-4">
+                <div class="item-img">
+                    <img src="https://dkl8of78aprwd.cloudfront.net/2020-07-28/icon-its-on-uber-eats@4x.png" alt="">
+                </div>
+                <div class="item-txt">
+                    會員專屬福利和優惠
+                </div>
+            </div>
+            <div class="item col-12 col-lg-4">
+                <div class="item-img">
+                    <img src="https://dkl8of78aprwd.cloudfront.net/2020-07-28/icon-cancel-your-subscription@4x.png" alt="">
+                </div>
+                <div class="item-txt">
+                    您可隨時取消訂用的方案，無需支付罰款和其他費用。
+                </div>
+            </div>
+        </div>
+        <div class="area row">
+            <div class="item-txt">
+                <h3>您所在地區獨享</h3>
+                <p>您的優饗方案僅適用於台北內的外送訂單。</p>
+            </div>
+            <div class="item-img"></div>
+        </div>
+        <div class="common">
+            <h3 class="pb-2">常見問題</h3>
+            <h5>如何使用「無接觸」外送服務</h5>
+            <p>
+                由於近期 COVID-19 新型冠狀病毒疫情持續升溫，中央疫情指揮中心已宣布全台灣防疫等級提升為三級。為配合政府防疫工作與指示，Uber Eats 已採取必要安全措施保護您的安全。
+                <br><br>
+                自 2021 年 07月 16 日起，依據中央流行疫情指揮中心宣布適度鬆綁部分措施，全台灣服務範圍將重新開放現金付款功能，您可以彈性選擇使否使用「無接觸送餐」以減少傳播風險。
+            </p>
+            <p>
+                使用「無接觸」外送服務的第一步 - 先幫帳戶綁定預先付款方式！<br>
+                變更或新增付款方式如下：<br>
+                1. 選擇「帳戶」<br>
+                2. 選擇「Wallet」<br>
+                3. 選擇「+新增付款方式」<br>
+                4. 選擇「信用卡或簽帳金融卡」<br>
+                5. 輸入信用卡資訊<br>
+                <br>
+                如您希望改為使用現金付款：請在確認訂單金額時更改付款方式。
+            </p>
+            <p>提醒您，如您對自身的健康狀況有疑問或疑慮，建議您與所在地區的公共衛生機關或醫師聯絡，尋求指引。</p>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
