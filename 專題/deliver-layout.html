@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <title>Hello, world!</title>
+    <style>
+
+        * {
+            font-size: 14px;
+        }
+        .container{
+            padding: 0 10px;
+        }
+        .top {
+            margin: 0 auto;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+        }
+        .head {
+            height: 72px;
+            border-bottom: 1px solid #EEEEEE;
+            background-color: #fff;
+        }
+        .hb {
+            width: 20px;
+            height: 20px;
+            margin: 0 5px 0 10px;
+            cursor: pointer;
+        }
+
+        .menu {
+            height: 100vh;
+            width: 300px;
+            position: absolute;
+            top: -72px;
+            left: -500px;
+            background-color: #fff;
+            padding: 20px;
+            transition: .5s;
+            border-right: 1px solid #EEEEEE;
+            z-index: 10;
+        }
+        .status{
+            align-items: center;
+        }
+        .status .login {
+            color: #888;
+            padding: 8px 15px;
+            background-color: #EEEEEE;
+            border-radius: 500px;
+            cursor: pointer;
+        }
+        .status .login:hover {
+            background-color: #DBDBDB;
+        }
+
+        #menu-check:checked~header .menu {
+            left: -30px;
+        }
+
+        .menu i {
+            margin-right: 15px;
+        }
+        .bg-style{
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0,0,0,0.5);
+            top: 0;
+            z-index: 1;
+        }
+        @media screen and (min-width: 1024px) {
+            .container {
+                max-width: 1500px;
+                padding: 0 30px;
+            }
+            .top {
+                height: 95px;
+                display: flex;
+                justify-content: space-between;
+            }
+            .status {
+                margin: auto 0;
+                margin-left: 20px;
+            }
+            .head {
+                padding: 0;
+                margin: auto 0;
+                width: auto;
+                position: unset;
+                justify-content: space-between;
+                border: 0;
+            }
+
+            .head :last-child {
+                margin-left: 20px;
+            }
+            .menu {
+                position: fixed;
+                top: 0;
+                left: -500px;
+                transition: .5s;
+                transform: translateX(0px);
+            }
+
+            #menu-check:checked~header .menu {
+                left: 0;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" class="d-none" id="menu-check">
+    <header class="container">
+        <div class="top">
+            <div class="head d-flex">
+                <label for="menu-check" class="hb my-auto"><i class="fas fa-bars align-middle"></i></label>
+                <div class="logo m-auto">
+                    <a href="#"><img src="https://picsum.photos/120/20/?random=1"></a>
+                </div>
+            </div>
+
+            <!-- 上線&登入 -->
+            <div class="status d-flex">
+                <input type="checkbox" checked data-toggle="toggle" data-on="上線" data-off="下線" data-onstyle="success" data-offstyle="danger">
+                <button class="login btn ml-3">登入</button>
+            </div>
+
+            <div class="menu">
+                <div class="name py-4 border-bottom">會員姓名</div>
+                <div class="function">
+                    <div class="account item"><i class="fas fa-user"></i>帳戶資訊</div>
+                    <div class="order item"><i class="fas fa-receipt"></i>歷史訂單</div>
+                </div>
+                <div class="switch">
+                    <button class="btn btn-dark d-block w-100 mb-2">我想要訂餐</button>
+                    <button class="btn btn-dark d-block w-100 mb-2">餐廳登入</button>
+                    <button class="btn btn-dark d-block w-100 mb-2">外送夥伴</button>
+                    <button class="btn border-secondary w-100">登出</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="bg"></div>
+    <script>
+        let menuCheck = document.querySelector('#menu-check');
+        let bg = document.querySelector('.bg');
+        let body = document.querySelector('body');
+
+        //加入menu背景
+        menuCheck.addEventListener('click', function(){
+            //若漢堡按下，加入背景
+            if(menuCheck.checked)
+            {
+                bg.classList.add('bg-style');
+                body.setAttribute('style','overflow:hidden;');
+                bg.addEventListener('click', function(){
+                    menuCheck.click();
+                });
+            }
+            //漢堡關起，移除背景
+            else{
+                bg.classList.remove('bg-style');
+                body.removeAttribute('style','overflow:hidden;');
+            }
+        });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+</body>
+
+</html>
