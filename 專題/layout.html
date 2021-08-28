@@ -225,10 +225,6 @@
                 border: 0;
             }
 
-            .head :last-child {
-                margin-left: 20px;
-            }
-
             .head button {
                 display: none;
             }
@@ -237,7 +233,6 @@
                 top: 0;
                 left: -500px;
                 transition: .5s;
-                transform: translateX(0px);
             }
 
             #menu-check:checked~header .menu {
@@ -522,7 +517,7 @@
         let menuCheck = document.querySelector('#menu-check');
         let bg = document.querySelector('.bg');
         let body = document.querySelector('body');
-        console.log(body)
+        console.log(bg)
         
         //加入menu背景
         menuCheck.addEventListener('click', function(){
@@ -533,6 +528,7 @@
                 body.setAttribute('style','overflow:hidden;');
                 bg.addEventListener('click', function(){
                     menuCheck.click();
+                    event.stopImmediatePropagation();
                 });
             }
             //漢堡關起，移除背景
@@ -540,6 +536,7 @@
                 bg.classList.remove('bg-style');
                 body.removeAttribute('style','overflow:hidden;');
             }
+            console.log(bg)
         });
     </script>
 </body>

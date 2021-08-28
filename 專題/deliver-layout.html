@@ -10,14 +10,15 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <title>Hello, world!</title>
     <style>
-
         * {
             font-size: 14px;
         }
         .container{
+            max-width: 1500px;
             padding: 0 10px;
         }
         .top {
+            width: 100%;
             margin: 0 auto;
             position: relative;
             display: flex;
@@ -75,11 +76,10 @@
             top: 0;
             z-index: 1;
         }
-        @media screen and (min-width: 1024px) {
-            .container {
-                max-width: 1500px;
-                padding: 0 30px;
-            }
+        .function .item {
+            padding-top: 20px;
+        }
+        @media screen and (min-width: 992px) {
             .top {
                 height: 95px;
                 display: flex;
@@ -100,11 +100,10 @@
             .menu {
                 position: fixed;
                 top: 0;
+                left: 0;
                 left: -500px;
                 transition: .5s;
-                transform: translateX(0px);
             }
-
             #menu-check:checked~header .menu {
                 left: 0;
             }
@@ -136,7 +135,7 @@
                     <div class="account item"><i class="fas fa-user"></i>帳戶資訊</div>
                     <div class="order item"><i class="fas fa-receipt"></i>歷史訂單</div>
                 </div>
-                <div class="switch">
+                <div class="switch mt-5">
                     <button class="btn btn-dark d-block w-100 mb-2">我想要訂餐</button>
                     <button class="btn btn-dark d-block w-100 mb-2">餐廳登入</button>
                     <button class="btn btn-dark d-block w-100 mb-2">外送夥伴</button>
@@ -161,6 +160,7 @@
                 body.setAttribute('style','overflow:hidden;');
                 bg.addEventListener('click', function(){
                     menuCheck.click();
+                    event.stopImmediatePropagation();
                 });
             }
             //漢堡關起，移除背景
