@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <title>Hello, world!</title>
+    <style>
+        .container{
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .map{
+            width: 100%;
+        }
+        .info{
+            position: absolute;
+            top: 80%;
+            /* top: 10px; */
+            left: 15px;
+            right: 15px;
+            margin: auto;
+            background-color: #EEEEEE;
+            padding: 0 20px 40px;
+        }
+        .detail{
+            position: relative;
+        }
+        .message{
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            top: 0;
+            right: 0;
+            border-radius: 50%;
+            background-color: #ccc;
+        }
+        .message i{
+            font-size: 30px;
+            padding: 15px;
+            cursor: pointer;
+        }
+        .info-body{
+            width: 100%;
+        }
+        .info-body .head{
+            text-align: end;
+            border-bottom: 1px solid #ccc;
+        }
+        .info-body .head i{
+            font-size: 20px;
+        }
+        /* .head:hover i{
+            transform: rotateX(180deg);
+        } */
+        .info-txt .item{
+            margin: 20px 0;
+            border-bottom: 1px solid #ccc;
+        }
+        .info-btn button{
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        h3{
+            margin: 20px 0;
+        }
+        .orderBox{
+            display: block;
+            position: relative;
+            margin-bottom: 10px;
+            padding-left: 30px;
+            cursor: pointer;
+        }
+        .orderBox input{
+            display: none;
+        }
+        .orderBox .orderDetail .name{
+            font-size: 20px;
+        }
+        .orderBox .checkMark{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            margin: auto;
+            border: 1px solid #ccc;
+        }
+        .checkMark::after{
+            content: "";
+            position: absolute;
+            left: 4px;
+            top: -1px;
+            width: 10px;
+            height: 15px;
+            border: 4px solid #fff;
+            border-width: 0 4px 4px 0;
+            transform: rotate(45deg);
+            display: none;
+
+        }
+        .orderBox input:checked ~ .checkMark{
+            background-color: #2196F3;
+        }
+        .orderBox input:checked ~ .checkMark::after{
+            display: block;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="map row">
+            <div class="mapinfo"></div>
+        </div>
+        <div class="info row">
+            <div class="info-body">
+                <div class="info-txt">
+                    <div class="head">
+                        <i class="fas fa-chevron-up p-2"></i>
+                    </div>
+                    <div class="item detail">
+                        <h3>餐廳名稱</h3>
+                        <p><i class="fas fa-map-marker-alt mr-3"></i>餐廳地址</p>
+                        <div class="message">
+                            <i class="fas fa-comment-alt"></i>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <!-- 自動產生訂單編號 -->
+                        <label class="orderBox">
+                            <input type="checkbox">
+                            <div class="orderDetail">
+                                <div class="name">客戶名稱</div>
+                                <div class="orderID">訂單編號</div>
+                            </div>
+                            <span class="checkMark"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="info-btn">
+                    <button class="btn bg-warning">開始外送</button>
+                    <button class="btn bg-success">完成訂單</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 手機版展開訂單明細
+        // let expand = document.querySelector('.info-body .head i');
+        // expand.addEventListener('click', function(){
+        //     let info = document.querySelector('.info');
+        //     if(){
+        //         info.removeAttribute('style','top: 80%;');
+        //         info.setAttribute('style','top: 10px');
+        //         console.log('a')
+        //         console.log(info)
+        //     }
+        //     else{
+        //         info.setAttribute('style','top: 80%;');
+        //         info.removeAttribute('style','top: 10px');
+        //         console.log('b');
+        //         console.log(info)
+        //     }
+        // });
+        
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
