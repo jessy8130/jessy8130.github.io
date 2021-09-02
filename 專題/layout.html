@@ -12,329 +12,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;500;900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="layout.css">
     <title>Hello, world!</title>
-    <style>
-        * {
-            font-size: 14px;
-        }
-
-        .container {
-            max-width: 1920px;
-            padding: 0 30px;
-        }
-
-        .top {
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .head {
-            width: 100%;
-            height: 72px;
-            border-bottom: 1px solid #EEEEEE;
-            position: fixed;
-            top: 0;
-            left: 0;
-            padding: 0 30px;
-            background-color: #fff;
-        }
-
-        .head button {
-            margin: 15px 10px;
-            padding: 0 15px;
-            background-color: #EEEEEE;
-            border-radius: 500px;
-        }
-
-        .hb {
-            width: 20px;
-            height: 20px;
-            margin: 0 15px;
-            cursor: pointer;
-        }
-
-        .menu {
-            height: 100vh;
-            width: 300px;
-            position: absolute;
-            top: -72px;
-            left: -500px;
-            background-color: #fff;
-            padding: 20px;
-            transition: .5s;
-            border-right: 1px solid #EEEEEE;
-            z-index: 10;
-        }
-
-        #menu-check:checked~header .menu {
-            left: -30px;
-        }
-
-        .menu i {
-            margin-right: 15px;
-        }
-
-        .function .item {
-            padding-top: 20px;
-        }
-
-        .switch {
-            margin-top: 50px;
-        }
-
-        .deliver {
-            margin-top: 72px;
-            height: 60px;
-            display: flex;
-            justify-content: space-between;
-            border-width: 0;
-            cursor: pointer;
-        }
-
-        .deliver:hover {
-            background-color: #DBDBDB;
-        }
-
-        .deliver>div {
-            padding: 0 10px;
-        }
-
-        .desc {
-            font-size: 15px;
-        }
-
-        .search {
-            width: 100%;
-            background-color: #EEEEEE;
-            padding: 10px;
-            justify-content: space-between;
-            border-radius: 30px;
-        }
-        .search label{
-            margin: 0;
-        }
-
-        .search .filter {
-            border-left: 1px solid #ccc;
-        }
-
-        .search .filter i {
-            padding: 0 10px;
-            vertical-align: middle;
-        }
-
-        .search input {
-            border-width: 0;
-            outline: none;
-        }
-
-        .cart,
-        .cartList {
-            display: none;
-        }
-
-        .status .login {
-            display: none;
-        }
-
-        .content {
-            height: 500px;
-        }
-
-        footer {
-            padding: 60px 0;
-            margin-top: 60px;
-            background-color: #000;
-        }
-
-        footer a {
-            text-decoration: none;
-            color: #fff;
-            display: block;
-            margin-bottom: 16px;
-        }
-
-        footer a:hover {
-            color: #EEEEEE;
-            text-decoration: underline;
-        }
-
-        .footer-top {
-            padding-bottom: 30px;
-            border-bottom: 1px solid #EEEEEE;
-        }
-
-        .info-img img {
-            margin-bottom: 40px;
-        }
-
-        .footer-bottom {
-            padding-top: 40px;
-        }
-
-        .footer-bottom i {
-            font-size: 20px;
-            margin-right: 10px;
-        }
-
-        .footer-bottom span {
-            color: #fff;
-            display: block;
-        }
-
-        #deliverModal i {
-            font-size: 20px;
-            padding-right: 15px;
-        }
-
-        #deliverModal .modal-body button {
-            border-width: 0;
-            padding: 10px 15px;
-            border-radius: 300px;
-        }
-        .bg-style{
-            position: fixed;
-            width: 100vw;
-            height: 100vh;
-            background-color: rgba(0,0,0,0.5);
-            top: 0;
-            z-index: 1;
-        }
-
-        @media screen and (min-width: 992px) {
-            .top {
-                height: 95px;
-                display: flex;
-                justify-content: space-between;
-            }
-
-            .deliver,
-            .search,
-            .cart,
-            .status {
-                margin: auto 0;
-                margin-left: 20px;
-            }
-
-            .head {
-                padding: 0;
-                margin: auto 0;
-                width: auto;
-                position: unset;
-                justify-content: space-between;
-                border: 0;
-            }
-
-            .head button {
-                display: none;
-            }
-            .menu {
-                position: fixed;
-                top: 0;
-                left: -500px;
-                transition: .5s;
-            }
-
-            #menu-check:checked~header .menu {
-                left: 0;
-            }
-
-            .search {
-                max-width: 800px;
-                flex-grow: 1;
-                width: auto;
-                border-radius: 0;
-            }
-
-            .search .filter {
-                display: none;
-            }
-
-            .deliver {
-                background-color: #EEEEEE;
-                padding: 10px;
-                border-radius: 30px;
-                height: 40px;
-            }
-
-            .status {
-                position: relative;
-            }
-
-            .status .login {
-                display: block;
-                padding: 15px 30px;
-                background-color: #EEEEEE;
-                border-radius: 500px;
-                margin-left: 20px;
-                cursor: pointer;
-            }
-
-            .status .login:hover {
-                background-color: #DBDBDB;
-            }
-
-            .footer-top {
-                display: flex;
-                justify-content: space-between;
-            }
-
-            .info-txt {
-                width: 500px;
-            }
-
-            .footer-bottom {
-                display: flex;
-                justify-content: space-between;
-                text-align: end;
-            }
-
-            .policy {
-                display: flex;
-                justify-content: flex-end;
-            }
-
-            .policy a {
-                margin-right: 20px;
-            }
-
-            .cart {
-                display: block;
-                border-radius: 30px;
-                cursor: pointer;
-            }
-
-            #cart-check:checked~.cartList {
-                display: block;
-            }
-
-            .cartList {
-                position: absolute;
-                top: 60px;
-                left: -50px;
-                border: 1px solid #EEEEEE;
-                box-shadow: 0 0 1px;
-                overflow-y: scroll;
-            }
-
-            .cartList .list-top button {
-                background-color: transparent;
-                border-width: 0;
-                color: #000;
-                padding: 15px;
-            }
-
-            .cartList .list-bottom {
-                margin: 30px;
-                text-align: center;
-            }
-
-            .cartList .list-bottom i {
-                font-size: 30px;
-                color: #888;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -344,29 +23,31 @@
             <div class="head d-flex">
                 <label for="menu-check" class="hb my-auto"><i class="fas fa-bars align-middle"></i></label>
                 <div class="logo m-auto">
-                    <a href="#"><img src="https://picsum.photos/120/20/?random=1"></a>
+                    <a class="d-block" href="#"><img src="./imges/logo.jpg"></a>
                 </div>
                 <button class="login btn">登入</button>
             </div>
-            <!-- 地址/時間 -->
-            <div class="deliver" data-toggle="modal" data-target="#deliverModal">
-                <div class="item my-auto d-flex">
-                    <i class="fas fa-map-marker-alt px-2 m-auto"></i>
-                    <div class="destination">台北市</div>
-                    <span>．</span>
-                    <div class="time">立刻</div>
+            <div class="lookup">
+                <!-- 地址/時間 -->
+                <div class="deliver" data-toggle="modal" data-target="#deliverModal">
+                    <div class="item my-auto d-flex">
+                        <i class="fas fa-map-marker-alt px-2 m-auto"></i>
+                        <div class="destination">台北市</div>
+                        <span>．</span>
+                        <div class="time">立刻</div>
+                    </div>
+                    <div class="my-auto">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
                 </div>
-                <div class="my-auto">
-                    <i class="fas fa-chevron-down"></i>
+                <!-- 搜尋 -->
+                <div class="search d-flex">
+                    <label class="w-100">
+                        <i class="fas fa-search p-2"></i>
+                        <input type="text" id="searchTxt" class="border-none bg-transparent" placeholder="想吃點什麼？">
+                    </label>
+                    <div class="filter"><i class="fas fa-sliders-h"></i></div>
                 </div>
-            </div>
-            <!-- 搜尋 -->
-            <div class="search d-flex">
-                <label class="w-100">
-                    <i class="fas fa-search p-2"></i>
-                    <input type="text" id="searchTxt" class="border-none bg-transparent" placeholder="想吃點什麼？">
-                </label>
-                <div class="filter"><i class="fas fa-sliders-h"></i></div>
             </div>
             <!-- 購物車&登入 -->
             <div class="status d-flex">
@@ -397,7 +78,8 @@
                     <div class="account item"><i class="fas fa-user"></i>帳戶資訊</div>
                     <div class="order item"><i class="fas fa-receipt"></i>訂單</div>
                     <div class="favorite item"><i class="fas fa-heart"></i>最愛餐廳</div>
-                    <div class="discount item"><i class="fas fa-tag"></i>優惠</div>
+                    <div class="discount item" data-toggle="modal" data-target="#discountModal"><i
+                            class="fas fa-tag"></i>優惠</div>
                     <div class="eatPass item text-success d-flex">
                         <div><i class="fas fa-ticket-alt"></i></div>
                         <div>
@@ -431,7 +113,7 @@
             <div class="footer-top">
                 <div class="info-img">
                     <div class="logo">
-                        <img src="https://picsum.photos/150/35/?random=2">
+                        <img src="./imges/logo.jpg">
                     </div>
                     <div class="download">
                         <img class="me-3" src="https://picsum.photos/135/40/?random=3">
@@ -469,7 +151,7 @@
     </footer>
 
     <!-- 時間地點Modal -->
-    <div class="modal fade" id="deliverModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="deliverModal" tabindex="-1" aria-labelledby="discountModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -486,7 +168,7 @@
                             <br>
                             <span>忠孝東路三段96號11號樓之1, 台北市大安區</span>
                         </div>
-                        <button>變更</button>
+                        <button data-toggle="modal" data-target="#destModal">變更</button>
                     </div>
                     <div class="item d-flex justify-content-between">
                         <div class="px-2 m-auto"><i class="fas fa-clock"></i></div>
@@ -499,7 +181,116 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-dark py-3 w-100">完成</button>
+                    <button type="button" class="btn btn-dark py-3 w-100" data-dismiss="modal">完成</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 優惠Modal -->
+    <div class="modal fade" id="discountModal" tabindex="-1" aria-labelledby="discountModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="discountModalLabel">優惠</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <button class="btn px-3 py-2" data-toggle="modal" data-target="#ONdiscountModal"
+                        id="discountAdd">新增優惠</button>
+                    <div class="discount-body">
+                        <!-- 優惠內容 -->
+                        <div class="discount-item my-3 py-3">
+                            <div class="discount-txt">40% 折扣優惠 (最多可折抵 $100)</div>
+                            <div>2021 年 12 月 26 日 上午 12 時</div>
+                        </div>
+                        <div class="discount-item my-3 py-3">
+                            <div class="discount-txt">40% 折扣優惠 (最多可折抵 $100)</div>
+                            <div>2021 年 12 月 26 日 上午 12 時</div>
+                        </div>
+                        <div class="discount-item my-3 py-3">
+                            <div class="discount-txt">40% 折扣優惠 (最多可折抵 $100)</div>
+                            <div>2021 年 12 月 26 日 上午 12 時</div>
+                        </div>
+                        <div class="discount-item my-3 py-3">
+                            <div class="discount-txt">40% 折扣優惠 (最多可折抵 $100)</div>
+                            <div>2021 年 12 月 26 日 上午 12 時</div>
+                        </div>
+                        <div class="discount-item my-3 py-3">
+                            <div class="discount-txt">40% 折扣優惠 (最多可折抵 $100)</div>
+                            <div>2021 年 12 月 26 日 上午 12 時</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark py-3 w-100" data-dismiss="modal">完成</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ON 優惠Modal -->
+    <div class="modal fade" id="ONdiscountModal" tabindex="-1" aria-labelledby="ONdiscountModalLabel"
+        aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="ONdiscount-body">
+                        <h4 class="modal-title mb-3" id="ONdiscountModalLabel">是否有優惠序號？</h4>
+                        <input type="text" placeholder="新增優惠序號">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark py-3 w-100" data-dismiss="modal">套用</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- 外送地點 -->
+        <div class="modal fade" id="destModal" tabindex="-1" aria-labelledby="destModalLabel"
+        aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="destlist" class="modal-body">
+                    <div class="dest-body">
+                        <h4 class="modal-title mb-3" id="destModalLabel">外送地點？</h4>
+                        <input type="text" placeholder="輸入外送地址">
+                        <!-- 紀錄地址 -->
+                        <div class="d-flex justify-content-between my-3">
+                            <div>
+                                <i class="fas fa-map-marker-alt p-3"></i>
+                                <p class="d-inline m-0">台北市大安區忠孝東路三段96號11號樓之1</p>
+                            </div>
+                            <div>
+                                <i class="fas fa-pencil-alt p-3"></i>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between my-3">
+                            <div>
+                                <i class="fas fa-map-marker-alt p-3"></i>
+                                <p class="d-inline m-0">台北市大安區忠孝東路三段96號11號樓之1</p>
+                            </div>
+                            <div>
+                                <i class="fas fa-pencil-alt p-3"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark py-3 w-100" data-dismiss="modal">完成</button>
                 </div>
             </div>
         </div>
@@ -513,32 +304,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
-    <script>
-        let menuCheck = document.querySelector('#menu-check');
-        let bg = document.querySelector('.bg');
-        let body = document.querySelector('body');
-        console.log(bg)
-        
-        //加入menu背景
-        menuCheck.addEventListener('click', function(){
-            //若漢堡按下，加入背景
-            if(menuCheck.checked)
-            {
-                bg.classList.add('bg-style');
-                body.setAttribute('style','overflow:hidden;');
-                bg.addEventListener('click', function(){
-                    menuCheck.click();
-                    event.stopImmediatePropagation();
-                });
-            }
-            //漢堡關起，移除背景
-            else{
-                bg.classList.remove('bg-style');
-                body.removeAttribute('style','overflow:hidden;');
-            }
-            console.log(bg)
-        });
-    </script>
+
+    <script src="layout.js"></script>
 </body>
 
 </html>
