@@ -58,9 +58,6 @@
                     <span>0</span>
                 </label>
                 <div class="cartList">
-                    <div class="list-top">
-                        <button>X</button>
-                    </div>
                     <div class="list-bottom">
                         <div>
                             <i class="fas fa-shopping-cart mb-3"></i>
@@ -121,7 +118,6 @@
                     </div>
                 </div>
                 <div class="info-txt">
-                    <a href="#">取得協助</a>
                     <a href="#">新增您的餐廳</a>
                     <a href="#">註冊成為合作夥伴</a>
                     <a href="#">首份訂單可享折扣優惠</a>
@@ -143,7 +139,7 @@
                     </div>
                     <div class="copyright">
                         <span>本網站受到 reCAPTCHA 和 Google 隱私政策的保護，且適用服務條款。</span>
-                        <span> &copy; 2021 Uber Technologies Inc.</span>
+                        <span> &copy; Holy Shong Technologies Inc.</span>
                     </div>
                 </div>
             </div>
@@ -177,7 +173,7 @@
                             <br>
                             <span>時間</span>
                         </div>
-                        <button>安排時間</button>
+                        <button data-toggle="modal" data-target="#timeModal">安排時間</button>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -232,8 +228,8 @@
     </div>
 
     <!-- ON 優惠Modal -->
-    <div class="modal fade" id="ONdiscountModal" tabindex="-1" aria-labelledby="ONdiscountModalLabel"
-        aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal fade" id="ONdiscountModal" tabindex="-1" aria-labelledby="ONdiscountModalLabel" aria-hidden="true"
+        data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -254,9 +250,9 @@
         </div>
     </div>
 
-        <!-- 外送地點 -->
-        <div class="modal fade" id="destModal" tabindex="-1" aria-labelledby="destModalLabel"
-        aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <!-- 外送地點 -->
+    <div class="modal fade" id="destModal" tabindex="-1" aria-labelledby="destModalLabel" aria-hidden="true"
+        data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -295,6 +291,44 @@
             </div>
         </div>
     </div>
+
+    <!-- 外送時間 -->
+    <div class="modal fade" id="timeModal" tabindex="-1" aria-labelledby="destModalLabel" aria-hidden="true"
+        data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="timelist" class="modal-body">
+                    <div class="time-body">
+                        <h4 class="modal-title mb-3" id="timeModalLabel">挑選時間</h4>
+                        <select class="w-100">
+                            <option value="2021-09-04">9月4日 週六</option>
+                            <option value="2021-09-05">9月5日 週日</option>
+                            <option value="2021-09-06">9月6日 週一</option>
+                            <option value="2021-09-07">9月7日 週二</option>
+                        </select>
+                       <select class="w-100">
+                           <option value="1">14:00 - 14:30</option>
+                           <option value="2">14:30 - 15:00</option>
+                           <option value="3">15:00 - 15:30</option>
+                           <option value="4">15:30 - 16:00</option>
+                           <option value="5">16:00 - 16:30</option>
+                           <option value="6">16:30 - 17:00</option>
+                       </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark py-3 w-100" data-dismiss="modal">完成</button>
+                    <button type="button" class="btn btn-outline-secondary py-3 w-100" data-dismiss="modal">立刻外送</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <div class="bg"></div>
 

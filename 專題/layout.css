@@ -85,10 +85,6 @@
     cursor: pointer;
 }
 
-.deliver:hover {
-    background-color: #DBDBDB;
-}
-
 .deliver>div {
     padding: 0 10px;
 }
@@ -230,6 +226,26 @@ footer a:hover {
 .info-img .logo img{
     width: 200px;
 }
+
+.opacity-0{
+    opacity: 0;
+}
+select{
+    margin-bottom: 15px;
+    padding: 12px 16px;
+    outline: none;
+    box-shadow:inset 0px -1px 0px #e2e2e2;
+    background-color:#F6F6F6;
+    border: none;
+    font-size:16px;
+    line-height:24px;
+    cursor:pointer;
+}
+option{
+    font-size: 16px;
+    background-color: rgb(246, 246, 246);
+    line-height:24px;
+}
 @media screen and (min-width: 992px) {
     .top {
         height: 95px;
@@ -297,6 +313,9 @@ footer a:hover {
         border-radius: 30px;
         height: 40px;
     }
+    .deliver:hover {
+        background-color: #DBDBDB;
+    }
 
     .status {
         position: relative;
@@ -356,13 +375,6 @@ footer a:hover {
         border: 1px solid #EEEEEE;
         box-shadow: 0 0 1px;
         overflow-y: scroll;
-    }
-
-    .cartList .list-top button {
-        background-color: transparent;
-        border-width: 0;
-        color: #000;
-        padding: 15px;
     }
 
     .cartList .list-bottom {

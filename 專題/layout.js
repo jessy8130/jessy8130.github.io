@@ -34,3 +34,15 @@ ONdiscount.forEach(button =>{
         discountModal.classList.remove('d-none');
     })
 });
+
+//時間地點Modal on Modal
+let changeDest = document.querySelector("#deliverModal .modal-body div:first-of-type button");
+changeDest.addEventListener('click', function(){
+    changeDest.parentNode.parentElement.offsetParent.classList.add('opacity-0');
+});
+let destModalBtn = document.querySelectorAll('#destModal button');
+destModalBtn.forEach(button => {
+    button.addEventListener('click',function(){
+        changeDest.parentNode.parentElement.offsetParent.classList.remove('opacity-0');
+    });
+});
