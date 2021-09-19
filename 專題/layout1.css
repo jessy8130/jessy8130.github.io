@@ -1,0 +1,678 @@
+* {
+    font-size: 14px;
+}
+
+.container {
+    max-width: 1920px;
+    padding: 0 30px;
+}
+
+.top {
+    margin: 0 auto;
+    position: relative;
+}
+
+.head {
+    width: 100%;
+    height: 72px;
+    border-bottom: 1px solid #EEEEEE;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 30px;
+    background-color: #fff;
+    z-index: 100;
+}
+.head i{
+    font-size: 30px;
+}
+
+.head button {
+    margin: 15px 10px;
+    padding: 0 15px;
+    background-color: #EEEEEE;
+    border-radius: 500px;
+}
+
+.hb {
+    width: 30px;
+    height: 30px;
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+.menu {
+    height: 100vh;
+    width: 300px;
+    position: absolute;
+    top: -72px;
+    left: -500px;
+    background-color: #fff;
+    padding: 20px;
+    transition: .5s;
+    border-right: 1px solid #EEEEEE;
+    z-index: 102;
+}
+
+.logo a img{
+    width: 130px;
+    vertical-align: baseline;
+}
+
+#menu-check:checked~header .menu {
+    left: -30px;
+}
+.function .item{
+    cursor: pointer;
+}
+.menu i {
+    margin-right: 15px;
+}
+
+.function .item {
+    padding-top: 20px;
+}
+
+.switch {
+    margin-top: 50px;
+}
+
+.deliver {
+    margin-top: 72px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    border-width: 0;
+    cursor: pointer;
+}
+
+.deliver>div {
+    padding: 0 10px;
+}
+
+.desc {
+    font-size: 15px;
+}
+
+.search {
+    width: 100%;
+    background-color: #EEEEEE;
+    padding: 10px;
+    justify-content: space-between;
+    border-radius: 30px;
+}
+
+.search label {
+    margin: 0;
+}
+
+.search .filter {
+    border-left: 1px solid #ccc;
+}
+
+.search .filter i {
+    padding: 0 10px;
+    vertical-align: middle;
+}
+
+.search input {
+    border-width: 0;
+    outline: none;
+}
+
+.cart{
+    display: none;
+}
+.cartList {
+    opacity: 0;
+    display: none;
+}
+
+.status .login {
+    display: none;
+}
+
+.content {
+    height: 500px;
+}
+
+footer {
+    padding: 60px 0;
+    margin-top: 60px;
+    background-color: #000;
+}
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    margin-bottom: 16px;
+}
+
+footer a:hover {
+    color: #EEEEEE;
+    text-decoration: underline;
+}
+
+.footer-top {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.info-img img {
+    margin-bottom: 40px;
+}
+
+.footer-bottom {
+    padding-top: 40px;
+}
+
+.footer-bottom i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.footer-bottom span {
+    color: #fff;
+    display: block;
+}
+
+#deliverModal i {
+    font-size: 20px;
+    padding-right: 15px;
+}
+
+#deliverModal .modal-body button {
+    border-width: 0;
+    padding: 10px 15px;
+    border-radius: 300px;
+}
+
+.bg-style {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    z-index: 101;
+}
+.discount-txt{
+    font-size: 16px;
+}
+.discount-item{
+    border-bottom: 1px solid #EEEEEE;
+}
+.discount-item:last-child{
+    border-bottom: none;
+}
+.discount-body{
+    margin-top: 10px;
+    height: 300px;
+    overflow-y: scroll;
+}
+#discountModal .modal-body button{
+    background-color: #EEEEEE;
+    border-radius: 30px;
+}
+#ONdiscountModal input,
+#destModal input{
+    outline: none;
+    width: 100%;
+    border-width: 0;
+    padding: 12px 16px;
+    box-shadow:inset 0px -1px 0px #e2e2e2;
+    background-color:#F6F6F6;
+}
+#destlist{
+    padding: 15px;
+}
+
+.info-img .logo img{
+    width: 200px;
+}
+
+.opacity-0{
+    opacity: 0;
+}
+.timelist select{
+    margin-bottom: 15px;
+    padding: 12px 16px;
+    outline: none;
+    box-shadow:inset 0px -1px 0px #e2e2e2;
+    background-color:#F6F6F6;
+    border: none;
+    font-size:16px;
+    line-height:24px;
+    cursor:pointer;
+}
+.timelist option{
+    font-size: 16px;
+    background-color: rgb(246, 246, 246);
+    line-height:24px;
+}
+
+/* 慧萱 */
+.storeModalContent {
+    border: none;
+  }
+
+  .storeModalBody {
+    padding: 0;
+  }
+
+  .imgAndClose {
+    position: relative;
+
+  }
+
+  .imgAndClosePic {
+    width: 100%;
+    height: 200px;
+  }
+
+  .imgAndClosePic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .imgAndClose .fa-times-circle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #fff;
+  }
+
+  .addGroup {
+    display: flex;
+    text-align: center;
+  }
+
+  .quantityAddWrap {
+    justify-content: center;
+  }
+
+  .selectedBgc {
+    background: rgb(246, 246, 246);
+  }
+
+  .addItemBgC {
+    padding: 10px 0;
+  }
+
+  .addItemBgC i {
+    padding: 0 15px;
+  }
+
+  .addToCart {
+    text-align: center;
+  }
+
+  .price {
+    text-align: right;
+  }
+
+  .cardWrap input {
+    border: none;
+    padding: 24px;
+  }
+
+  .input {
+    width: 100%;
+  }
+
+  .cardWrap {
+    height: 500px;
+
+  }
+
+  .billTxt {
+    background: rgb(246, 246, 246);
+  }
+
+  .billTxt p {
+    padding: 10px;
+  }
+
+  .scroll {
+    overflow: auto;
+    height: 500px;
+    display: block;
+  }
+
+  .addGroup {
+    display: flex;
+  }
+
+  .quantityAddWrap {
+    justify-content: space-between;
+    margin: auto;
+  }
+
+  .addToCartWrap button {
+    margin: 10px;
+  }
+
+
+@media screen and (min-width: 992px) {
+    .top {
+        height: 95px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .deliver,
+    .search,
+    .cart,
+    .status {
+        margin: auto 0;
+        margin-left: 20px;
+    }
+
+    .head {
+        padding: 0;
+        margin: auto 0;
+        width: auto;
+        position: unset;
+        justify-content: space-between;
+        border: 0;
+    }
+
+    .head button {
+        display: none;
+    }
+
+    .lookup{
+        display: flex;
+        justify-content: space-around;
+        flex-grow: 1;
+    }
+
+    .menu {
+        position: fixed;
+        top: 0;
+        left: -500px;
+        transition: .5s;
+    }
+    
+    .logo a img{
+        width: 180px;
+    }
+
+    #menu-check:checked~header .menu {
+        left: 0;
+    }
+
+    .search {
+        max-width: 800px;
+        flex-grow: 1;
+        width: auto;
+        border-radius: 0;
+        box-shadow:inset  0px -1px 0px #e2e2e2;
+    }
+
+    .search .filter {
+        display: none;
+    }
+
+    .deliver {
+        background-color: #EEEEEE;
+        padding: 10px;
+        border-radius: 30px;
+        height: 40px;
+    }
+    .deliver:hover {
+        background-color: #DBDBDB;
+    }
+
+    .status {
+        position: relative;
+    }
+
+    .status .login {
+        display: block;
+        padding: 15px 30px;
+        background-color: #EEEEEE;
+        border-radius: 500px;
+        margin-left: 20px;
+        cursor: pointer;
+    }
+
+    .status .login:hover {
+        background-color: #DBDBDB;
+    }
+
+    .footer-top {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .info-txt {
+        width: 500px;
+    }
+
+    .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        text-align: end;
+    }
+
+    .policy {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .policy a {
+        margin-right: 20px;
+    }
+
+    .cart {
+        display: block;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+
+    #cart-check:checked~.cartList {
+        opacity: 1;
+        display: block;
+        transition: opacity 500ms ease 0s;
+
+    }
+
+    .cartList {
+        position: absolute;
+        top: 60px;
+        left: -200px;
+        border: 1px solid #EEEEEE;
+        box-shadow: 0px 0px 10px rgb(0 0 0 / 10%);
+
+    }
+    .noneList{
+        padding: 30px;
+    }
+    .noneList i {
+        font-size: 30px;
+        color: #888;
+    }
+    .cartList .list{
+        text-align: center;
+        max-height: calc(100vh - 150px);
+        overflow-y: scroll;
+        background-color: #fff;
+    }
+
+    .cart-content .modal-body{
+        position: unset;
+    }
+
+    /* 丁丁購物車 */
+    .mt-1{
+        font-weight: bold;
+    }
+    #shoppingBag{
+        float: right;
+    }
+    .groupOrderDiv{
+        justify-content: start;
+    }
+    .groupOrderBtn{
+        background-color: rgb(238, 238, 238);
+    }
+    .selectDiv{
+        height: 38px;
+        width: 90px;
+        padding:10px ;
+        border-radius: 20px;
+        background: rgb(238, 238, 238);
+        justify-content: center;
+        align-items: center;
+    }
+    .cartList select{
+        height: 36px;
+        width: 80px;
+        border-radius: 20px;
+        border: 0px;
+        line-height: 36px;
+        padding:0px 5px 0px 0px;
+        background: rgb(238, 238, 238);
+        outline: none;
+    }
+    .cartList .cart-content .modal-header button{
+        background-color: transparent;
+        padding: 0 20px;
+        border: none;
+        font-size: 20px;
+    }
+    .cartList .cart-content .modal-header{
+        position: sticky;
+        top: 0;
+        background-color: #fff;
+    }
+    .cartList .cart-content .modal-title{
+        line-height: 30px;
+    }
+    .selectList{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 15px;
+    }
+    .otherItems{
+        background-color: rgb(238, 238, 238);
+        height: 54px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: auto;
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .otherItems input{
+        margin-right:10px ;
+    }
+    .otherItems label{
+        margin-bottom:0px ;
+    }
+    .otherItems div{
+        width: 200px;
+        margin-left: 20px;
+        text-align: left;
+    }
+    .plasticBag{
+        background-color: rgb(238, 238, 238);
+        height: 54px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: auto;
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .plasticBag{
+        margin-bottom: 65px;
+    }
+    .plasticBag input{
+        margin-right:10px ;
+    }
+    .plasticBag label{
+        margin-bottom:0px ;
+    }
+    .plasticBag div{
+        width: 200px;
+        margin-left: 20px;
+        text-align: left;
+    }
+    .orderContentDiv{
+        text-align: left;
+    }
+    .orderContentDiv span:first-child{
+        font-size: 16px;
+    }
+    .cart-content{
+        width: 430px;
+    }
+    
+    .previewOrderDiv{
+        background-color: black;
+        border: 0px;
+        margin: auto;
+        color: white;
+        justify-content: center;
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(rgba(255, 255, 255, 0) 2.5%, rgba(255, 255, 255, 0.92) 55.35%);
+        padding:15px 2rem 15px 1rem;
+    }
+    .previewOrderBtn{
+        border: 0px;
+        background-color: black;
+        color: white;
+        text-align: center;
+        display: flex;
+        height: 54px;
+        width: 100%;
+    }
+    .previewOrderSpan{
+        font-size: 18px;
+        margin: auto;
+    }
+    
+    .imgAndClosePic .img{
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* 慧萱 */
+    .card img {
+        width: 88px;
+        height: 120px;
+      }
+  
+      .addGroup {
+        display: flex;
+        text-align: center;
+      }
+  
+      .quantityAddWrap {
+        justify-content: center;
+      }
+  
+      .storeModalBody {
+        display: flex;
+        width: 100%;
+      }
+  
+      .imgAndClose {
+        width: 50%;
+      }
+  
+      .imgAndClosePic img {
+        height: 500px;
+      }
+  
+      .cardWrap {
+        width: 50%;
+      }
+}

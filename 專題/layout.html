@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;500;900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="layout1.css">
     <title>Hello, world!</title>
 </head>
 
@@ -58,12 +58,195 @@
                     <span>0</span>
                 </label>
                 <div class="cartList">
-                    <div class="list-bottom">
-                        <div>
+                    <div class="list">
+                        <!-- <div class="noneList">
                             <i class="fas fa-shopping-cart mb-3"></i>
                             <br>
                             <span>選購餐廳或商店中的商品，即可開啟新的購物車</span>
+                        </div> -->
+
+                        <!-- 購物車 -->
+                        <div class="cart-content">
+                            <div class="modal-header">
+                                <button type="button">x</button>
+                                <h5 class="modal-title m-auto">五桐號 WooTEA 忠孝復興店</h5>
+                            </div>
+                            <div class="modal-body">
+                                <div class="groupOrderDiv modal-footer footer mb-1 border-0">
+                                    <button type="button" class="groupOrderBtn btn rounded-pill" data-toggle="modal"
+                                        data-target="#groupOrder"><i
+                                            class="fas fa-user-plus mx-1"></i><span>團購訂單</span></button>
+                                </div>
+                                <div class="selectList d-flex ml-3">
+                                    <div class="d-flex">
+                                        <div class="selectDiv d-flex">
+                                            <select name="" id="remove">
+                                                <option value="">移除</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <button class="orderContentDiv btn" data-toggle="modal"
+                                                data-target="#storeModal">
+                                                <span class="mt-1">荔枝冰凍茶飲</span><br>
+                                                <span>
+                                                    甜度選擇 Sweewness Level <br>
+                                                    無糖 Sugar-Free($9.00) <br>
+                                                    仙草凍 Herb Jelly
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="firstPrice">$99元
+                                    </div>
+                                </div>
+                                <div class="selectList d-flex ml-3">
+                                    <div class="d-flex">
+                                        <div class="selectDiv d-flex">
+                                            <select name="" id="remove">
+                                                <option value="">移除</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <button class="orderContentDiv btn" data-toggle="modal"
+                                                data-target="#storeModal">
+                                                <span class="mt-1">荔枝冰凍茶飲</span><br>
+                                                <span>
+                                                    甜度選擇 Sweewness Level <br>
+                                                    無糖 Sugar-Free($9.00) <br>
+                                                    仙草凍 Herb Jelly
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="firstPrice">$99元
+                                    </div>
+                                </div>
+                                <div class="selectList d-flex ml-3">
+                                    <div class="d-flex">
+                                        <div class="selectDiv d-flex">
+                                            <select name="" id="remove">
+                                                <option value="">移除</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <button class="orderContentDiv btn" data-toggle="modal"
+                                                data-target="#storeModal">
+                                                <span class="mt-1">荔枝冰凍茶飲</span><br>
+                                                <span>
+                                                    甜度選擇 Sweewness Level <br>
+                                                    無糖 Sugar-Free($9.00) <br>
+                                                    仙草凍 Herb Jelly
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="firstPrice">$99元
+                                    </div>
+                                </div>
+                                <div class="selectList d-flex ml-3">
+                                    <div class="d-flex">
+                                        <div class="selectDiv d-flex">
+                                            <select name="" id="remove">
+                                                <option value="">移除</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <button class="orderContentDiv btn" data-toggle="modal"
+                                                data-target="#storeModal">
+                                                <span class="mt-1">荔枝冰凍茶飲</span><br>
+                                                <span>
+                                                    甜度選擇 Sweewness Level <br>
+                                                    無糖 Sugar-Free($9.00) <br>
+                                                    仙草凍 Herb Jelly
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="firstPrice">$99元
+                                    </div>
+                                </div>
+                                <div class="selectList d-flex ml-3">
+                                    <div class="d-flex">
+                                        <div class="selectDiv d-flex">
+                                            <select name="" id="remove">
+                                                <option value="">移除</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <button class="orderContentDiv btn" data-toggle="modal"
+                                                data-target="#storeModal">
+                                                <span class="mt-1">荔枝冰凍茶飲</span><br>
+                                                <span>
+                                                    甜度選擇 Sweewness Level <br>
+                                                    無糖 Sugar-Free($9.00) <br>
+                                                    仙草凍 Herb Jelly
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="firstPrice">$99元
+                                    </div>
+                                </div>
+                                <div class="selectList d-flex ml-3">
+                                    <div class="d-flex">
+                                        <div class="selectDiv d-flex">
+                                            <select name="" id="remove">
+                                                <option value="">移除</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                            </select>
+                                        </div>
+                                        <div>
+                                            <button class="orderContentDiv btn" data-toggle="modal"
+                                                data-target="#storeModal">
+                                                <span class="mt-1">荔枝冰凍茶飲</span><br>
+                                                <span>
+                                                    甜度選擇 Sweewness Level <br>
+                                                    無糖 Sugar-Free($9.00) <br>
+                                                    仙草凍 Herb Jelly
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="firstPrice">$99元
+                                    </div>
+                                </div>
+                                <div class="otherItems">
+                                    <label for="checkbox" class="w-100">
+                                        <div>索取餐具、吸管等用品</div>
+                                    </label>
+                                    <input type="checkbox" id="checkbox" style="zoom:180%">
+                                </div>
+                                <div class="plasticBag mt-2">
+                                    <label for="checkbox2" class="w-100">
+                                        <div>索取袋子</div>
+                                    </label>
+                                    <input type="checkbox" id="checkbox2" style="zoom:180%">
+                                </div>
+                                <div class="previewOrderDiv">
+                                    <button class="btn btn-dark previewOrderBtn">
+                                        <span class="previewOrderSpan">前往結帳 • $99.00</span>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
+
                     </div>
                 </div>
                 <button class="login btn mr-3">登入</button>
@@ -311,24 +494,122 @@
                             <option value="2021-09-06">9月6日 週一</option>
                             <option value="2021-09-07">9月7日 週二</option>
                         </select>
-                       <select class="w-100">
-                           <option value="1">14:00 - 14:30</option>
-                           <option value="2">14:30 - 15:00</option>
-                           <option value="3">15:00 - 15:30</option>
-                           <option value="4">15:30 - 16:00</option>
-                           <option value="5">16:00 - 16:30</option>
-                           <option value="6">16:30 - 17:00</option>
-                       </select>
+                        <select class="w-100">
+                            <option value="1">14:00 - 14:30</option>
+                            <option value="2">14:30 - 15:00</option>
+                            <option value="3">15:00 - 15:30</option>
+                            <option value="4">15:30 - 16:00</option>
+                            <option value="5">16:00 - 16:30</option>
+                            <option value="6">16:30 - 17:00</option>
+                        </select>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-dark py-3 w-100" data-dismiss="modal">完成</button>
-                    <button type="button" class="btn btn-outline-secondary py-3 w-100" data-dismiss="modal">立刻外送</button>
+                    <button type="button" class="btn btn-outline-secondary py-3 w-100"
+                        data-dismiss="modal">立刻外送</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal 團購訂單-->
+    <div class="modal fade" id="groupOrder" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="">BS的團購訂單</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <P>邀請賓客使用可分享連結新增餐點。所有人都訂完後，再幫大家付款。</P>
+                </div>
+                <div class="modal-footer">
+                    <div class="previewOrderDiv"><button class="previewOrderBtn">
+                            <div class="previewOrderSpan">建立訂單</div>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Modal 內容明細-->
+    <div class="modal fade" id="storeModal" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="storeModalContent modal-content">
+                <!-- <div class="storeModal modal-header"> -->
+                <div class="storeModalBody modal-body">
+                    <div class="imgAndClose">
+                        <div type="button" data-dismiss="modal">
+                            <span aria-hidden="true">
+                                <i class="far fa-times-circle fa-3x"></i>
+                            </span>
+                        </div>
+                        <div class="imgAndClosePic">
+                            <img src="https://picsum.photos/600/600/?random=1">
+                        </div>
+                    </div>
+
+                    <div class="cardWrap d-flex flex-column">
+                        <div class="scroll">
+                            <div class="topWrap">
+                                <div class="food p-4">
+                                    <h2>蕃茄迷你鍋</h2>
+                                    <p>附白飯一碗。恕無客製化醬料，敬請見諒。</p>
+                                </div>
+                                <div class="selectedBgc p-4">
+                                    <div class="selected d-flex justify-content-between align-items-center">
+                                        <div class="selectWrap">
+                                            <div class="selectedTitle">辣選擇</div>
+                                            <div class="selectedTxt">
+                                                <span>最多可選擇 1 個項目</span>
+                                            </div>
+                                        </div>
+                                        <div class="circleIconDiv">
+                                            <i class="fas fa-chevron-circle-down circleIcon fa-2x"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="checkboxDiv d-flex align-items-center p-4">
+                                    <label for="checkbox">
+                                        <input id="checkbox" type="checkbox">加辣
+                                    </label>
+                                </div>
+                            </div>
+                            <input class="input" type="text" placeholder="新增註記(醬料多一點，不加洋蔥等)">
+                            <div class="billTxt">
+                                <p>[本店免開統一發票] 本商家所提供的商品沒有含有任何依法規應揭露之肉類食材
+                                    (上開肉品資訊是由我們所合作之商家合作夥伴所提供。如對上開資訊有任何疑問，請直接與商家合作夥伴聯繫)
+                                </p>
+                            </div>
+                            <div class="addItemBgC">
+                                <div class="addGroup wrap justify-content-around">
+                                    <div class="quantityAddWrap d-flex">
+                                        <i class="fas fa-minus-circle fa-2x"></i>
+                                        <div class="quantity" style="font-size: 20px;">1</div>
+                                        <i class="fas fa-plus-circle fa-2x"></i>
+                                    </div>
+                                    <div class="addToCartWrap">
+                                        <button type="button" class="btn btn-lg btn-dark active">
+                                            <span class="addToCart">
+                                                新增 1 項商品至訂單
+                                            </span>
+                                            <span class="price">
+                                                $195.00
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 
     <div class="bg"></div>
 

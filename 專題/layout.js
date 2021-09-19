@@ -46,3 +46,29 @@ destModalBtn.forEach(button => {
         changeDest.parentNode.parentElement.offsetParent.classList.remove('opacity-0');
     });
 });
+
+//cartList 按鈕點擊關閉購物車
+let cartBtn = document.querySelector('.cartList .cart-content .modal-header button');
+cartBtn.addEventListener('click', function(){
+    let cartInput = document.querySelector('#cart-check');
+    cartInput.click();
+});
+
+// 下拉選單
+$('.circleIcon').on('click', function () {
+    
+    if ($(".checkboxDiv").hasClass('d-flex')) {
+    $('.checkboxDiv').removeClass('d-flex');
+    $('.checkboxDiv').addClass('d-none')
+
+    $('.circleIcon').removeClass('fa-chevron-circle-down');
+    $('.circleIcon').addClass('fa-chevron-circle-up');
+
+    } else {
+    $('.checkboxDiv').addClass('d-flex');
+    $('.checkboxDiv').removeClass('d-none');
+
+    $('.circleIcon').removeClass('fa-chevron-circle-up');
+    $('.circleIcon').addClass('fa-chevron-circle-down');
+    }
+});
